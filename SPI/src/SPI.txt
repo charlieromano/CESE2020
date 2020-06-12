@@ -1,0 +1,170 @@
+/*****************************************************************************
+ ** SPI.c
+ * Copyright (c) 2020, Carlos Germán Carreño Romano <charlieromano@gmail.com>
+ * All rights reserved.
+ * License: gpl-3.0 (see LICENSE.txt)
+ * Date: 2020/06/07
+ * Version: 1.0
+ ****************************************************************************/
+
+#include "SPI.h"
+#include "sapi.h"
+#include "chip.h"
+
+#define SPI_SCK 120
+#define SPI_SCLK_LOW_TIME   200
+#define SPI_SCLK_HIGH_TIME   150
+#define DEC    10
+
+char* itoa(int value, char* result, int base);
+
+int main( void )
+{
+   boardInit();
+   //spiInit(SPI0);
+
+   uint8_t* buffer=NULL;
+   uint32_t bufferSize = 10;
+
+   /*while(1) {
+      spiRead(SPI0, buffer, bufferSize);
+   }*/
+
+   /* Init */
+   boardConfig();
+   uartConfig( UART_USB, 115200 );
+   adcConfig( ADC_ENABLE ); /* ADC */
+
+
+   /* Data */
+   static char uartBuff_X[10];
+   static char uartBuff_Y[10];
+   uint16_t sample_X = 0;
+   uint16_t sample_Y = 0;
+   uint32_t i = 0;
+
+   /* Time */
+   delay_t delay1;
+   delay_t delay2;
+   delayConfig( &delay1, 500 );
+   delayConfig( &delay2, 200 );
+
+   while(1) {
+
+      if (delayRead( &delay1 )){
+
+         sample_X = adcRead( CH1 );
+         sample_Y = adcRead( CH2 );
+
+         /* Conversión de sample_X entera a ascii con base decimal */
+         itoa( sample_X, uartBuff_X, DEC ); 
+         itoa( sample_Y, uartBuff_Y, DEC ); 
+
+         /* Enviar sample_X y Enter */
+         uartWriteString( UART_USB, "(x,y) = [ " );
+         uartWriteString( UART_USB, uartBuff_X );
+         uartWriteString( UART_USB, ", " );
+         uartWriteString( UART_USB, uartBuff_Y );
+         uartWriteString( UART_USB, "];\r\n" );
+         
+         gpioWrite(GPIO0, OFF);
+         uint8_t spiBuff[2]={0x1C,0x1C};    
+         //spiBuff = uartBuff_X[0];
+         spiWrite(SPI0, spiBuff, 2);
+
+      }
+
+   }
+
+   return 0 ;
+}
+/* SAPI 
+
+bool_t spiInit( spiMap_t spi );
+
+bool_t spiRead( spiMap_t spi, uint8_t* buffer, uint32_t bufferSize );
+
+bool_t spiWrite( spiMap_t spi, uint8_t* buffer, uint32_t bufferSize);
+*/
+
+
+/* Wiki
+uint8_t SPI_transfer_byte( uint8_t byte_out){
+   uint8_t byte_in = 0;
+   uint8_t bit;
+
+   for (bit = 0x80; bit; bit>>1){
+      write_MOSI(( byte_out & bit) ? HIGH : LOW);
+
+      delay(SPI_SCLK_LOW_TIME);
+      write_SCLK(HIGH);
+
+      if(read_MISO()==HIGH)
+         byte_in |= bit;
+
+      delay(SPI_SCLK_HIGH_TIME);
+
+      write_SCLK(LOW);
+   }
+   return byte_in;
+}
+
+void read_MISO (){
+   gpioToogle(SPI_MISO, ON)
+}
+void write_MOSI (){
+   SPI_MOSI
+}
+
+
+
+void write_SCLK (){
+   spiMap_t SPI0
+}
+*/
+/**
+ * @brief   Send SPI 16-bit data
+ * @param   pSPI  : The base of SPI peripheral on the chip
+ * @param   data  : Transmit Data
+ * @return  Nothing
+ */
+/*STATIC INLINE void Chip_SPI_SendFrame(LPC_SPI_T *pSPI, uint16_t data)
+{
+   pSPI->DR = SPI_DR_DATA(data);
+}
+*/
+
+
+
+/**
+ * C++ version 0.4 char* style "itoa":
+ * Written by Lukás Chmela
+ * Released under GPLv3.
+
+ */
+
+char* itoa(int value, char* result, int base) {
+   // check that the base if valid
+   if (base < 2 || base > 36) { *result = '\0'; return result; }
+
+   char* ptr = result, *ptr1 = result, tmp_char;
+   int tmp_value;
+
+   do {
+      tmp_value = value;
+      value /= base;
+      *ptr++ = "zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz" [35 + (tmp_value - value * base)];
+   } while ( value );
+
+   // Apply negative sign
+   if (tmp_value < 0) *ptr++ = '-';
+   *ptr-- = '\0';
+   while(ptr1 < ptr) {
+      tmp_char = *ptr;
+      *ptr--= *ptr1;
+      *ptr1++ = tmp_char;
+   }
+   return result;
+}
+
+
