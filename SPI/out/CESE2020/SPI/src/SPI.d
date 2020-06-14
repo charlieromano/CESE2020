@@ -119,4 +119,5 @@ CESE2020/SPI/out/CESE2020/SPI/src/SPI.o: CESE2020/SPI/src/SPI.c \
  libs/sapi/sapi_v0.5.2/external_peripherals/imu/mpu9250/inc/sapi_imu_mpu9250.h \
  libs/sapi/sapi_v0.5.2/external_peripherals/imu/mpu60X0/inc/sapi_imu_mpu60X0.h \
  libs/sapi/sapi_v0.5.2/external_peripherals/memory/eeprom/inc/sapi_eeprom24xx1025.h \
- libs/sapi/sapi_v0.5.2/external_peripherals/ultrasonic/hcsr04/inc/sapi_ultrasonic_hcsr04.h
+ libs/sapi/sapi_v0.5.2/external_peripherals/ultrasonic/hcsr04/inc/sapi_ultrasonic_hcsr04.h \
+ CESE2020/SPI/inc/MAX7219.h
