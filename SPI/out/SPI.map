@@ -16682,7 +16682,7 @@ END GROUP
  *(.rodata.$Flash2*)
  *(.rodata.$MFlashB512*)
 
-.text           0x000000001a000000     0x22fc
+.text           0x000000001a000000     0x22e8
  FILL mask 0xff
                 0x000000001a000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -16695,19 +16695,19 @@ END GROUP
                 0x000000001a000114                . = ALIGN (0x4)
                 0x000000001a000114                __section_table_start = .
                 0x000000001a000114                __data_section_table = .
-                0x000000001a000114        0x4 LONG 0x1a002308 LOADADDR (.data)
+                0x000000001a000114        0x4 LONG 0x1a0022f4 LOADADDR (.data)
                 0x000000001a000118        0x4 LONG 0x10000000 ADDR (.data)
                 0x000000001a00011c        0x4 LONG 0x48 SIZEOF (.data)
-                0x000000001a000120        0x4 LONG 0x1a002308 LOADADDR (.data_RAM2)
+                0x000000001a000120        0x4 LONG 0x1a0022f4 LOADADDR (.data_RAM2)
                 0x000000001a000124        0x4 LONG 0x10080000 ADDR (.data_RAM2)
                 0x000000001a000128        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x000000001a00012c        0x4 LONG 0x1a002308 LOADADDR (.data_RAM3)
+                0x000000001a00012c        0x4 LONG 0x1a0022f4 LOADADDR (.data_RAM3)
                 0x000000001a000130        0x4 LONG 0x20000000 ADDR (.data_RAM3)
                 0x000000001a000134        0x4 LONG 0x0 SIZEOF (.data_RAM3)
-                0x000000001a000138        0x4 LONG 0x1a002308 LOADADDR (.data_RAM4)
+                0x000000001a000138        0x4 LONG 0x1a0022f4 LOADADDR (.data_RAM4)
                 0x000000001a00013c        0x4 LONG 0x20008000 ADDR (.data_RAM4)
                 0x000000001a000140        0x4 LONG 0x0 SIZEOF (.data_RAM4)
-                0x000000001a000144        0x4 LONG 0x1a002308 LOADADDR (.data_RAM5)
+                0x000000001a000144        0x4 LONG 0x1a0022f4 LOADADDR (.data_RAM5)
                 0x000000001a000148        0x4 LONG 0x2000c000 ADDR (.data_RAM5)
                 0x000000001a00014c        0x4 LONG 0x0 SIZEOF (.data_RAM5)
                 0x000000001a000150                __data_section_table_end = .
@@ -16803,360 +16803,360 @@ END GROUP
  .text.maxAll   0x000000001a000360       0x5a CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
                 0x000000001a000360                maxAll
  *fill*         0x000000001a0003ba        0x2 ff
- .text.main     0x000000001a0003bc      0x134 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+ .text.main     0x000000001a0003bc      0x128 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
                 0x000000001a0003bc                main
  .text.initialise_monitor_handles
-                0x000000001a0004f0        0x2 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a0004f0                initialise_monitor_handles
- *fill*         0x000000001a0004f2        0x2 ff
+                0x000000001a0004e4        0x2 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a0004e4                initialise_monitor_handles
+ *fill*         0x000000001a0004e6        0x2 ff
  .text.Reset_Handler
-                0x000000001a0004f4       0x88 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a0004f4                Reset_Handler
- .text._fini    0x000000001a00057c        0x2 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a00057c                _fini
- .text._init    0x000000001a00057e        0x2 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a00057e                _init
+                0x000000001a0004e8       0x88 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a0004e8                Reset_Handler
+ .text._fini    0x000000001a000570        0x2 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a000570                _fini
+ .text._init    0x000000001a000572        0x2 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a000572                _init
  .text.Board_LED_Init
-                0x000000001a000580       0x44 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000574       0x44 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_TEC_Init
-                0x000000001a0005c4       0x40 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0005b8       0x40 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_GPIO_Init
-                0x000000001a000604       0x40 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0005f8       0x40 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_ADC_Init
-                0x000000001a000644       0x30 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000638       0x30 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_SPI_Init
-                0x000000001a000674       0x38 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000668       0x38 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_I2C_Init
-                0x000000001a0006ac       0x24 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0006a0       0x24 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_Debug_Init
-                0x000000001a0006d0       0x24 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0006d0                Board_Debug_Init
+                0x000000001a0006c4       0x24 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0006c4                Board_Debug_Init
  .text.Board_Init
-                0x000000001a0006f4       0x30 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0006f4                Board_Init
+                0x000000001a0006e8       0x30 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0006e8                Board_Init
  .text.__stdio_init
-                0x000000001a000724        0x8 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a000724                __stdio_init
+                0x000000001a000718        0x8 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a000718                __stdio_init
  .text.Board_SetupMuxing
-                0x000000001a00072c       0x38 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a00072c                Board_SetupMuxing
+                0x000000001a000720       0x38 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a000720                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x000000001a000764       0x6c CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a000764                Board_SetupClocking
+                0x000000001a000758       0x6c CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a000758                Board_SetupClocking
  .text.Board_SystemInit
-                0x000000001a0007d0        0xc CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a0007d0                Board_SystemInit
+                0x000000001a0007c4        0xc CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a0007c4                Board_SystemInit
  .text.Chip_UART_GetIndex
-                0x000000001a0007dc       0x2c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0007d0       0x2c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .text.Chip_UART_Init
-                0x000000001a000808       0x54 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a000808                Chip_UART_Init
+                0x000000001a0007fc       0x54 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0007fc                Chip_UART_Init
  .text.Chip_UART_SetBaud
-                0x000000001a00085c       0x40 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a00085c                Chip_UART_SetBaud
+                0x000000001a000850       0x40 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a000850                Chip_UART_SetBaud
  .text.Chip_UART_SetBaudFDR
-                0x000000001a00089c       0xdc CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a00089c                Chip_UART_SetBaudFDR
+                0x000000001a000890       0xdc CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a000890                Chip_UART_SetBaudFDR
  .text.Chip_ADC_GetClockIndex
-                0x000000001a000978       0x14 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a00096c       0x14 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .text.getClkDiv
-                0x000000001a00098c       0x32 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000980       0x32 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .text.setStartMode
-                0x000000001a0009be        0xe CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0009be                setStartMode
+                0x000000001a0009b2        0xe CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0009b2                setStartMode
  .text.readAdcVal
-                0x000000001a0009cc       0x18 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0009cc                readAdcVal
+                0x000000001a0009c0       0x18 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0009c0                readAdcVal
  .text.Chip_ADC_Init
-                0x000000001a0009e4       0x40 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0009e4                Chip_ADC_Init
+                0x000000001a0009d8       0x40 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0009d8                Chip_ADC_Init
  .text.Chip_ADC_DeInit
-                0x000000001a000a24       0x16 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000a24                Chip_ADC_DeInit
+                0x000000001a000a18       0x16 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000a18                Chip_ADC_DeInit
  .text.Chip_ADC_ReadValue
-                0x000000001a000a3a        0x8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000a3a                Chip_ADC_ReadValue
+                0x000000001a000a2e        0x8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000a2e                Chip_ADC_ReadValue
  .text.Chip_ADC_ReadStatus
-                0x000000001a000a42       0x36 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000a42                Chip_ADC_ReadStatus
+                0x000000001a000a36       0x36 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000a36                Chip_ADC_ReadStatus
  .text.Chip_ADC_Int_SetChannelCmd
-                0x000000001a000a78       0x22 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000a78                Chip_ADC_Int_SetChannelCmd
+                0x000000001a000a6c       0x22 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000a6c                Chip_ADC_Int_SetChannelCmd
  .text.Chip_ADC_SetStartMode
-                0x000000001a000a9a       0x20 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000a9a                Chip_ADC_SetStartMode
+                0x000000001a000a8e       0x20 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000a8e                Chip_ADC_SetStartMode
  .text.Chip_ADC_SetSampleRate
-                0x000000001a000aba       0x32 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000aba                Chip_ADC_SetSampleRate
+                0x000000001a000aae       0x32 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000aae                Chip_ADC_SetSampleRate
  .text.Chip_ADC_SetResolution
-                0x000000001a000aec        0xc CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000aec                Chip_ADC_SetResolution
+                0x000000001a000ae0        0xc CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000ae0                Chip_ADC_SetResolution
  .text.Chip_ADC_EnableChannel
-                0x000000001a000af8       0x2a CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000af8                Chip_ADC_EnableChannel
+                0x000000001a000aec       0x2a CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000aec                Chip_ADC_EnableChannel
  .text.Chip_ADC_SetBurstCmd
-                0x000000001a000b22       0x22 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a000b22                Chip_ADC_SetBurstCmd
+                0x000000001a000b16       0x22 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a000b16                Chip_ADC_SetBurstCmd
  .text.SystemCoreClockUpdate
-                0x000000001a000b44       0x14 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
-                0x000000001a000b44                SystemCoreClockUpdate
+                0x000000001a000b38       0x14 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+                0x000000001a000b38                SystemCoreClockUpdate
  .text.pll_calc_divs
-                0x000000001a000b58       0xa0 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000b4c       0xa0 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.pll_get_frac
-                0x000000001a000bf8      0x10c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000bec      0x10c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_FindBaseClock
-                0x000000001a000d04       0x4c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000cf8       0x4c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_EnableCrystal
-                0x000000001a000d50       0x4c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000d50                Chip_Clock_EnableCrystal
+                0x000000001a000d44       0x4c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000d44                Chip_Clock_EnableCrystal
  .text.Chip_Clock_GetDividerSource
-                0x000000001a000d9c       0x1c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000d9c                Chip_Clock_GetDividerSource
+                0x000000001a000d90       0x1c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000d90                Chip_Clock_GetDividerSource
  .text.Chip_Clock_GetDividerDivisor
-                0x000000001a000db8       0x1c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000db8                Chip_Clock_GetDividerDivisor
+                0x000000001a000dac       0x1c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000dac                Chip_Clock_GetDividerDivisor
  .text.Chip_Clock_GetClockInputHz
-                0x000000001a000dd4       0xb8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000dd4                Chip_Clock_GetClockInputHz
+                0x000000001a000dc8       0xb8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000dc8                Chip_Clock_GetClockInputHz
  .text.Chip_Clock_CalcMainPLLValue
-                0x000000001a000e8c       0x80 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000e8c                Chip_Clock_CalcMainPLLValue
+                0x000000001a000e80       0x80 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000e80                Chip_Clock_CalcMainPLLValue
  .text.Chip_Clock_GetMainPLLHz
-                0x000000001a000f0c       0x6c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000f0c                Chip_Clock_GetMainPLLHz
+                0x000000001a000f00       0x6c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000f00                Chip_Clock_GetMainPLLHz
  .text.Chip_Clock_GetDivRate
-                0x000000001a000f78       0x22 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- *fill*         0x000000001a000f9a        0x2 ff
+                0x000000001a000f6c       0x22 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ *fill*         0x000000001a000f8e        0x2 ff
  .text.Chip_Clock_SetBaseClock
-                0x000000001a000f9c       0x58 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000f9c                Chip_Clock_SetBaseClock
+                0x000000001a000f90       0x58 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000f90                Chip_Clock_SetBaseClock
  .text.Chip_Clock_GetBaseClock
-                0x000000001a000ff4       0x26 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a000ff4                Chip_Clock_GetBaseClock
+                0x000000001a000fe8       0x26 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a000fe8                Chip_Clock_GetBaseClock
  .text.Chip_Clock_GetBaseClocktHz
-                0x000000001a00101a        0xc CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a00101a                Chip_Clock_GetBaseClocktHz
- *fill*         0x000000001a001026        0x2 ff
+                0x000000001a00100e        0xc CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a00100e                Chip_Clock_GetBaseClocktHz
+ *fill*         0x000000001a00101a        0x2 ff
  .text.Chip_Clock_EnableOpts
-                0x000000001a001028       0x3c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a001028                Chip_Clock_EnableOpts
+                0x000000001a00101c       0x3c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a00101c                Chip_Clock_EnableOpts
  .text.Chip_Clock_Enable
-                0x000000001a001064       0x34 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a001064                Chip_Clock_Enable
+                0x000000001a001058       0x34 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a001058                Chip_Clock_Enable
  .text.Chip_Clock_Disable
-                0x000000001a001098       0x34 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a001098                Chip_Clock_Disable
+                0x000000001a00108c       0x34 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a00108c                Chip_Clock_Disable
  .text.Chip_Clock_GetRate
-                0x000000001a0010cc       0x4c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a0010cc                Chip_Clock_GetRate
+                0x000000001a0010c0       0x4c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0010c0                Chip_Clock_GetRate
  .text.Chip_GPIO_Init
-                0x000000001a001118        0x2 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
-                0x000000001a001118                Chip_GPIO_Init
- *fill*         0x000000001a00111a        0x2 ff
+                0x000000001a00110c        0x2 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+                0x000000001a00110c                Chip_GPIO_Init
+ *fill*         0x000000001a00110e        0x2 ff
  .text.Chip_SetupCoreClock
-                0x000000001a00111c      0x158 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
-                0x000000001a00111c                Chip_SetupCoreClock
+                0x000000001a001110      0x158 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000001a001110                Chip_SetupCoreClock
  .text.Chip_I2C_EventHandler
-                0x000000001a001274       0x20 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a001274                Chip_I2C_EventHandler
+                0x000000001a001268       0x20 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a001268                Chip_I2C_EventHandler
  .text.Chip_I2C_Init
-                0x000000001a001294       0x24 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a001294                Chip_I2C_Init
+                0x000000001a001288       0x24 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a001288                Chip_I2C_Init
  .text.Chip_I2C_SetClockRate
-                0x000000001a0012b8       0x38 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a0012b8                Chip_I2C_SetClockRate
+                0x000000001a0012ac       0x38 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a0012ac                Chip_I2C_SetClockRate
  .text.SSP_Write2BFifo
-                0x000000001a0012f0       0x1a CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a0012e4       0x1a CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.SSP_Write1BFifo
-                0x000000001a00130a       0x18 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a0012fe       0x18 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.SSP_Read2BFifo
-                0x000000001a001322       0x42 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a001316       0x42 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.SSP_Read1BFifo
-                0x000000001a001364       0x40 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a001358       0x40 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_GetClockIndex
-                0x000000001a0013a4       0x14 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a001398       0x14 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_GetPeriphClockIndex
-                0x000000001a0013b8       0x18 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a0013ac       0x18 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_SetClockRate
-                0x000000001a0013d0       0x12 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a0013d0                Chip_SSP_SetClockRate
+                0x000000001a0013c4       0x12 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a0013c4                Chip_SSP_SetClockRate
  .text.Chip_SSP_RWFrames_Blocking
-                0x000000001a0013e2       0xa8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a0013e2                Chip_SSP_RWFrames_Blocking
+                0x000000001a0013d6       0xa8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a0013d6                Chip_SSP_RWFrames_Blocking
  .text.Chip_SSP_SetBitRate
-                0x000000001a00148a       0x3e CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a00148a                Chip_SSP_SetBitRate
+                0x000000001a00147e       0x3e CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a00147e                Chip_SSP_SetBitRate
  .text.Chip_SSP_Init
-                0x000000001a0014c8       0x36 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a0014c8                Chip_SSP_Init
- *fill*         0x000000001a0014fe        0x2 ff
+                0x000000001a0014bc       0x36 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a0014bc                Chip_SSP_Init
+ *fill*         0x000000001a0014f2        0x2 ff
  .text.SystemInit
-                0x000000001a001500       0x38 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
-                0x000000001a001500                SystemInit
+                0x000000001a0014f4       0x38 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
+                0x000000001a0014f4                SystemInit
  .text.cyclesCounterInit
-                0x000000001a001538       0x1c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
-                0x000000001a001538                cyclesCounterInit
+                0x000000001a00152c       0x1c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+                0x000000001a00152c                cyclesCounterInit
  .text.uartTxReady
-                0x000000001a001554       0x18 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a001554                uartTxReady
+                0x000000001a001548       0x18 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a001548                uartTxReady
  .text.uartTxWrite
-                0x000000001a00156c       0x14 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a00156c                uartTxWrite
+                0x000000001a001560       0x14 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a001560                uartTxWrite
  .text.uartInit
-                0x000000001a001580       0x7c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a001580                uartInit
+                0x000000001a001574       0x7c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a001574                uartInit
  .text.uartWriteByte
-                0x000000001a0015fc       0x1a CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a0015fc                uartWriteByte
+                0x000000001a0015f0       0x1a CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a0015f0                uartWriteByte
  .text.uartWriteString
-                0x000000001a001616       0x16 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a001616                uartWriteString
- .text.spiInit  0x000000001a00162c       0x50 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
-                0x000000001a00162c                spiInit
+                0x000000001a00160a       0x16 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a00160a                uartWriteString
+ .text.spiInit  0x000000001a001620       0x50 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
+                0x000000001a001620                spiInit
  .text.spiWrite
-                0x000000001a00167c       0x2c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
-                0x000000001a00167c                spiWrite
+                0x000000001a001670       0x2c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
+                0x000000001a001670                spiWrite
  .text.tickRead
-                0x000000001a0016a8        0xc CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
-                0x000000001a0016a8                tickRead
+                0x000000001a00169c        0xc CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x000000001a00169c                tickRead
  .text.tickPowerSet
-                0x000000001a0016b4       0x18 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
-                0x000000001a0016b4                tickPowerSet
+                0x000000001a0016a8       0x18 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x000000001a0016a8                tickPowerSet
  .text.tickInit
-                0x000000001a0016cc       0x7c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
-                0x000000001a0016cc                tickInit
+                0x000000001a0016c0       0x7c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x000000001a0016c0                tickInit
  .text.SysTick_Handler
-                0x000000001a001748       0x2c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
-                0x000000001a001748                SysTick_Handler
- .text.adcInit  0x000000001a001774       0xb8 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
-                0x000000001a001774                adcInit
- .text.adcRead  0x000000001a00182c       0x58 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
-                0x000000001a00182c                adcRead
+                0x000000001a00173c       0x2c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+                0x000000001a00173c                SysTick_Handler
+ .text.adcInit  0x000000001a001768       0xb8 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+                0x000000001a001768                adcInit
+ .text.adcRead  0x000000001a001820       0x58 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+                0x000000001a001820                adcRead
  .text.gpioObtainPinInit
-                0x000000001a001884       0x34 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a001878       0x34 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
  .text.gpioInit
-                0x000000001a0018b8      0x1ac CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a0018b8                gpioInit
+                0x000000001a0018ac      0x1ac CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a0018ac                gpioInit
  .text.gpioWrite
-                0x000000001a001a64       0x6a CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a001a64                gpioWrite
- *fill*         0x000000001a001ace        0x2 ff
+                0x000000001a001a58       0x6a CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a001a58                gpioWrite
+ *fill*         0x000000001a001ac2        0x2 ff
  .text.USB0_IRQHandler
-                0x000000001a001ad0       0x1c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
-                0x000000001a001ad0                USB0_IRQHandler
+                0x000000001a001ac4       0x1c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+                0x000000001a001ac4                USB0_IRQHandler
  .text.boardInit
-                0x000000001a001aec       0x74 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
-                0x000000001a001aec                boardInit
- .text.delay    0x000000001a001b60       0x38 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
-                0x000000001a001b60                delay
+                0x000000001a001ae0       0x74 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+                0x000000001a001ae0                boardInit
+ .text.delay    0x000000001a001b54       0x38 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+                0x000000001a001b54                delay
  .text.delayInit
-                0x000000001a001b98       0x20 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
-                0x000000001a001b98                delayInit
+                0x000000001a001b8c       0x20 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+                0x000000001a001b8c                delayInit
  .text.delayRead
-                0x000000001a001bb8       0x3e CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
-                0x000000001a001bb8                delayRead
- *fill*         0x000000001a001bf6        0x2 ff
- .text          0x000000001a001bf8       0x30 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
-                0x000000001a001bf8                __aeabi_uldivmod
+                0x000000001a001bac       0x3e CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+                0x000000001a001bac                delayRead
+ *fill*         0x000000001a001bea        0x2 ff
+ .text          0x000000001a001bec       0x30 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x000000001a001bec                __aeabi_uldivmod
  .text.__udivmoddi4
-                0x000000001a001c28      0x2d0 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000001a001c28                __udivmoddi4
- .text          0x000000001a001ef8        0x4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
-                0x000000001a001ef8                __aeabi_ldiv0
-                0x000000001a001ef8                __aeabi_idiv0
+                0x000000001a001c1c      0x2d0 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000001a001c1c                __udivmoddi4
+ .text          0x000000001a001eec        0x4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x000000001a001eec                __aeabi_ldiv0
+                0x000000001a001eec                __aeabi_idiv0
  .text.__libc_init_array
-                0x000000001a001efc       0x48 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-init.o)
-                0x000000001a001efc                __libc_init_array
- .text.memset   0x000000001a001f44       0xa0 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memset.o)
-                0x000000001a001f44                memset
+                0x000000001a001ef0       0x48 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-init.o)
+                0x000000001a001ef0                __libc_init_array
+ .text.memset   0x000000001a001f38       0xa0 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memset.o)
+                0x000000001a001f38                memset
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.itoa.str1.4
-                0x000000001a001fe4       0x48 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+                0x000000001a001fd8       0x48 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
  .rodata.main.str1.4
-                0x000000001a00202c       0x1e CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
- *fill*         0x000000001a00204a        0x2 ff
+                0x000000001a002020       0x15 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+ *fill*         0x000000001a002035        0x3 ff
  .rodata.ExtRateIn
-                0x000000001a00204c        0x4 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a00204c                ExtRateIn
+                0x000000001a002038        0x4 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002038                ExtRateIn
  .rodata.GpioButtons
-                0x000000001a002050        0x8 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a00203c        0x8 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .rodata.GpioLeds
-                0x000000001a002058        0xc CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002044        0xc CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .rodata.GpioPorts
-                0x000000001a002064       0x12 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- *fill*         0x000000001a002076        0x2 ff
+                0x000000001a002050       0x12 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ *fill*         0x000000001a002062        0x2 ff
  .rodata.OscRateIn
-                0x000000001a002078        0x4 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a002078                OscRateIn
+                0x000000001a002064        0x4 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002064                OscRateIn
  .rodata.InitClkStates
-                0x000000001a00207c        0x4 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a002068        0x4 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.pinmuxing
-                0x000000001a002080       0x74 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a00206c       0x74 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.UART_BClock
-                0x000000001a0020f4        0x8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0020e0        0x8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .rodata.UART_PClock
-                0x000000001a0020fc        0x8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .rodata        0x000000001a002104        0x4 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0020e8        0x8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .rodata        0x000000001a0020f0        0x4 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.Chip_Clock_SetDivider.str1.4
-                0x000000001a002108        0x8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0020f4        0x8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
                                           0x6 (size before relaxing)
  .rodata.periph_to_base
-                0x000000001a002110       0x6c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0020fc       0x6c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.InitClkStates
-                0x000000001a00217c       0x48 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000001a002168       0x48 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
  .rodata.lpcUarts
-                0x000000001a0021c4       0x48 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .rodata        0x000000001a00220c        0x8 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+                0x000000001a0021b0       0x48 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .rodata        0x000000001a0021f8        0x8 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
  .rodata.gpioPinsInit
-                0x000000001a002214       0xe6 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a002214                gpioPinsInit
-                0x000000001a0022fc                . = ALIGN (0x4)
- *fill*         0x000000001a0022fa        0x2 ff
+                0x000000001a002200       0xe6 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a002200                gpioPinsInit
+                0x000000001a0022e8                . = ALIGN (0x4)
+ *fill*         0x000000001a0022e6        0x2 ff
 
-.glue_7         0x000000001a0022fc        0x0
- .glue_7        0x000000001a0022fc        0x0 linker stubs
+.glue_7         0x000000001a0022e8        0x0
+ .glue_7        0x000000001a0022e8        0x0 linker stubs
 
-.glue_7t        0x000000001a0022fc        0x0
- .glue_7t       0x000000001a0022fc        0x0 linker stubs
+.glue_7t        0x000000001a0022e8        0x0
+ .glue_7t       0x000000001a0022e8        0x0 linker stubs
 
-.vfp11_veneer   0x000000001a0022fc        0x0
- .vfp11_veneer  0x000000001a0022fc        0x0 linker stubs
+.vfp11_veneer   0x000000001a0022e8        0x0
+ .vfp11_veneer  0x000000001a0022e8        0x0 linker stubs
 
-.v4_bx          0x000000001a0022fc        0x0
- .v4_bx         0x000000001a0022fc        0x0 linker stubs
+.v4_bx          0x000000001a0022e8        0x0
+ .v4_bx         0x000000001a0022e8        0x0 linker stubs
 
-.iplt           0x000000001a0022fc        0x0
- .iplt          0x000000001a0022fc        0x0 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
-                0x000000001a0022fc                . = ALIGN (0x4)
+.iplt           0x000000001a0022e8        0x0
+ .iplt          0x000000001a0022e8        0x0 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+                0x000000001a0022e8                . = ALIGN (0x4)
 
-.preinit_array  0x000000001a0022fc        0x0
-                0x000000001a0022fc                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x000000001a0022e8        0x0
+                0x000000001a0022e8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x000000001a0022fc                PROVIDE (__preinit_array_end = .)
+                0x000000001a0022e8                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x000000001a0022fc        0x4
-                0x000000001a0022fc                PROVIDE (__init_array_start = .)
+.init_array     0x000000001a0022e8        0x4
+                0x000000001a0022e8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x000000001a0022fc        0x4 CESE2020/SPI/out/libs/sys_newlib//src/system.o
-                0x000000001a002300                PROVIDE (__init_array_end = .)
-                0x000000001a002300                . = ALIGN (0x4)
+ .init_array    0x000000001a0022e8        0x4 CESE2020/SPI/out/libs/sys_newlib//src/system.o
+                0x000000001a0022ec                PROVIDE (__init_array_end = .)
+                0x000000001a0022ec                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000001a002300                __exidx_start = .
+                0x000000001a0022ec                __exidx_start = .
 
-.ARM.exidx      0x000000001a002300        0x8
+.ARM.exidx      0x000000001a0022ec        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
  .ARM.exidx.text.__udivmoddi4
-                0x000000001a002300        0x8 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000001a002308                __exidx_end = .
-                0x000000001a002308                _etext = .
+                0x000000001a0022ec        0x8 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000001a0022f4                __exidx_end = .
+                0x000000001a0022f4                _etext = .
 
-.rel.dyn        0x000000001a002308        0x0
- .rel.iplt      0x000000001a002308        0x0 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+.rel.dyn        0x000000001a0022f4        0x0
+ .rel.iplt      0x000000001a0022f4        0x0 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
 
-.data_RAM2      0x0000000010080000        0x0 load address 0x000000001a002308
+.data_RAM2      0x0000000010080000        0x0 load address 0x000000001a0022f4
  FILL mask 0xff
  *(.ramfunc.$RAM2)
  *(.ramfunc.$RamLoc40)
@@ -17164,7 +17164,7 @@ END GROUP
  *(.data.$RamLoc40*)
                 0x0000000010080000                . = ALIGN (0x4)
 
-.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a002308
+.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a0022f4
  FILL mask 0xff
  *(.ramfunc.$RAM3)
  *(.ramfunc.$RamAHB32)
@@ -17172,7 +17172,7 @@ END GROUP
  *(.data.$RamAHB32*)
                 0x0000000020000000                . = ALIGN (0x4)
 
-.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a002308
+.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a0022f4
  FILL mask 0xff
  *(.ramfunc.$RAM4)
  *(.ramfunc.$RamAHB16)
@@ -17180,7 +17180,7 @@ END GROUP
  *(.data.$RamAHB16*)
                 0x0000000020008000                . = ALIGN (0x4)
 
-.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a002308
+.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a0022f4
  FILL mask 0xff
  *(.ramfunc.$RAM5)
  *(.ramfunc.$RamAHB_ETB16)
@@ -17194,7 +17194,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0x48 load address 0x000000001a002308
+.data           0x0000000010000000       0x48 load address 0x000000001a0022f4
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -17210,7 +17210,7 @@ END GROUP
                 0x0000000010000048                . = ALIGN (0x4)
                 0x0000000010000048                _edata = .
 
-.igot.plt       0x0000000010000048        0x0 load address 0x000000001a002350
+.igot.plt       0x0000000010000048        0x0 load address 0x000000001a00233c
  .igot.plt      0x0000000010000048        0x0 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
 
 .bss_RAM2       0x0000000010080000        0x0
@@ -17288,35 +17288,35 @@ END GROUP
                 0x0000000010000088                _end_noinit = .
                 0x0000000010000088                PROVIDE (_pvHeapStart = .)
                 0x0000000010008000                PROVIDE (_vStackTop = (__top_RamLoc32 - 0x0))
-                0xffffffff53ff739a                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
+                0xffffffff53ff73a6                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(CESE2020/SPI/out/SPI.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x1e827
- .debug_info    0x0000000000000000     0x2d7a CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
- .debug_info    0x0000000000002d7a      0x35d CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_info    0x00000000000030d7     0x10c3 CESE2020/SPI/out/libs/sys_newlib//src/system.o
- .debug_info    0x000000000000419a     0x23f7 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_info    0x0000000000006591     0x15d2 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_info    0x0000000000007b63     0x1981 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_info    0x00000000000094e4      0xc0c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_info    0x000000000000a0f0      0xc97 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_info    0x000000000000ad87     0x1b68 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_info    0x000000000000c8ef      0x232 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_info    0x000000000000cb21      0xb39 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_info    0x000000000000d65a     0x159b CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_info    0x000000000000ebf5     0x1a31 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_info    0x0000000000010626       0x40 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_info    0x0000000000010666      0xc8b CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_info    0x00000000000112f1       0x76 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_info    0x0000000000011367      0xf6a CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_info    0x00000000000122d1     0x2347 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_info    0x0000000000014618     0x10b5 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
- .debug_info    0x00000000000156cd     0x15a7 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_info    0x0000000000016c74     0x10ac CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_info    0x0000000000017d20     0x1cdd CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_info    0x00000000000199fd     0x357f CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_info    0x000000000001cf7c      0xc5d CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_info    0x000000000001dbd9      0xc4e CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_info     0x0000000000000000    0x1e800
+ .debug_info    0x0000000000000000     0x2d53 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+ .debug_info    0x0000000000002d53      0x35d CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_info    0x00000000000030b0     0x10c3 CESE2020/SPI/out/libs/sys_newlib//src/system.o
+ .debug_info    0x0000000000004173     0x23f7 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_info    0x000000000000656a     0x15d2 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_info    0x0000000000007b3c     0x1981 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_info    0x00000000000094bd      0xc0c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_info    0x000000000000a0c9      0xc97 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_info    0x000000000000ad60     0x1b68 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_info    0x000000000000c8c8      0x232 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_info    0x000000000000cafa      0xb39 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_info    0x000000000000d633     0x159b CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_info    0x000000000000ebce     0x1a31 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_info    0x00000000000105ff       0x40 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_info    0x000000000001063f      0xc8b CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_info    0x00000000000112ca       0x76 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_info    0x0000000000011340      0xf6a CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_info    0x00000000000122aa     0x2347 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_info    0x00000000000145f1     0x10b5 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
+ .debug_info    0x00000000000156a6     0x15a7 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_info    0x0000000000016c4d     0x10ac CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_info    0x0000000000017cf9     0x1cdd CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_info    0x00000000000199d6     0x357f CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_info    0x000000000001cf55      0xc5d CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_info    0x000000000001dbb2      0xc4e CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
 .debug_abbrev   0x0000000000000000     0x47c0
  .debug_abbrev  0x0000000000000000      0x3a2 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
@@ -17345,27 +17345,27 @@ OUTPUT(CESE2020/SPI/out/SPI.elf elf32-littlearm)
  .debug_abbrev  0x00000000000042ee      0x242 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
  .debug_abbrev  0x0000000000004530      0x290 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_loc      0x0000000000000000     0x8356
- .debug_loc     0x0000000000000000      0x266 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
- .debug_loc     0x0000000000000266      0x282 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_loc     0x00000000000004e8      0x653 CESE2020/SPI/out/libs/sys_newlib//src/system.o
- .debug_loc     0x0000000000000b3b      0x659 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_loc     0x0000000000001194      0x10f CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_loc     0x00000000000012a3      0xf38 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_loc     0x00000000000021db      0x738 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_loc     0x0000000000002913     0x1505 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_loc     0x0000000000003e18      0x1e2 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_loc     0x0000000000003ffa      0xe82 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_loc     0x0000000000004e7c      0xfda CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_loc     0x0000000000005e56       0x15 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_loc     0x0000000000005e6b      0x109 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_loc     0x0000000000005f74      0xccd CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_loc     0x0000000000006c41      0x3ad CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
- .debug_loc     0x0000000000006fee      0x1a3 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_loc     0x0000000000007191       0xc5 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_loc     0x0000000000007256      0xaff CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_loc     0x0000000000007d55      0x3e0 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_loc     0x0000000000008135      0x221 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_loc      0x0000000000000000     0x83b1
+ .debug_loc     0x0000000000000000      0x2d8 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+ .debug_loc     0x00000000000002d8      0x282 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_loc     0x000000000000055a      0x653 CESE2020/SPI/out/libs/sys_newlib//src/system.o
+ .debug_loc     0x0000000000000bad      0x659 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_loc     0x0000000000001206      0x10f CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_loc     0x0000000000001315      0xf38 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_loc     0x000000000000224d      0x738 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_loc     0x0000000000002985     0x1505 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_loc     0x0000000000003e8a      0x1e2 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_loc     0x000000000000406c      0xe82 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_loc     0x0000000000004eee      0xfc3 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_loc     0x0000000000005eb1       0x15 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_loc     0x0000000000005ec6      0x109 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_loc     0x0000000000005fcf      0xccd CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_loc     0x0000000000006c9c      0x3ad CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
+ .debug_loc     0x0000000000007049      0x1a3 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_loc     0x00000000000071ec       0xc5 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_loc     0x00000000000072b1      0xaff CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_loc     0x0000000000007db0      0x3e0 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_loc     0x0000000000008190      0x221 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
 .debug_aranges  0x0000000000000000      0x9b8
  .debug_aranges
@@ -17419,31 +17419,31 @@ OUTPUT(CESE2020/SPI/out/SPI.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000968       0x50 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_ranges   0x0000000000000000      0xa80
- .debug_ranges  0x0000000000000000       0x38 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
- .debug_ranges  0x0000000000000038       0x80 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_ranges  0x00000000000000b8       0xd0 CESE2020/SPI/out/libs/sys_newlib//src/system.o
- .debug_ranges  0x0000000000000188       0xf8 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_ranges  0x0000000000000280       0x50 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_ranges  0x00000000000002d0       0xb0 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_ranges  0x0000000000000380       0x80 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_ranges  0x0000000000000400       0x28 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_ranges  0x0000000000000428      0x198 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_ranges  0x00000000000005c0       0x18 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_ranges  0x00000000000005d8       0x28 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_ranges  0x0000000000000600       0xc8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_ranges  0x00000000000006c8       0xc0 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_ranges  0x0000000000000788       0x10 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_ranges  0x0000000000000798       0x10 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_ranges  0x00000000000007a8       0x28 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_ranges  0x00000000000007d0      0x108 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_ranges  0x00000000000008d8       0x20 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
- .debug_ranges  0x00000000000008f8       0x38 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_ranges  0x0000000000000930       0x18 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_ranges  0x0000000000000948       0xa8 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_ranges  0x00000000000009f0       0x40 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_ranges  0x0000000000000a30       0x10 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_ranges  0x0000000000000a40       0x40 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_ranges   0x0000000000000000      0xa98
+ .debug_ranges  0x0000000000000000       0x50 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+ .debug_ranges  0x0000000000000050       0x80 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_ranges  0x00000000000000d0       0xd0 CESE2020/SPI/out/libs/sys_newlib//src/system.o
+ .debug_ranges  0x00000000000001a0       0xf8 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_ranges  0x0000000000000298       0x50 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_ranges  0x00000000000002e8       0xb0 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_ranges  0x0000000000000398       0x80 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_ranges  0x0000000000000418       0x28 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_ranges  0x0000000000000440      0x198 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_ranges  0x00000000000005d8       0x18 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_ranges  0x00000000000005f0       0x28 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_ranges  0x0000000000000618       0xc8 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_ranges  0x00000000000006e0       0xc0 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_ranges  0x00000000000007a0       0x10 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_ranges  0x00000000000007b0       0x10 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_ranges  0x00000000000007c0       0x28 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_ranges  0x00000000000007e8      0x108 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_ranges  0x00000000000008f0       0x20 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
+ .debug_ranges  0x0000000000000910       0x38 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_ranges  0x0000000000000948       0x18 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_ranges  0x0000000000000960       0xa8 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_ranges  0x0000000000000a08       0x40 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_ranges  0x0000000000000a48       0x10 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_ranges  0x0000000000000a58       0x40 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
 .debug_macro    0x0000000000000000     0xc92e
  .debug_macro   0x0000000000000000      0x6c6 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
@@ -17597,32 +17597,32 @@ OUTPUT(CESE2020/SPI/out/SPI.elf elf32-littlearm)
  .debug_macro   0x000000000000c3d9      0x477 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
  .debug_macro   0x000000000000c850       0xde CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
-.debug_line     0x0000000000000000    0x11621
- .debug_line    0x0000000000000000     0x1285 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
- .debug_line    0x0000000000001285      0x267 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_line    0x00000000000014ec      0x711 CESE2020/SPI/out/libs/sys_newlib//src/system.o
- .debug_line    0x0000000000001bfd      0xe22 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_line    0x0000000000002a1f      0x9b9 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_line    0x00000000000033d8      0xf7f CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_line    0x0000000000004357      0xb34 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_line    0x0000000000004e8b      0x848 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_line    0x00000000000056d3     0x14ec CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_line    0x0000000000006bbf      0x7c1 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_line    0x0000000000007380      0x9d3 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_line    0x0000000000007d53     0x10f3 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_line    0x0000000000008e46     0x12fa CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_line    0x000000000000a140       0x44 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_line    0x000000000000a184      0x8fa CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_line    0x000000000000aa7e       0x6f CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_line    0x000000000000aaed      0xa1a CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_line    0x000000000000b507     0x106e CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_line    0x000000000000c575      0xaf6 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
- .debug_line    0x000000000000d06b      0xb3e CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_line    0x000000000000dba9      0xa19 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_line    0x000000000000e5c2      0xcd2 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_line    0x000000000000f294      0xde5 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_line    0x0000000000010079      0x9eb CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_line    0x0000000000010a64      0xbbd CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+.debug_line     0x0000000000000000    0x11660
+ .debug_line    0x0000000000000000     0x12c4 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+ .debug_line    0x00000000000012c4      0x267 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_line    0x000000000000152b      0x711 CESE2020/SPI/out/libs/sys_newlib//src/system.o
+ .debug_line    0x0000000000001c3c      0xe22 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_line    0x0000000000002a5e      0x9b9 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_line    0x0000000000003417      0xf7f CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_line    0x0000000000004396      0xb34 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_line    0x0000000000004eca      0x848 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_line    0x0000000000005712     0x14ec CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_line    0x0000000000006bfe      0x7c1 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_line    0x00000000000073bf      0x9d3 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_line    0x0000000000007d92     0x10f3 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_line    0x0000000000008e85     0x12fa CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_line    0x000000000000a17f       0x44 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_line    0x000000000000a1c3      0x8fa CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_line    0x000000000000aabd       0x6f CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_line    0x000000000000ab2c      0xa1a CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_line    0x000000000000b546     0x106e CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_line    0x000000000000c5b4      0xaf6 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
+ .debug_line    0x000000000000d0aa      0xb3e CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_line    0x000000000000dbe8      0xa19 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_line    0x000000000000e601      0xcd2 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_line    0x000000000000f2d3      0xde5 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_line    0x00000000000100b8      0x9eb CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_line    0x0000000000010aa3      0xbbd CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
 
 .debug_str      0x0000000000000000    0x27eda
  .debug_str     0x0000000000000000    0x236fb CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
@@ -17767,35 +17767,35 @@ OUTPUT(CESE2020/SPI/out/SPI.elf elf32-littlearm)
  .ARM.attributes
                 0x00000000000005bd       0x34 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memset.o)
 
-.debug_frame    0x0000000000000000     0x185c
- .debug_frame   0x0000000000000000       0x80 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
- .debug_frame   0x0000000000000080      0x114 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_frame   0x0000000000000194      0x1d8 CESE2020/SPI/out/libs/sys_newlib//src/system.o
- .debug_frame   0x000000000000036c      0x204 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_frame   0x0000000000000570       0x5c CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_frame   0x00000000000005cc      0x1f4 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_frame   0x00000000000007c0      0x178 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_frame   0x0000000000000938       0x70 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_frame   0x00000000000009a8      0x31c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_frame   0x0000000000000cc4       0x30 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_frame   0x0000000000000cf4       0x80 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_frame   0x0000000000000d74      0x278 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_frame   0x0000000000000fec      0x198 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_frame   0x0000000000001184       0x28 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_frame   0x00000000000011ac       0x20 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_frame   0x00000000000011cc       0x74 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_frame   0x0000000000001240      0x190 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_frame   0x00000000000013d0       0x6c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
- .debug_frame   0x000000000000143c       0x84 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
- .debug_frame   0x00000000000014c0       0x58 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_frame   0x0000000000001518       0xb4 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_frame   0x00000000000015cc       0xb8 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_frame   0x0000000000001684       0x28 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_frame   0x00000000000016ac       0xec CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
- .debug_frame   0x0000000000001798       0x2c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x00000000000017c4       0x34 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
- .debug_frame   0x00000000000017f8       0x2c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-init.o)
- .debug_frame   0x0000000000001824       0x38 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memset.o)
+.debug_frame    0x0000000000000000     0x1860
+ .debug_frame   0x0000000000000000       0x84 CESE2020/SPI/out/CESE2020/SPI/src/SPI.o
+ .debug_frame   0x0000000000000084      0x114 CESE2020/SPI/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_frame   0x0000000000000198      0x1d8 CESE2020/SPI/out/libs/sys_newlib//src/system.o
+ .debug_frame   0x0000000000000370      0x204 CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_frame   0x0000000000000574       0x5c CESE2020/SPI/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_frame   0x00000000000005d0      0x1f4 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_frame   0x00000000000007c4      0x178 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_frame   0x000000000000093c       0x70 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_frame   0x00000000000009ac      0x31c CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_frame   0x0000000000000cc8       0x30 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_frame   0x0000000000000cf8       0x80 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_frame   0x0000000000000d78      0x278 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_frame   0x0000000000000ff0      0x198 CESE2020/SPI/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_frame   0x0000000000001188       0x28 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_frame   0x00000000000011b0       0x20 CESE2020/SPI/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_frame   0x00000000000011d0       0x74 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_frame   0x0000000000001244      0x190 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_frame   0x00000000000013d4       0x6c CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_spi.o
+ .debug_frame   0x0000000000001440       0x84 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_tick.o
+ .debug_frame   0x00000000000014c4       0x58 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_frame   0x000000000000151c       0xb4 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_frame   0x00000000000015d0       0xb8 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_frame   0x0000000000001688       0x28 CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_frame   0x00000000000016b0       0xec CESE2020/SPI/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_delay.o
+ .debug_frame   0x000000000000179c       0x2c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00000000000017c8       0x34 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00000000000017fc       0x2c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-init.o)
+ .debug_frame   0x0000000000001828       0x38 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-memset.o)
 
 Cross Reference Table
 

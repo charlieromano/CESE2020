@@ -55,49 +55,49 @@ int main( void )
    delay_t delayLoad;
    
    uint8_t i = 0;
+   uint8_t j = 0;
+   uint8_t k = 0;
 
-   while(1) {
+  while(1) {
 
-      if (delayRead( &delay1 )){
+    if (delayRead( &delay1 )){
 
-         sample_X = adcRead( CH1 );
-         sample_Y = adcRead( CH2 );
 
-         /* Conversión de sample_X entera a ascii con base decimal */
-         itoa( sample_X, uartBuff_X, DEC ); 
-         itoa( sample_Y, uartBuff_Y, DEC ); 
+      sample_X = adcRead( CH1 );
+      sample_Y = adcRead( CH2 );
 
-         /* Enviar sample_X y Enter */
-         uartWriteString( UART_USB, "(x,y) = [ " );
-         uartWriteString( UART_USB, uartBuff_X );
-         uartWriteString( UART_USB, ", " );
-         uartWriteString( UART_USB, uartBuff_Y );
-         uartWriteString( UART_USB, "];\r\n" );     
+      sample_X = (int)sample_X/128;
+      sample_Y = (int)sample_Y/128;
+
+      /* Conversión de sample_X entera a ascii con base decimal */
+      itoa( sample_X, uartBuff_X, DEC ); 
+      itoa( sample_Y, uartBuff_Y, DEC ); 
+
+      /* Enviar sample_X y Enter */
+      uartWriteString( UART_USB, "(x,y) = [ " );
+      uartWriteString( UART_USB, uartBuff_X );
+      uartWriteString( UART_USB, ", " );
+      uartWriteString( UART_USB, uartBuff_Y );
+      uartWriteString( UART_USB, "];\r\n" );     
          
 
-         maxAll(2,i);
-         delay(1);
-         i+=8;
-         if(i==255){
-          i=0;
-          uartWriteString( UART_USB, "i=0\r\n" );     
-          uartWriteString( UART_USB, "i=0\r\n" );     
-          uartWriteString( UART_USB, "i=0\r\n" );     
-          maxAll(max7219_reg_scanLimit, 0x07);      
-          maxAll(max7219_reg_decodeMode, 0x00);  // using an led matrix (not digits)
-          maxAll(max7219_reg_shutdown, 0x01);    // not in shutdown mode
-          maxAll(max7219_reg_displayTest, 0x01); // no display test
- /*         for (uint16_t e=1; e<=8; e++) {    // empty registers, turn all LEDs off 
+      maxAll(0x00,0x00);
+      delay(1);
+      j = sample_X + 1;
+      
+      maxAll(j,0b11111111);
+      maxAll(0x00,0x00);
+      i++;
+      if(i==4){
+        i=0;
+        for (uint16_t e=1; e<=8; e++)
           maxAll(e,0);
+         // empty registers, turn all LEDs off 
+      }
+    }
+  }
 
-          }
-*/        }
-
-     }
-
-   }
-
-   return 0 ;
+  return 0 ;
 }
 /**
  * C++ version 0.4 char* style "itoa":
