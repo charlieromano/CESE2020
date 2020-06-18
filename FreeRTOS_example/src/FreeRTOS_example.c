@@ -5,21 +5,33 @@
 #include "chip.h"
 #include "types_config.h"
 
-tConfig xTaskParams[2];
-
+void tarea_led( void* taskParmPtr );
+void tarea_tecla( void* taskParmPtr );
 void vTaskT0 (void* xTaskParams);
 void vTaskT1 (void* xTaskParams);
  
+DEBUG_PRINT_ENABLE;
+
+tConfig xTaskParams[2];
 
 int main (void){
 
-    boardInit();
+    boardConfig();
+    debugPrintConfigUart( UART_USB, 115200 );
+    debugPrintlnString( "Ejercicio 3.1" );
+    gpioWrite( LED3 , ON );
 
+    xTaskParams[0].pinIn = TEC1;
+    xTaskParams[0].pinOut   = LEDB;
     xTaskParams[0].queue = xQueueCreate(1,sizeof(TickType_t));
+
+    xTaskParams[1].pinIn = TEC2;
+    xTaskParams[1].pinOut = LEDG;
+    xTaskParams[1].queue = xQueueCreate(1,sizeof(TickType_t));
     //xTaskParams[1].semMutex = xSemaphoreCreate();
     
-    vTaskCreate(vTaskT0, "Task Button", configMINIMAL_STACK_SIZE*2, &xTaskParams[0], taskiDLE_PRIORITY+1,0  );
-    vTaskCreate(vTaskT1, "Task Led",    configMINIMAL_STACK_SIZE*2, &xTaskParams[1], taskiDLE_PRIORITY+1,0  );
+    xTaskCreate(vTaskT0, (const char *)"Task Button", configMINIMAL_STACK_SIZE*2, &xTaskParams[0], tskIDLE_PRIORITY+1,0  );
+    xTaskCreate(vTaskT1, (const char *)"Task Led",    configMINIMAL_STACK_SIZE*2, &xTaskParams[0], tskIDLE_PRIORITY+1,0  );
 
     vTaskStartScheduler();
 
@@ -38,10 +50,11 @@ void vTaskT0 (void* xTaskParams)
 
         fsmButtonUpdate(x);
         vTaskDelay(1 / portTICK_RATE_MS);
-        if (x->tiempo_medido > 0)
-            xQueueSend( x->tiempo_medido );      
+ 
     }
 }
+
+
 
 void vTaskT1 (void* xTaskParams)
 {
@@ -50,10 +63,10 @@ void vTaskT1 (void* xTaskParams)
     
     while(1){
 
-        xQueueReceive(x->queue,&t, portMAX_DELAY);
-        gpioWrite(LEDB, ON);
+        xQueueReceive(x->queue, &t, portMAX_DELAY);
+        gpioWrite(x->pinOut, ON);
         vTaskDelay(t);
-        gpioWrite(LEDB, OFF);
+        gpioWrite(x->pinOut, OFF);
         //t = 0;
 
     }

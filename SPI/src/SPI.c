@@ -82,7 +82,7 @@ int main( void )
          
 
       maxAll(0x00,0x00);
-      delay(1);
+      //delay(1);
       j = sample_X + 1;
       
       maxAll(j,0b11111111);

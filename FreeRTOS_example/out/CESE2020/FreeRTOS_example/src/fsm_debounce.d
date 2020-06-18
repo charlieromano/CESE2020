@@ -1,7 +1,7 @@
 CESE2020/FreeRTOS_example/out/CESE2020/FreeRTOS_example/src/fsm_debounce.o: \
  CESE2020/FreeRTOS_example/src/fsm_debounce.c \
- libs/sapi/sapi_v0.5.2/base/inc/sapi.h \
- libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \
+ libs/freertos/include/FreeRTOS.h \
+ CESE2020/FreeRTOS_example/inc/FreeRTOSConfig.h \
  libs/lpc_open/lpc_chip_43xx/inc/chip.h \
  libs/lpc_open/lpc_chip_43xx/inc/sys_config.h \
  libs/lpc_open/lpc_chip_43xx/inc/cmsis.h \
@@ -62,6 +62,13 @@ CESE2020/FreeRTOS_example/out/CESE2020/FreeRTOS_example/src/fsm_debounce.o: \
  libs/lpc_open/lpc_chip_43xx/inc/iap_18xx_43xx.h \
  libs/lpc_open/lpc_chip_43xx/inc/error.h \
  libs/lpc_open/lpc_chip_43xx/inc/i2cm_18xx_43xx.h \
+ libs/freertos/include/private/projdefs.h \
+ libs/freertos/include/private/portable.h \
+ libs/freertos/include/private/deprecated_definitions.h \
+ libs/freertos/source/portable/ARM_CM4F/portmacro.h \
+ libs/freertos/include/private/mpu_wrappers.h \
+ libs/sapi/sapi_v0.5.2/base/inc/sapi.h \
+ libs/sapi/sapi_v0.5.2/base/inc/sapi_datatypes.h \
  libs/lpc_open/boards/edu_ciaa_nxp/inc/board.h \
  libs/lpc_open/boards/inc/board_api.h \
  libs/lpc_open/lpc_chip_43xx/inc/lpc_types.h \
@@ -122,12 +129,5 @@ CESE2020/FreeRTOS_example/out/CESE2020/FreeRTOS_example/src/fsm_debounce.o: \
  libs/sapi/sapi_v0.5.2/external_peripherals/memory/eeprom/inc/sapi_eeprom24xx1025.h \
  libs/sapi/sapi_v0.5.2/external_peripherals/ultrasonic/hcsr04/inc/sapi_ultrasonic_hcsr04.h \
  CESE2020/FreeRTOS_example/inc/types_config.h \
- libs/freertos/include/FreeRTOS.h \
- CESE2020/FreeRTOS_example/inc/FreeRTOSConfig.h \
- libs/freertos/include/private/projdefs.h \
- libs/freertos/include/private/portable.h \
- libs/freertos/include/private/deprecated_definitions.h \
- libs/freertos/source/portable/ARM_CM4F/portmacro.h \
- libs/freertos/include/private/mpu_wrappers.h \
  CESE2020/FreeRTOS_example/inc/FreeRTOSConfig.h \
  libs/freertos/include/semphr.h libs/freertos/include/queue.h

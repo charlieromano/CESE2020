@@ -18,18 +18,20 @@ typedef enum{
 
 typedef struct{
 
-	gpioMap_t	tecla;
+	gpioMap_t			pinIn;
+	gpioMap_t			pinOut;
 	
-	TickType_t tiempo_medido;	
-	fsmButtonState_t fsmButtonState;
+	TickType_t 			tiempo_medido;	
+	fsmButtonState_t 	fsmButtonState;
 	
-	TickType_t tiempo_down;		
-	TickType_t tiempo_up;		
+	TickType_t 			tiempo_down;		
+	TickType_t 			tiempo_up;		
 
-	uint8_t contFalling  ;		
-	uint8_t contRising  ;		
+	uint8_t 			contFalling;
+	uint8_t 			contRising;		
 
-	SemaphoreHandle_t semaphore;
+	SemaphoreHandle_t	semaphore;
+	QueueHandle_t		queue;
 
 } tConfig;
 

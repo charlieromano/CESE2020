@@ -1,7 +1,7 @@
-#include "sapi.h"
-#include "types_config.h"
 #include "FreeRTOS.h"
+#include "sapi.h"
 
+#include "types_config.h"
 
 void fsmButtonError( tConfig* config );
 void fsmButtonInit( tConfig* config );
@@ -9,17 +9,19 @@ void fsmButtonUpdate( tConfig* config );
 void buttonPressed( tConfig* config );
 void buttonReleased( tConfig* config );
 
-/* accion de el evento de tecla pulsada */
+/* accion de el evento de pinIn pulsada */
 void buttonPressed( tConfig* config )
 {
     config->tiempo_down = xTaskGetTickCount();
 }
 
-/* accion de el evento de tecla liberada */
+/* accion de el evento de pinIn liberada */
 void buttonReleased( tConfig* config )
 {
     config->tiempo_up = xTaskGetTickCount();
     config->tiempo_medido = config->tiempo_up - config->tiempo_down;
+    if (config->tiempo_medido > 0)
+        xQueueSend(config->queue, &(config->tiempo_medido), portMAX_DELAY );     
 
 }
 
@@ -47,7 +49,7 @@ void fsmButtonUpdate( tConfig* config )
     {
         case STATE_BUTTON_UP:
             /* CHECK TRANSITION CONDITIONS */
-            if( !gpioRead( config->tecla ) )
+            if( !gpioRead( config->pinIn ) )
             {
                 config->fsmButtonState = STATE_BUTTON_FALLING;
             }
@@ -59,7 +61,7 @@ void fsmButtonUpdate( tConfig* config )
             /* CHECK TRANSITION CONDITIONS */
             if( config->contFalling >= DEBOUNCE_TIME )
             {
-                if( !gpioRead( config->tecla ) )
+                if( !gpioRead( config->pinIn ) )
                 {
                     config->fsmButtonState = STATE_BUTTON_DOWN;
 
@@ -81,7 +83,7 @@ void fsmButtonUpdate( tConfig* config )
 
         case STATE_BUTTON_DOWN:
             /* CHECK TRANSITION CONDITIONS */
-            if( gpioRead( config->tecla ) )
+            if( gpioRead( config->pinIn ) )
             {
                 config->fsmButtonState = STATE_BUTTON_RISING;
             }
@@ -94,7 +96,7 @@ void fsmButtonUpdate( tConfig* config )
 
             if( config->contRising >= DEBOUNCE_TIME )
             {
-                if( gpioRead( config->tecla ) )
+                if( gpioRead( config->pinIn ) )
                 {
                     config->fsmButtonState = STATE_BUTTON_UP;
 
