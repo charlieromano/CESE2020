@@ -19267,7 +19267,7 @@ END GROUP
  *(.rodata.$Flash2*)
  *(.rodata.$MFlashB512*)
 
-.text           0x000000001a000000     0x4b20
+.text           0x000000001a000000     0x4b30
  FILL mask 0xff
                 0x000000001a000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -19280,19 +19280,19 @@ END GROUP
                 0x000000001a000114                . = ALIGN (0x4)
                 0x000000001a000114                __section_table_start = .
                 0x000000001a000114                __data_section_table = .
-                0x000000001a000114        0x4 LONG 0x1a004b2c LOADADDR (.data)
+                0x000000001a000114        0x4 LONG 0x1a004b3c LOADADDR (.data)
                 0x000000001a000118        0x4 LONG 0x10000000 ADDR (.data)
                 0x000000001a00011c        0x4 LONG 0xa4 SIZEOF (.data)
-                0x000000001a000120        0x4 LONG 0x1a004b2c LOADADDR (.data_RAM2)
+                0x000000001a000120        0x4 LONG 0x1a004b3c LOADADDR (.data_RAM2)
                 0x000000001a000124        0x4 LONG 0x10080000 ADDR (.data_RAM2)
                 0x000000001a000128        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x000000001a00012c        0x4 LONG 0x1a004b2c LOADADDR (.data_RAM3)
+                0x000000001a00012c        0x4 LONG 0x1a004b3c LOADADDR (.data_RAM3)
                 0x000000001a000130        0x4 LONG 0x20000000 ADDR (.data_RAM3)
                 0x000000001a000134        0x4 LONG 0x0 SIZEOF (.data_RAM3)
-                0x000000001a000138        0x4 LONG 0x1a004b2c LOADADDR (.data_RAM4)
+                0x000000001a000138        0x4 LONG 0x1a004b3c LOADADDR (.data_RAM4)
                 0x000000001a00013c        0x4 LONG 0x20008000 ADDR (.data_RAM4)
                 0x000000001a000140        0x4 LONG 0x0 SIZEOF (.data_RAM4)
-                0x000000001a000144        0x4 LONG 0x1a004b2c LOADADDR (.data_RAM5)
+                0x000000001a000144        0x4 LONG 0x1a004b3c LOADADDR (.data_RAM5)
                 0x000000001a000148        0x4 LONG 0x2000c000 ADDR (.data_RAM5)
                 0x000000001a00014c        0x4 LONG 0x0 SIZEOF (.data_RAM5)
                 0x000000001a000150                __data_section_table_end = .
@@ -19388,724 +19388,725 @@ END GROUP
                 0x000000001a000344       0x38 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
                 0x000000001a000344                vTaskReadADC
  .text.vTaskProcessing
-                0x000000001a00037c       0x40 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+                0x000000001a00037c       0x4c CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
                 0x000000001a00037c                vTaskProcessing
- .text.main     0x000000001a0003bc      0x10c CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
-                0x000000001a0003bc                main
+ .text.main     0x000000001a0003c8      0x10c CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
+                0x000000001a0003c8                main
  .text.buttonPressed
-                0x000000001a0004c8        0xc CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
-                0x000000001a0004c8                buttonPressed
+                0x000000001a0004d4        0xc CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+                0x000000001a0004d4                buttonPressed
  .text.buttonReleased
-                0x000000001a0004d4       0x24 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
-                0x000000001a0004d4                buttonReleased
+                0x000000001a0004e0       0x24 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+                0x000000001a0004e0                buttonReleased
  .text.fsmButtonError
-                0x000000001a0004f8        0x6 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
-                0x000000001a0004f8                fsmButtonError
+                0x000000001a000504        0x6 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+                0x000000001a000504                fsmButtonError
  .text.fsmButtonInit
-                0x000000001a0004fe        0xa CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
-                0x000000001a0004fe                fsmButtonInit
+                0x000000001a00050a        0xa CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+                0x000000001a00050a                fsmButtonInit
  .text.fsmButtonUpdate
-                0x000000001a000508       0x96 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
-                0x000000001a000508                fsmButtonUpdate
+                0x000000001a000514       0x96 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+                0x000000001a000514                fsmButtonUpdate
  .text.initialise_monitor_handles
-                0x000000001a00059e        0x2 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a00059e                initialise_monitor_handles
+                0x000000001a0005aa        0x2 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a0005aa                initialise_monitor_handles
  .text.Reset_Handler
-                0x000000001a0005a0       0x88 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a0005a0                Reset_Handler
- .text._fini    0x000000001a000628        0x2 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a000628                _fini
- .text._init    0x000000001a00062a        0x2 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
-                0x000000001a00062a                _init
+                0x000000001a0005ac       0x88 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a0005ac                Reset_Handler
+ .text._fini    0x000000001a000634        0x2 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a000634                _fini
+ .text._init    0x000000001a000636        0x2 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+                0x000000001a000636                _init
  .text._close_r
-                0x000000001a00062c        0xa CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
-                0x000000001a00062c                _close_r
+                0x000000001a000638        0xa CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+                0x000000001a000638                _close_r
  .text._fstat_r
-                0x000000001a000636        0xa CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
-                0x000000001a000636                _fstat_r
+                0x000000001a000642        0xa CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+                0x000000001a000642                _fstat_r
  .text._isatty_r
-                0x000000001a000640       0x12 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
-                0x000000001a000640                _isatty_r
+                0x000000001a00064c       0x12 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+                0x000000001a00064c                _isatty_r
  .text._lseek_r
-                0x000000001a000652        0xa CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
-                0x000000001a000652                _lseek_r
- .text._read_r  0x000000001a00065c       0x4e CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
-                0x000000001a00065c                _read_r
+                0x000000001a00065e        0xa CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+                0x000000001a00065e                _lseek_r
+ .text._read_r  0x000000001a000668       0x4e CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+                0x000000001a000668                _read_r
  .text._write_r
-                0x000000001a0006aa       0x28 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
-                0x000000001a0006aa                _write_r
- *fill*         0x000000001a0006d2        0x2 ff
- .text._sbrk_r  0x000000001a0006d4       0x20 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
-                0x000000001a0006d4                _sbrk_r
+                0x000000001a0006b6       0x28 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+                0x000000001a0006b6                _write_r
+ *fill*         0x000000001a0006de        0x2 ff
+ .text._sbrk_r  0x000000001a0006e0       0x20 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+                0x000000001a0006e0                _sbrk_r
  .text.pvPortMalloc
-                0x000000001a0006f4       0x70 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
-                0x000000001a0006f4                pvPortMalloc
+                0x000000001a000700       0x70 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
+                0x000000001a000700                pvPortMalloc
  .text.vPortFree
-                0x000000001a000764       0x16 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
-                0x000000001a000764                vPortFree
+                0x000000001a000770       0x16 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
+                0x000000001a000770                vPortFree
  .text.prvIsQueueFull
-                0x000000001a00077a       0x1e CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a000786       0x1e CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
  .text.prvIsQueueEmpty
-                0x000000001a000798       0x1a CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a0007a4       0x1a CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
  .text.prvCopyDataToQueue
-                0x000000001a0007b2       0x76 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a0007be       0x76 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
  .text.prvCopyDataFromQueue
-                0x000000001a000828       0x24 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a000834       0x24 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
  .text.prvUnlockQueue
-                0x000000001a00084c       0x6e CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
- *fill*         0x000000001a0008ba        0x2 ff
+                0x000000001a000858       0x6e CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+ *fill*         0x000000001a0008c6        0x2 ff
  .text.xQueueGenericReset
-                0x000000001a0008bc       0x84 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
-                0x000000001a0008bc                xQueueGenericReset
+                0x000000001a0008c8       0x84 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a0008c8                xQueueGenericReset
  .text.prvInitialiseNewQueue
-                0x000000001a000940       0x22 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a00094c       0x22 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
  .text.xQueueGenericCreate
-                0x000000001a000962       0x48 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
-                0x000000001a000962                xQueueGenericCreate
- *fill*         0x000000001a0009aa        0x2 ff
+                0x000000001a00096e       0x48 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a00096e                xQueueGenericCreate
+ *fill*         0x000000001a0009b6        0x2 ff
  .text.xQueueGenericSend
-                0x000000001a0009ac      0x180 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
-                0x000000001a0009ac                xQueueGenericSend
+                0x000000001a0009b8      0x180 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a0009b8                xQueueGenericSend
  .text.xQueueGenericSendFromISR
-                0x000000001a000b2c       0xce CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
-                0x000000001a000b2c                xQueueGenericSendFromISR
- *fill*         0x000000001a000bfa        0x2 ff
+                0x000000001a000b38       0xce CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a000b38                xQueueGenericSendFromISR
+ *fill*         0x000000001a000c06        0x2 ff
  .text.xQueueReceive
-                0x000000001a000bfc      0x15c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
-                0x000000001a000bfc                xQueueReceive
+                0x000000001a000c08      0x15c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a000c08                xQueueReceive
  .text.vQueueAddToRegistry
-                0x000000001a000d58       0x28 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
-                0x000000001a000d58                vQueueAddToRegistry
+                0x000000001a000d64       0x28 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a000d64                vQueueAddToRegistry
  .text.vQueueWaitForMessageRestricted
-                0x000000001a000d80       0x52 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
-                0x000000001a000d80                vQueueWaitForMessageRestricted
+                0x000000001a000d8c       0x52 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+                0x000000001a000d8c                vQueueWaitForMessageRestricted
  .text.vListInitialise
-                0x000000001a000dd2       0x16 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
-                0x000000001a000dd2                vListInitialise
+                0x000000001a000dde       0x16 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+                0x000000001a000dde                vListInitialise
  .text.vListInitialiseItem
-                0x000000001a000de8        0x6 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
-                0x000000001a000de8                vListInitialiseItem
+                0x000000001a000df4        0x6 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+                0x000000001a000df4                vListInitialiseItem
  .text.vListInsertEnd
-                0x000000001a000dee       0x16 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
-                0x000000001a000dee                vListInsertEnd
+                0x000000001a000dfa       0x16 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+                0x000000001a000dfa                vListInsertEnd
  .text.vListInsert
-                0x000000001a000e04       0x34 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
-                0x000000001a000e04                vListInsert
+                0x000000001a000e10       0x34 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+                0x000000001a000e10                vListInsert
  .text.uxListRemove
-                0x000000001a000e38       0x26 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
-                0x000000001a000e38                uxListRemove
- *fill*         0x000000001a000e5e        0x2 ff
+                0x000000001a000e44       0x26 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+                0x000000001a000e44                uxListRemove
+ *fill*         0x000000001a000e6a        0x2 ff
  .text.vAssertCalled
-                0x000000001a000e60       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
-                0x000000001a000e60                vAssertCalled
+                0x000000001a000e6c       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+                0x000000001a000e6c                vAssertCalled
  .text.vApplicationMallocFailedHook
-                0x000000001a000e8c       0x1c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
-                0x000000001a000e8c                vApplicationMallocFailedHook
+                0x000000001a000e98       0x1c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+                0x000000001a000e98                vApplicationMallocFailedHook
  .text.vApplicationStackOverflowHook
-                0x000000001a000ea8       0x1c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
-                0x000000001a000ea8                vApplicationStackOverflowHook
+                0x000000001a000eb4       0x1c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+                0x000000001a000eb4                vApplicationStackOverflowHook
  .text.prvResetNextTaskUnblockTime
-                0x000000001a000ec4       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a000ed0       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
  .text.prvDeleteTCB
-                0x000000001a000ef0       0x12 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a000efc       0x12 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
  .text.prvInitialiseNewTask
-                0x000000001a000f02       0x90 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
- *fill*         0x000000001a000f92        0x2 ff
+                0x000000001a000f0e       0x90 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+ *fill*         0x000000001a000f9e        0x2 ff
  .text.prvInitialiseTaskLists
-                0x000000001a000f94       0x68 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a000fa0       0x68 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
  .text.prvAddNewTaskToReadyList
-                0x000000001a000ffc       0xac CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a001008       0xac CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
  .text.prvCheckTasksWaitingTermination
-                0x000000001a0010a8       0x4c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0010b4       0x4c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
  .text.prvIdleTask
-                0x000000001a0010f4       0x28 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a001100       0x28 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x000000001a00111c       0x98 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a001128       0x98 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
  .text.xTaskCreate
-                0x000000001a0011b4       0x62 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0011b4                xTaskCreate
- *fill*         0x000000001a001216        0x2 ff
+                0x000000001a0011c0       0x62 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0011c0                xTaskCreate
+ *fill*         0x000000001a001222        0x2 ff
  .text.vTaskStartScheduler
-                0x000000001a001218       0x84 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a001218                vTaskStartScheduler
+                0x000000001a001224       0x84 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a001224                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x000000001a00129c       0x10 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a00129c                vTaskSuspendAll
+                0x000000001a0012a8       0x10 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0012a8                vTaskSuspendAll
  .text.xTaskGetTickCount
-                0x000000001a0012ac        0xc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0012ac                xTaskGetTickCount
+                0x000000001a0012b8        0xc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0012b8                xTaskGetTickCount
  .text.xTaskIncrementTick
-                0x000000001a0012b8      0x118 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0012b8                xTaskIncrementTick
+                0x000000001a0012c4      0x118 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0012c4                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x000000001a0013d0       0xfc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0013d0                xTaskResumeAll
+                0x000000001a0013dc       0xfc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0013dc                xTaskResumeAll
  .text.vTaskDelay
-                0x000000001a0014cc       0x4c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0014cc                vTaskDelay
+                0x000000001a0014d8       0x4c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0014d8                vTaskDelay
  .text.vTaskSwitchContext
-                0x000000001a001518       0xcc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a001518                vTaskSwitchContext
+                0x000000001a001524       0xcc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a001524                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x000000001a0015e4       0x30 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0015e4                vTaskPlaceOnEventList
+                0x000000001a0015f0       0x30 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0015f0                vTaskPlaceOnEventList
  .text.vTaskPlaceOnEventListRestricted
-                0x000000001a001614       0x38 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a001614                vTaskPlaceOnEventListRestricted
+                0x000000001a001620       0x38 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a001620                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x000000001a00164c       0x8c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a00164c                xTaskRemoveFromEventList
+                0x000000001a001658       0x8c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a001658                xTaskRemoveFromEventList
  .text.vTaskInternalSetTimeOutState
-                0x000000001a0016d8       0x18 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0016d8                vTaskInternalSetTimeOutState
+                0x000000001a0016e4       0x18 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0016e4                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x000000001a0016f0       0x84 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0016f0                xTaskCheckForTimeOut
+                0x000000001a0016fc       0x84 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0016fc                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x000000001a001774        0xc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a001774                vTaskMissedYield
+                0x000000001a001780        0xc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a001780                vTaskMissedYield
  .text.xTaskGetSchedulerState
-                0x000000001a001780       0x20 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a001780                xTaskGetSchedulerState
+                0x000000001a00178c       0x20 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a00178c                xTaskGetSchedulerState
  .text.xTaskPriorityDisinherit
-                0x000000001a0017a0       0xb4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
-                0x000000001a0017a0                xTaskPriorityDisinherit
+                0x000000001a0017ac       0xb4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+                0x000000001a0017ac                xTaskPriorityDisinherit
  .text.prvGetNextExpireTime
-                0x000000001a001854       0x20 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a001860       0x20 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .text.prvInsertTimerInActiveList
-                0x000000001a001874       0x48 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a001880       0x48 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .text.prvCheckForValidListAndQueue
-                0x000000001a0018bc       0x5c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a0018c8       0x5c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .text.xTimerCreateTimerTask
-                0x000000001a001918       0x50 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
-                0x000000001a001918                xTimerCreateTimerTask
+                0x000000001a001924       0x50 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a001924                xTimerCreateTimerTask
  .text.xTimerGenericCommand
-                0x000000001a001968       0x6c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
-                0x000000001a001968                xTimerGenericCommand
+                0x000000001a001974       0x6c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a001974                xTimerGenericCommand
  .text.prvSwitchTimerLists
-                0x000000001a0019d4       0x78 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a0019e0       0x78 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .text.prvSampleTimeNow
-                0x000000001a001a4c       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a001a58       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .text.prvProcessExpiredTimer
-                0x000000001a001a78       0x60 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a001a84       0x60 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .text.prvProcessTimerOrBlockTask
-                0x000000001a001ad8       0x74 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a001ae4       0x74 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .text.prvProcessReceivedCommands
-                0x000000001a001b4c       0xf4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a001b58       0xf4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .text.prvTimerTask
-                0x000000001a001c40       0x16 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
- *fill*         0x000000001a001c56        0x2 ff
+                0x000000001a001c4c       0x16 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+ *fill*         0x000000001a001c62        0x2 ff
  .text.prvTaskExitError
-                0x000000001a001c58       0x40 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001c64       0x40 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
  .text.prvPortStartFirstTask
-                0x000000001a001c98       0x28 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001ca4       0x28 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
  .text.vPortEnableVFP
-                0x000000001a001cc0       0x14 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001ccc       0x14 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
  .text.pxPortInitialiseStack
-                0x000000001a001cd4       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001cd4                pxPortInitialiseStack
+                0x000000001a001ce0       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001ce0                pxPortInitialiseStack
+ *fill*         0x000000001a001d0c        0x4 ff
  .text.SVC_Handler
-                0x000000001a001d00       0x24 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001d00                SVC_Handler
+                0x000000001a001d10       0x24 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001d10                SVC_Handler
  .text.vPortEnterCritical
-                0x000000001a001d24       0x44 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001d24                vPortEnterCritical
+                0x000000001a001d34       0x44 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001d34                vPortEnterCritical
  .text.vPortExitCritical
-                0x000000001a001d68       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001d68                vPortExitCritical
- *fill*         0x000000001a001d94        0xc ff
+                0x000000001a001d78       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001d78                vPortExitCritical
+ *fill*         0x000000001a001da4        0xc ff
  .text.PendSV_Handler
-                0x000000001a001da0       0x64 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001da0                PendSV_Handler
+                0x000000001a001db0       0x64 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001db0                PendSV_Handler
  .text.SysTick_Handler
-                0x000000001a001e04       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001e04                SysTick_Handler
+                0x000000001a001e14       0x2c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001e14                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x000000001a001e30       0x38 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001e30                vPortSetupTimerInterrupt
+                0x000000001a001e40       0x38 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001e40                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x000000001a001e68      0x110 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001e68                xPortStartScheduler
+                0x000000001a001e78      0x110 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001e78                xPortStartScheduler
  .text.vPortValidateInterruptPriority
-                0x000000001a001f78       0x5c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
-                0x000000001a001f78                vPortValidateInterruptPriority
+                0x000000001a001f88       0x5c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+                0x000000001a001f88                vPortValidateInterruptPriority
  .text.DAC_IRQHandler
-                0x000000001a001fd4       0x20 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
-                0x000000001a001fd4                DAC_IRQHandler
+                0x000000001a001fe4       0x20 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
+                0x000000001a001fe4                DAC_IRQHandler
  .text.Board_LED_Init
-                0x000000001a001ff4       0x44 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002004       0x44 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_TEC_Init
-                0x000000001a002038       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002048       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_GPIO_Init
-                0x000000001a002078       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002088       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_ADC_Init
-                0x000000001a0020b8       0x30 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0020c8       0x30 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_SPI_Init
-                0x000000001a0020e8       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0020f8       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_I2C_Init
-                0x000000001a002120       0x24 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002130       0x24 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .text.Board_Debug_Init
-                0x000000001a002144       0x24 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a002144                Board_Debug_Init
+                0x000000001a002154       0x24 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002154                Board_Debug_Init
  .text.Board_UARTPutChar
-                0x000000001a002168       0x14 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a002168                Board_UARTPutChar
+                0x000000001a002178       0x14 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a002178                Board_UARTPutChar
  .text.Board_UARTGetChar
-                0x000000001a00217c       0x1c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a00217c                Board_UARTGetChar
+                0x000000001a00218c       0x1c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a00218c                Board_UARTGetChar
  .text.Board_Init
-                0x000000001a002198       0x30 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a002198                Board_Init
+                0x000000001a0021a8       0x30 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0021a8                Board_Init
  .text.__stdio_putchar
-                0x000000001a0021c8        0xa CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0021c8                __stdio_putchar
+                0x000000001a0021d8        0xa CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0021d8                __stdio_putchar
  .text.__stdio_getchar
-                0x000000001a0021d2        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0021d2                __stdio_getchar
+                0x000000001a0021e2        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0021e2                __stdio_getchar
  .text.__stdio_init
-                0x000000001a0021da        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0021da                __stdio_init
- *fill*         0x000000001a0021e2        0x2 ff
+                0x000000001a0021ea        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0021ea                __stdio_init
+ *fill*         0x000000001a0021f2        0x2 ff
  .text.Board_SetupMuxing
-                0x000000001a0021e4       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a0021e4                Board_SetupMuxing
+                0x000000001a0021f4       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a0021f4                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x000000001a00221c       0x6c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a00221c                Board_SetupClocking
+                0x000000001a00222c       0x6c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a00222c                Board_SetupClocking
  .text.Board_SystemInit
-                0x000000001a002288        0xc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
-                0x000000001a002288                Board_SystemInit
+                0x000000001a002298        0xc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a002298                Board_SystemInit
  .text.Chip_UART_GetIndex
-                0x000000001a002294       0x2c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0022a4       0x2c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .text.Chip_UART_Init
-                0x000000001a0022c0       0x54 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a0022c0                Chip_UART_Init
+                0x000000001a0022d0       0x54 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a0022d0                Chip_UART_Init
  .text.Chip_UART_SetBaud
-                0x000000001a002314       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a002314                Chip_UART_SetBaud
+                0x000000001a002324       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a002324                Chip_UART_SetBaud
  .text.Chip_UART_SetBaudFDR
-                0x000000001a002354       0xdc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
-                0x000000001a002354                Chip_UART_SetBaudFDR
+                0x000000001a002364       0xdc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a002364                Chip_UART_SetBaudFDR
  .text.Chip_ADC_GetClockIndex
-                0x000000001a002430       0x14 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a002440       0x14 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .text.getClkDiv
-                0x000000001a002444       0x32 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a002454       0x32 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
  .text.setStartMode
-                0x000000001a002476        0xe CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a002476                setStartMode
+                0x000000001a002486        0xe CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a002486                setStartMode
  .text.readAdcVal
-                0x000000001a002484       0x18 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a002484                readAdcVal
+                0x000000001a002494       0x18 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a002494                readAdcVal
  .text.Chip_ADC_Init
-                0x000000001a00249c       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a00249c                Chip_ADC_Init
+                0x000000001a0024ac       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0024ac                Chip_ADC_Init
  .text.Chip_ADC_DeInit
-                0x000000001a0024dc       0x16 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0024dc                Chip_ADC_DeInit
+                0x000000001a0024ec       0x16 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0024ec                Chip_ADC_DeInit
  .text.Chip_ADC_ReadValue
-                0x000000001a0024f2        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0024f2                Chip_ADC_ReadValue
+                0x000000001a002502        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a002502                Chip_ADC_ReadValue
  .text.Chip_ADC_ReadStatus
-                0x000000001a0024fa       0x36 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0024fa                Chip_ADC_ReadStatus
+                0x000000001a00250a       0x36 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a00250a                Chip_ADC_ReadStatus
  .text.Chip_ADC_Int_SetChannelCmd
-                0x000000001a002530       0x22 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a002530                Chip_ADC_Int_SetChannelCmd
+                0x000000001a002540       0x22 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a002540                Chip_ADC_Int_SetChannelCmd
  .text.Chip_ADC_SetStartMode
-                0x000000001a002552       0x20 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a002552                Chip_ADC_SetStartMode
+                0x000000001a002562       0x20 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a002562                Chip_ADC_SetStartMode
  .text.Chip_ADC_SetSampleRate
-                0x000000001a002572       0x32 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a002572                Chip_ADC_SetSampleRate
+                0x000000001a002582       0x32 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a002582                Chip_ADC_SetSampleRate
  .text.Chip_ADC_SetResolution
-                0x000000001a0025a4        0xc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0025a4                Chip_ADC_SetResolution
+                0x000000001a0025b4        0xc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0025b4                Chip_ADC_SetResolution
  .text.Chip_ADC_EnableChannel
-                0x000000001a0025b0       0x2a CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0025b0                Chip_ADC_EnableChannel
+                0x000000001a0025c0       0x2a CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0025c0                Chip_ADC_EnableChannel
  .text.Chip_ADC_SetBurstCmd
-                0x000000001a0025da       0x22 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
-                0x000000001a0025da                Chip_ADC_SetBurstCmd
+                0x000000001a0025ea       0x22 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+                0x000000001a0025ea                Chip_ADC_SetBurstCmd
  .text.SystemCoreClockUpdate
-                0x000000001a0025fc       0x14 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
-                0x000000001a0025fc                SystemCoreClockUpdate
+                0x000000001a00260c       0x14 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+                0x000000001a00260c                SystemCoreClockUpdate
  .text.pll_calc_divs
-                0x000000001a002610       0xa0 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002620       0xa0 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.pll_get_frac
-                0x000000001a0026b0      0x10c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0026c0      0x10c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_FindBaseClock
-                0x000000001a0027bc       0x4c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0027cc       0x4c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .text.Chip_Clock_EnableCrystal
-                0x000000001a002808       0x4c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002808                Chip_Clock_EnableCrystal
+                0x000000001a002818       0x4c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002818                Chip_Clock_EnableCrystal
  .text.Chip_Clock_GetDividerSource
-                0x000000001a002854       0x1c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002854                Chip_Clock_GetDividerSource
+                0x000000001a002864       0x1c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002864                Chip_Clock_GetDividerSource
  .text.Chip_Clock_GetDividerDivisor
-                0x000000001a002870       0x1c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002870                Chip_Clock_GetDividerDivisor
+                0x000000001a002880       0x1c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002880                Chip_Clock_GetDividerDivisor
  .text.Chip_Clock_GetClockInputHz
-                0x000000001a00288c       0xb8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a00288c                Chip_Clock_GetClockInputHz
+                0x000000001a00289c       0xb8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a00289c                Chip_Clock_GetClockInputHz
  .text.Chip_Clock_CalcMainPLLValue
-                0x000000001a002944       0x80 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002944                Chip_Clock_CalcMainPLLValue
+                0x000000001a002954       0x80 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002954                Chip_Clock_CalcMainPLLValue
  .text.Chip_Clock_GetMainPLLHz
-                0x000000001a0029c4       0x6c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a0029c4                Chip_Clock_GetMainPLLHz
+                0x000000001a0029d4       0x6c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0029d4                Chip_Clock_GetMainPLLHz
  .text.Chip_Clock_GetDivRate
-                0x000000001a002a30       0x22 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- *fill*         0x000000001a002a52        0x2 ff
+                0x000000001a002a40       0x22 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ *fill*         0x000000001a002a62        0x2 ff
  .text.Chip_Clock_SetBaseClock
-                0x000000001a002a54       0x58 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002a54                Chip_Clock_SetBaseClock
+                0x000000001a002a64       0x58 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002a64                Chip_Clock_SetBaseClock
  .text.Chip_Clock_GetBaseClock
-                0x000000001a002aac       0x26 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002aac                Chip_Clock_GetBaseClock
+                0x000000001a002abc       0x26 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002abc                Chip_Clock_GetBaseClock
  .text.Chip_Clock_GetBaseClocktHz
-                0x000000001a002ad2        0xc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002ad2                Chip_Clock_GetBaseClocktHz
- *fill*         0x000000001a002ade        0x2 ff
+                0x000000001a002ae2        0xc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002ae2                Chip_Clock_GetBaseClocktHz
+ *fill*         0x000000001a002aee        0x2 ff
  .text.Chip_Clock_EnableOpts
-                0x000000001a002ae0       0x3c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002ae0                Chip_Clock_EnableOpts
+                0x000000001a002af0       0x3c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002af0                Chip_Clock_EnableOpts
  .text.Chip_Clock_Enable
-                0x000000001a002b1c       0x34 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002b1c                Chip_Clock_Enable
+                0x000000001a002b2c       0x34 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002b2c                Chip_Clock_Enable
  .text.Chip_Clock_Disable
-                0x000000001a002b50       0x34 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002b50                Chip_Clock_Disable
+                0x000000001a002b60       0x34 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002b60                Chip_Clock_Disable
  .text.Chip_Clock_GetRate
-                0x000000001a002b84       0x4c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
-                0x000000001a002b84                Chip_Clock_GetRate
+                0x000000001a002b94       0x4c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a002b94                Chip_Clock_GetRate
  .text.Chip_GPIO_Init
-                0x000000001a002bd0        0x2 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
-                0x000000001a002bd0                Chip_GPIO_Init
- *fill*         0x000000001a002bd2        0x2 ff
+                0x000000001a002be0        0x2 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+                0x000000001a002be0                Chip_GPIO_Init
+ *fill*         0x000000001a002be2        0x2 ff
  .text.Chip_SetupCoreClock
-                0x000000001a002bd4      0x158 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
-                0x000000001a002bd4                Chip_SetupCoreClock
+                0x000000001a002be4      0x158 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000001a002be4                Chip_SetupCoreClock
  .text.Chip_I2C_EventHandler
-                0x000000001a002d2c       0x20 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a002d2c                Chip_I2C_EventHandler
+                0x000000001a002d3c       0x20 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a002d3c                Chip_I2C_EventHandler
  .text.Chip_I2C_Init
-                0x000000001a002d4c       0x24 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a002d4c                Chip_I2C_Init
+                0x000000001a002d5c       0x24 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a002d5c                Chip_I2C_Init
  .text.Chip_I2C_SetClockRate
-                0x000000001a002d70       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
-                0x000000001a002d70                Chip_I2C_SetClockRate
+                0x000000001a002d80       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+                0x000000001a002d80                Chip_I2C_SetClockRate
  .text.Chip_SSP_GetClockIndex
-                0x000000001a002da8       0x14 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a002db8       0x14 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_GetPeriphClockIndex
-                0x000000001a002dbc       0x18 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a002dcc       0x18 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
  .text.Chip_SSP_SetClockRate
-                0x000000001a002dd4       0x12 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a002dd4                Chip_SSP_SetClockRate
+                0x000000001a002de4       0x12 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a002de4                Chip_SSP_SetClockRate
  .text.Chip_SSP_SetBitRate
-                0x000000001a002de6       0x3e CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a002de6                Chip_SSP_SetBitRate
+                0x000000001a002df6       0x3e CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a002df6                Chip_SSP_SetBitRate
  .text.Chip_SSP_Init
-                0x000000001a002e24       0x36 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
-                0x000000001a002e24                Chip_SSP_Init
- *fill*         0x000000001a002e5a        0x2 ff
+                0x000000001a002e34       0x36 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+                0x000000001a002e34                Chip_SSP_Init
+ *fill*         0x000000001a002e6a        0x2 ff
  .text.SystemInit
-                0x000000001a002e5c       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
-                0x000000001a002e5c                SystemInit
+                0x000000001a002e6c       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
+                0x000000001a002e6c                SystemInit
  .text.cyclesCounterInit
-                0x000000001a002e94       0x1c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
-                0x000000001a002e94                cyclesCounterInit
+                0x000000001a002ea4       0x1c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+                0x000000001a002ea4                cyclesCounterInit
  .text.uartTxReady
-                0x000000001a002eb0       0x18 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a002eb0                uartTxReady
+                0x000000001a002ec0       0x18 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a002ec0                uartTxReady
  .text.uartTxWrite
-                0x000000001a002ec8       0x14 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a002ec8                uartTxWrite
+                0x000000001a002ed8       0x14 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a002ed8                uartTxWrite
  .text.uartInit
-                0x000000001a002edc       0x7c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a002edc                uartInit
+                0x000000001a002eec       0x7c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a002eec                uartInit
  .text.uartWriteByte
-                0x000000001a002f58       0x1a CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a002f58                uartWriteByte
+                0x000000001a002f68       0x1a CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a002f68                uartWriteByte
  .text.uartWriteString
-                0x000000001a002f72       0x16 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
-                0x000000001a002f72                uartWriteString
- .text.adcInit  0x000000001a002f88       0xb8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
-                0x000000001a002f88                adcInit
- .text.adcRead  0x000000001a003040       0x58 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
-                0x000000001a003040                adcRead
+                0x000000001a002f82       0x16 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+                0x000000001a002f82                uartWriteString
+ .text.adcInit  0x000000001a002f98       0xb8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+                0x000000001a002f98                adcInit
+ .text.adcRead  0x000000001a003050       0x58 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+                0x000000001a003050                adcRead
  .text.gpioObtainPinInit
-                0x000000001a003098       0x34 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a0030a8       0x34 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
  .text.gpioInit
-                0x000000001a0030cc      0x1ac CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a0030cc                gpioInit
+                0x000000001a0030dc      0x1ac CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a0030dc                gpioInit
  .text.gpioWrite
-                0x000000001a003278       0x6a CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a003278                gpioWrite
+                0x000000001a003288       0x6a CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a003288                gpioWrite
  .text.gpioRead
-                0x000000001a0032e2       0x68 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a0032e2                gpioRead
- *fill*         0x000000001a00334a        0x2 ff
+                0x000000001a0032f2       0x68 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a0032f2                gpioRead
+ *fill*         0x000000001a00335a        0x2 ff
  .text.USB0_IRQHandler
-                0x000000001a00334c       0x1c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
-                0x000000001a00334c                USB0_IRQHandler
+                0x000000001a00335c       0x1c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+                0x000000001a00335c                USB0_IRQHandler
  .text.boardInit
-                0x000000001a003368       0x6c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
-                0x000000001a003368                boardInit
+                0x000000001a003378       0x6c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+                0x000000001a003378                boardInit
  .text.printInitUart
-                0x000000001a0033d4       0x10 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
-                0x000000001a0033d4                printInitUart
+                0x000000001a0033e4       0x10 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+                0x000000001a0033e4                printInitUart
  .text.printString
-                0x000000001a0033e4        0x8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
-                0x000000001a0033e4                printString
+                0x000000001a0033f4        0x8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+                0x000000001a0033f4                printString
  .text.printEnter
-                0x000000001a0033ec       0x10 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
-                0x000000001a0033ec                printEnter
- .text          0x000000001a0033fc       0x30 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
-                0x000000001a0033fc                __aeabi_uldivmod
+                0x000000001a0033fc       0x10 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+                0x000000001a0033fc                printEnter
+ .text          0x000000001a00340c       0x30 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x000000001a00340c                __aeabi_uldivmod
  .text.__udivmoddi4
-                0x000000001a00342c      0x2d0 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000001a00342c                __udivmoddi4
- .text          0x000000001a0036fc        0x4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
-                0x000000001a0036fc                __aeabi_ldiv0
-                0x000000001a0036fc                __aeabi_idiv0
+                0x000000001a00343c      0x2d0 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000001a00343c                __udivmoddi4
+ .text          0x000000001a00370c        0x4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x000000001a00370c                __aeabi_ldiv0
+                0x000000001a00370c                __aeabi_idiv0
  .text.__sflush_r
-                0x000000001a003700      0x10c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
-                0x000000001a003700                __sflush_r
+                0x000000001a003710      0x10c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
+                0x000000001a003710                __sflush_r
  .text._fflush_r
-                0x000000001a00380c       0x78 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
-                0x000000001a00380c                _fflush_r
- .text.std      0x000000001a003884       0x48 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a00381c       0x78 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fflush.o)
+                0x000000001a00381c                _fflush_r
+ .text.std      0x000000001a003894       0x48 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
  .text._cleanup_r
-                0x000000001a0038cc        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a0038cc                _cleanup_r
+                0x000000001a0038dc        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a0038dc                _cleanup_r
  .text.__sfmoreglue
-                0x000000001a0038d8       0x2c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a0038d8                __sfmoreglue
+                0x000000001a0038e8       0x2c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a0038e8                __sfmoreglue
  .text.__sfp_lock_acquire
-                0x000000001a003904        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a003904                __sfp_lock_acquire
+                0x000000001a003914        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a003914                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x000000001a003910        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a003910                __sfp_lock_release
+                0x000000001a003920        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a003920                __sfp_lock_release
  .text.__sinit_lock_acquire
-                0x000000001a00391c        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a00391c                __sinit_lock_acquire
+                0x000000001a00392c        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a00392c                __sinit_lock_acquire
  .text.__sinit_lock_release
-                0x000000001a003928        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a003928                __sinit_lock_release
- .text.__sinit  0x000000001a003934       0x70 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a003934                __sinit
- .text.__sfp    0x000000001a0039a4       0x8c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a0039a4                __sfp
+                0x000000001a003938        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a003938                __sinit_lock_release
+ .text.__sinit  0x000000001a003944       0x70 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a003944                __sinit
+ .text.__sfp    0x000000001a0039b4       0x8c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a0039b4                __sfp
  .text._fwalk_reent
-                0x000000001a003a30       0x3c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fwalk.o)
-                0x000000001a003a30                _fwalk_reent
+                0x000000001a003a40       0x3c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-fwalk.o)
+                0x000000001a003a40                _fwalk_reent
  .text.__libc_init_array
-                0x000000001a003a6c       0x48 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
-                0x000000001a003a6c                __libc_init_array
+                0x000000001a003a7c       0x48 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-init.o)
+                0x000000001a003a7c                __libc_init_array
  .text.__retarget_lock_init_recursive
-                0x000000001a003ab4        0x2 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x000000001a003ab4                __retarget_lock_init_recursive
+                0x000000001a003ac4        0x2 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000001a003ac4                __retarget_lock_init_recursive
  .text.__retarget_lock_acquire_recursive
-                0x000000001a003ab6        0x2 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x000000001a003ab6                __retarget_lock_acquire_recursive
+                0x000000001a003ac6        0x2 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000001a003ac6                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x000000001a003ab8        0x2 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
-                0x000000001a003ab8                __retarget_lock_release_recursive
- .text.memcpy   0x000000001a003aba       0x1c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
-                0x000000001a003aba                memcpy
- .text.memset   0x000000001a003ad6       0x10 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
-                0x000000001a003ad6                memset
- *fill*         0x000000001a003ae6        0x2 ff
- .text._free_r  0x000000001a003ae8       0x9c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
-                0x000000001a003ae8                _free_r
+                0x000000001a003ac8        0x2 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-lock.o)
+                0x000000001a003ac8                __retarget_lock_release_recursive
+ .text.memcpy   0x000000001a003aca       0x1c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memcpy-stub.o)
+                0x000000001a003aca                memcpy
+ .text.memset   0x000000001a003ae6       0x10 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memset.o)
+                0x000000001a003ae6                memset
+ *fill*         0x000000001a003af6        0x2 ff
+ .text._free_r  0x000000001a003af8       0x9c /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-freer.o)
+                0x000000001a003af8                _free_r
  .text._malloc_r
-                0x000000001a003b84       0xb4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
-                0x000000001a003b84                _malloc_r
+                0x000000001a003b94       0xb4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-mallocr.o)
+                0x000000001a003b94                _malloc_r
  .text.__sfputc_r
-                0x000000001a003c38       0x2e /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000001a003c48       0x2e /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x000000001a003c66       0x24 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x000000001a003c66                __sfputs_r
- *fill*         0x000000001a003c8a        0x2 ff
+                0x000000001a003c76       0x24 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000001a003c76                __sfputs_r
+ *fill*         0x000000001a003c9a        0x2 ff
  .text._vfprintf_r
-                0x000000001a003c8c      0x250 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x000000001a003c8c                _vfiprintf_r
-                0x000000001a003c8c                _vfprintf_r
+                0x000000001a003c9c      0x250 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000001a003c9c                _vfiprintf_r
+                0x000000001a003c9c                _vfprintf_r
  .text._printf_common
-                0x000000001a003edc       0xea /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000000001a003edc                _printf_common
- *fill*         0x000000001a003fc6        0x2 ff
+                0x000000001a003eec       0xea /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000001a003eec                _printf_common
+ *fill*         0x000000001a003fd6        0x2 ff
  .text._printf_i
-                0x000000001a003fc8      0x228 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000000001a003fc8                _printf_i
- .text.printf   0x000000001a0041f0       0x30 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-printf.o)
-                0x000000001a0041f0                printf
-                0x000000001a0041f0                iprintf
- .text._puts_r  0x000000001a004220       0xdc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-puts.o)
-                0x000000001a004220                _puts_r
- .text.puts     0x000000001a0042fc       0x10 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-puts.o)
-                0x000000001a0042fc                puts
- .text.__sread  0x000000001a00430c       0x22 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
-                0x000000001a00430c                __sread
+                0x000000001a003fd8      0x228 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000001a003fd8                _printf_i
+ .text.printf   0x000000001a004200       0x30 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-printf.o)
+                0x000000001a004200                printf
+                0x000000001a004200                iprintf
+ .text._puts_r  0x000000001a004230       0xdc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-puts.o)
+                0x000000001a004230                _puts_r
+ .text.puts     0x000000001a00430c       0x10 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-puts.o)
+                0x000000001a00430c                puts
+ .text.__sread  0x000000001a00431c       0x22 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+                0x000000001a00431c                __sread
  .text.__swrite
-                0x000000001a00432e       0x38 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
-                0x000000001a00432e                __swrite
- .text.__sseek  0x000000001a004366       0x24 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
-                0x000000001a004366                __sseek
+                0x000000001a00433e       0x38 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+                0x000000001a00433e                __swrite
+ .text.__sseek  0x000000001a004376       0x24 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+                0x000000001a004376                __sseek
  .text.__sclose
-                0x000000001a00438a        0x8 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
-                0x000000001a00438a                __sclose
- *fill*         0x000000001a004392        0x2 ff
+                0x000000001a00439a        0x8 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-stdio.o)
+                0x000000001a00439a                __sclose
+ *fill*         0x000000001a0043a2        0x2 ff
  .text.__swbuf_r
-                0x000000001a004394       0xa4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wbuf.o)
-                0x000000001a004394                __swbuf_r
+                0x000000001a0043a4       0xa4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wbuf.o)
+                0x000000001a0043a4                __swbuf_r
  .text.__swsetup_r
-                0x000000001a004438       0xdc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wsetup.o)
-                0x000000001a004438                __swsetup_r
+                0x000000001a004448       0xdc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-wsetup.o)
+                0x000000001a004448                __swsetup_r
  .text.__swhatbuf_r
-                0x000000001a004514       0x48 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
-                0x000000001a004514                __swhatbuf_r
+                0x000000001a004524       0x48 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
+                0x000000001a004524                __swhatbuf_r
  .text.__smakebuf_r
-                0x000000001a00455c       0x80 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
-                0x000000001a00455c                __smakebuf_r
- *fill*         0x000000001a0045dc        0x4 ff
- .text          0x000000001a0045e0       0xa0 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
-                0x000000001a0045e0                memchr
+                0x000000001a00456c       0x80 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-makebuf.o)
+                0x000000001a00456c                __smakebuf_r
+ *fill*         0x000000001a0045ec        0x4 ff
+ .text          0x000000001a0045f0       0xa0 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-memchr.o)
+                0x000000001a0045f0                memchr
  .text.__malloc_lock
-                0x000000001a004680        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
-                0x000000001a004680                __malloc_lock
+                0x000000001a004690        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+                0x000000001a004690                __malloc_lock
  .text.__malloc_unlock
-                0x000000001a00468c        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
-                0x000000001a00468c                __malloc_unlock
+                0x000000001a00469c        0xc /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-mlock.o)
+                0x000000001a00469c                __malloc_unlock
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.vTaskProcessing.str1.4
-                0x000000001a004698       0x12 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
- *fill*         0x000000001a0046aa        0x2 ff
+                0x000000001a0046a8       0x12 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+ *fill*         0x000000001a0046ba        0x2 ff
  .rodata.vTaskReadADC.str1.4
-                0x000000001a0046ac       0x10 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+                0x000000001a0046bc       0x10 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
  .rodata.main.str1.4
-                0x000000001a0046bc       0x4f CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
- *fill*         0x000000001a00470b        0x1 ff
+                0x000000001a0046cc       0x4f CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
+ *fill*         0x000000001a00471b        0x1 ff
  .rodata.vApplicationMallocFailedHook.str1.4
-                0x000000001a00470c       0x41 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
- *fill*         0x000000001a00474d        0x3 ff
+                0x000000001a00471c       0x41 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+ *fill*         0x000000001a00475d        0x3 ff
  .rodata.vApplicationStackOverflowHook.str1.4
-                0x000000001a004750       0x2d CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
- *fill*         0x000000001a00477d        0x3 ff
+                0x000000001a004760       0x2d CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+ *fill*         0x000000001a00478d        0x3 ff
  .rodata.vAssertCalled.str1.4
-                0x000000001a004780       0x3f CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
- *fill*         0x000000001a0047bf        0x1 ff
+                0x000000001a004790       0x3f CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+ *fill*         0x000000001a0047cf        0x1 ff
  .rodata.vTaskStartScheduler.str1.4
-                0x000000001a0047c0        0x5 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
- *fill*         0x000000001a0047c5        0x3 ff
+                0x000000001a0047d0        0x5 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+ *fill*         0x000000001a0047d5        0x3 ff
  .rodata.prvCheckForValidListAndQueue.str1.4
-                0x000000001a0047c8        0x5 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
- *fill*         0x000000001a0047cd        0x3 ff
+                0x000000001a0047d8        0x5 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+ *fill*         0x000000001a0047dd        0x3 ff
  .rodata.xTimerCreateTimerTask.str1.4
-                0x000000001a0047d0        0x8 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+                0x000000001a0047e0        0x8 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
  .rodata.ExtRateIn
-                0x000000001a0047d8        0x4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a0047d8                ExtRateIn
+                0x000000001a0047e8        0x4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0047e8                ExtRateIn
  .rodata.GpioButtons
-                0x000000001a0047dc        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0047ec        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .rodata.GpioLeds
-                0x000000001a0047e4        0xc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a0047f4        0xc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
  .rodata.GpioPorts
-                0x000000001a0047f0       0x12 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- *fill*         0x000000001a004802        0x2 ff
+                0x000000001a004800       0x12 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ *fill*         0x000000001a004812        0x2 ff
  .rodata.OscRateIn
-                0x000000001a004804        0x4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
-                0x000000001a004804                OscRateIn
+                0x000000001a004814        0x4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+                0x000000001a004814                OscRateIn
  .rodata.InitClkStates
-                0x000000001a004808        0x4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a004818        0x4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.pinmuxing
-                0x000000001a00480c       0x74 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+                0x000000001a00481c       0x74 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
  .rodata.UART_BClock
-                0x000000001a004880        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+                0x000000001a004890        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
  .rodata.UART_PClock
-                0x000000001a004888        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .rodata        0x000000001a004890        0x4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a004898        0x8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .rodata        0x000000001a0048a0        0x4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.Chip_Clock_SetDivider.str1.4
-                0x000000001a004894        0x6 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- *fill*         0x000000001a00489a        0x2 ff
+                0x000000001a0048a4        0x6 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ *fill*         0x000000001a0048aa        0x2 ff
  .rodata.periph_to_base
-                0x000000001a00489c       0x6c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+                0x000000001a0048ac       0x6c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
  .rodata.InitClkStates
-                0x000000001a004908       0x48 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+                0x000000001a004918       0x48 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
  .rodata.lpcUarts
-                0x000000001a004950       0x48 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .rodata        0x000000001a004998        0x8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+                0x000000001a004960       0x48 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .rodata        0x000000001a0049a8        0x8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
  .rodata.gpioPinsInit
-                0x000000001a0049a0       0xe6 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
-                0x000000001a0049a0                gpioPinsInit
+                0x000000001a0049b0       0xe6 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+                0x000000001a0049b0                gpioPinsInit
  .rodata.printEnter.str1.4
-                0x000000001a004a86        0x8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+                0x000000001a004a96        0x8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
                                           0x3 (size before relaxing)
- *fill*         0x000000001a004a86        0x2 ff
+ *fill*         0x000000001a004a96        0x2 ff
  .rodata.__sf_fake_stderr
-                0x000000001a004a88       0x20 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a004a88                __sf_fake_stderr
+                0x000000001a004a98       0x20 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a004a98                __sf_fake_stderr
  .rodata.__sf_fake_stdin
-                0x000000001a004aa8       0x20 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a004aa8                __sf_fake_stdin
+                0x000000001a004ab8       0x20 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a004ab8                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x000000001a004ac8       0x20 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
-                0x000000001a004ac8                __sf_fake_stdout
+                0x000000001a004ad8       0x20 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-findfp.o)
+                0x000000001a004ad8                __sf_fake_stdout
  .rodata._global_impure_ptr
-                0x000000001a004ae8        0x4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
-                0x000000001a004ae8                _global_impure_ptr
+                0x000000001a004af8        0x4 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-impure.o)
+                0x000000001a004af8                _global_impure_ptr
  .rodata._vfprintf_r.str1.1
-                0x000000001a004aec       0x11 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000000001a004afc       0x11 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata._printf_i.str1.1
-                0x000000001a004afd       0x22 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000000001a004b20                . = ALIGN (0x4)
- *fill*         0x000000001a004b1f        0x1 ff
+                0x000000001a004b0d       0x22 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000000001a004b30                . = ALIGN (0x4)
+ *fill*         0x000000001a004b2f        0x1 ff
 
-.glue_7         0x000000001a004b20        0x0
- .glue_7        0x000000001a004b20        0x0 linker stubs
+.glue_7         0x000000001a004b30        0x0
+ .glue_7        0x000000001a004b30        0x0 linker stubs
 
-.glue_7t        0x000000001a004b20        0x0
- .glue_7t       0x000000001a004b20        0x0 linker stubs
+.glue_7t        0x000000001a004b30        0x0
+ .glue_7t       0x000000001a004b30        0x0 linker stubs
 
-.vfp11_veneer   0x000000001a004b20        0x0
- .vfp11_veneer  0x000000001a004b20        0x0 linker stubs
+.vfp11_veneer   0x000000001a004b30        0x0
+ .vfp11_veneer  0x000000001a004b30        0x0 linker stubs
 
-.v4_bx          0x000000001a004b20        0x0
- .v4_bx         0x000000001a004b20        0x0 linker stubs
+.v4_bx          0x000000001a004b30        0x0
+ .v4_bx         0x000000001a004b30        0x0 linker stubs
 
-.iplt           0x000000001a004b20        0x0
- .iplt          0x000000001a004b20        0x0 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
-                0x000000001a004b20                . = ALIGN (0x4)
+.iplt           0x000000001a004b30        0x0
+ .iplt          0x000000001a004b30        0x0 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+                0x000000001a004b30                . = ALIGN (0x4)
 
-.preinit_array  0x000000001a004b20        0x0
-                0x000000001a004b20                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x000000001a004b30        0x0
+                0x000000001a004b30                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x000000001a004b20                PROVIDE (__preinit_array_end = .)
+                0x000000001a004b30                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x000000001a004b20        0x4
-                0x000000001a004b20                PROVIDE (__init_array_start = .)
+.init_array     0x000000001a004b30        0x4
+                0x000000001a004b30                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x000000001a004b20        0x4 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
-                0x000000001a004b24                PROVIDE (__init_array_end = .)
-                0x000000001a004b24                . = ALIGN (0x4)
+ .init_array    0x000000001a004b30        0x4 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+                0x000000001a004b34                PROVIDE (__init_array_end = .)
+                0x000000001a004b34                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000001a004b24                __exidx_start = .
+                0x000000001a004b34                __exidx_start = .
 
-.ARM.exidx      0x000000001a004b24        0x8
+.ARM.exidx      0x000000001a004b34        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
  .ARM.exidx.text.__udivmoddi4
-                0x000000001a004b24        0x8 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x000000001a004b2c                __exidx_end = .
-                0x000000001a004b2c                _etext = .
+                0x000000001a004b34        0x8 /home/charlieromano/Documents/Academico/CESE/PdM/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x000000001a004b3c                __exidx_end = .
+                0x000000001a004b3c                _etext = .
 
-.rel.dyn        0x000000001a004b2c        0x0
- .rel.iplt      0x000000001a004b2c        0x0 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+.rel.dyn        0x000000001a004b3c        0x0
+ .rel.iplt      0x000000001a004b3c        0x0 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
 
-.data_RAM2      0x0000000010080000        0x0 load address 0x000000001a004b2c
+.data_RAM2      0x0000000010080000        0x0 load address 0x000000001a004b3c
  FILL mask 0xff
  *(.ramfunc.$RAM2)
  *(.ramfunc.$RamLoc40)
@@ -20113,7 +20114,7 @@ END GROUP
  *(.data.$RamLoc40*)
                 0x0000000010080000                . = ALIGN (0x4)
 
-.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a004b2c
+.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a004b3c
  FILL mask 0xff
  *(.ramfunc.$RAM3)
  *(.ramfunc.$RamAHB32)
@@ -20121,7 +20122,7 @@ END GROUP
  *(.data.$RamAHB32*)
                 0x0000000020000000                . = ALIGN (0x4)
 
-.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a004b2c
+.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a004b3c
  FILL mask 0xff
  *(.ramfunc.$RAM4)
  *(.ramfunc.$RamAHB16)
@@ -20129,7 +20130,7 @@ END GROUP
  *(.data.$RamAHB16*)
                 0x0000000020008000                . = ALIGN (0x4)
 
-.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a004b2c
+.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a004b3c
  FILL mask 0xff
  *(.ramfunc.$RAM5)
  *(.ramfunc.$RamAHB_ETB16)
@@ -20143,7 +20144,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0xa4 load address 0x000000001a004b2c
+.data           0x0000000010000000       0xa4 load address 0x000000001a004b3c
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -20162,7 +20163,7 @@ END GROUP
                 0x00000000100000a4                . = ALIGN (0x4)
                 0x00000000100000a4                _edata = .
 
-.igot.plt       0x00000000100000a4        0x0 load address 0x000000001a004bd0
+.igot.plt       0x00000000100000a4        0x0 load address 0x000000001a004be0
  .igot.plt      0x00000000100000a4        0x0 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
 
 .bss_RAM2       0x0000000010080000        0x0
@@ -20324,108 +20325,108 @@ END GROUP
                 0x00000000100022bc                _end_noinit = .
                 0x00000000100022bc                PROVIDE (_pvHeapStart = .)
                 0x0000000010008000                PROVIDE (_vStackTop = (__top_RamLoc32 - 0x0))
-                0xffffffff53ff72ee                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
+                0xffffffff53ff72e2                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(CESE2020/FreeRTOS_IRQ/out/FreeRTOS_IRQ.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x2ddc4
- .debug_info    0x0000000000000000     0x2b11 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
- .debug_info    0x0000000000002b11     0x2a5b CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
- .debug_info    0x000000000000556c     0x23b9 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
- .debug_info    0x0000000000007925      0x35d CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_info    0x0000000000007c82     0x10c3 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
- .debug_info    0x0000000000008d45      0xfe1 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
- .debug_info    0x0000000000009d26     0x31f4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
- .debug_info    0x000000000000cf1a      0xbca CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
- .debug_info    0x000000000000dae4      0xb7d CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
- .debug_info    0x000000000000e661     0x3c5c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
- .debug_info    0x00000000000122bd     0x2286 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
- .debug_info    0x0000000000014543      0xaff CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
- .debug_info    0x0000000000015042      0xbfc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
- .debug_info    0x0000000000015c3e     0x23f7 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_info    0x0000000000018035     0x15d2 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_info    0x0000000000019607     0x1981 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_info    0x000000000001af88      0xc0c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_info    0x000000000001bb94      0xc97 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_info    0x000000000001c82b     0x1b68 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_info    0x000000000001e393      0x232 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_info    0x000000000001e5c5      0xb39 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_info    0x000000000001f0fe     0x159b CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_info    0x0000000000020699     0x1a31 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_info    0x00000000000220ca       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_info    0x000000000002210a      0xc8b CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_info    0x0000000000022d95       0x76 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_info    0x0000000000022e0b      0xf6a CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_info    0x0000000000023d75     0x2347 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_info    0x00000000000260bc     0x10ac CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_info    0x0000000000027168     0x1cdd CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_info    0x0000000000028e45     0x357f CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_info    0x000000000002c3c4      0xc48 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_info    0x000000000002d00c      0xdb8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+.debug_info     0x0000000000000000    0x2de16
+ .debug_info    0x0000000000000000     0x2b63 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+ .debug_info    0x0000000000002b63     0x2a5b CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
+ .debug_info    0x00000000000055be     0x23b9 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+ .debug_info    0x0000000000007977      0x35d CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_info    0x0000000000007cd4     0x10c3 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+ .debug_info    0x0000000000008d97      0xfe1 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
+ .debug_info    0x0000000000009d78     0x31f4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+ .debug_info    0x000000000000cf6c      0xbca CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+ .debug_info    0x000000000000db36      0xb7d CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+ .debug_info    0x000000000000e6b3     0x3c5c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+ .debug_info    0x000000000001230f     0x2286 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+ .debug_info    0x0000000000014595      0xaff CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+ .debug_info    0x0000000000015094      0xbfc CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
+ .debug_info    0x0000000000015c90     0x23f7 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_info    0x0000000000018087     0x15d2 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_info    0x0000000000019659     0x1981 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_info    0x000000000001afda      0xc0c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_info    0x000000000001bbe6      0xc97 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_info    0x000000000001c87d     0x1b68 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_info    0x000000000001e3e5      0x232 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_info    0x000000000001e617      0xb39 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_info    0x000000000001f150     0x159b CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_info    0x00000000000206eb     0x1a31 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_info    0x000000000002211c       0x40 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_info    0x000000000002215c      0xc8b CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_info    0x0000000000022de7       0x76 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_info    0x0000000000022e5d      0xf6a CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_info    0x0000000000023dc7     0x2347 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_info    0x000000000002610e     0x10ac CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_info    0x00000000000271ba     0x1cdd CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_info    0x0000000000028e97     0x357f CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_info    0x000000000002c416      0xc48 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_info    0x000000000002d05e      0xdb8 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
 
-.debug_abbrev   0x0000000000000000     0x6030
- .debug_abbrev  0x0000000000000000      0x379 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
- .debug_abbrev  0x0000000000000379      0x31b CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
- .debug_abbrev  0x0000000000000694      0x2f9 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
- .debug_abbrev  0x000000000000098d      0x127 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_abbrev  0x0000000000000ab4      0x301 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
- .debug_abbrev  0x0000000000000db5      0x353 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
- .debug_abbrev  0x0000000000001108      0x46b CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
- .debug_abbrev  0x0000000000001573      0x24c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
- .debug_abbrev  0x00000000000017bf      0x267 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
- .debug_abbrev  0x0000000000001a26      0x43e CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
- .debug_abbrev  0x0000000000001e64      0x3db CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
- .debug_abbrev  0x000000000000223f      0x2c4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
- .debug_abbrev  0x0000000000002503      0x21a CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
- .debug_abbrev  0x000000000000271d      0x512 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_abbrev  0x0000000000002c2f      0x352 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_abbrev  0x0000000000002f81      0x42c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_abbrev  0x00000000000033ad      0x219 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_abbrev  0x00000000000035c6      0x1ee CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_abbrev  0x00000000000037b4      0x3ef CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_abbrev  0x0000000000003ba3      0x114 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_abbrev  0x0000000000003cb7      0x245 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_abbrev  0x0000000000003efc      0x3af CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_abbrev  0x00000000000042ab      0x38a CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_abbrev  0x0000000000004635       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_abbrev  0x000000000000466d      0x260 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_abbrev  0x00000000000048cd       0x78 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_abbrev  0x0000000000004945      0x26c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_abbrev  0x0000000000004bb1      0x47e CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_abbrev  0x000000000000502f      0x316 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_abbrev  0x0000000000005345      0x3f2 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_abbrev  0x0000000000005737      0x448 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_abbrev  0x0000000000005b7f      0x242 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_abbrev  0x0000000000005dc1      0x26f CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+.debug_abbrev   0x0000000000000000     0x6041
+ .debug_abbrev  0x0000000000000000      0x38a CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+ .debug_abbrev  0x000000000000038a      0x31b CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
+ .debug_abbrev  0x00000000000006a5      0x2f9 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+ .debug_abbrev  0x000000000000099e      0x127 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_abbrev  0x0000000000000ac5      0x301 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+ .debug_abbrev  0x0000000000000dc6      0x353 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
+ .debug_abbrev  0x0000000000001119      0x46b CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+ .debug_abbrev  0x0000000000001584      0x24c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+ .debug_abbrev  0x00000000000017d0      0x267 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+ .debug_abbrev  0x0000000000001a37      0x43e CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+ .debug_abbrev  0x0000000000001e75      0x3db CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+ .debug_abbrev  0x0000000000002250      0x2c4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+ .debug_abbrev  0x0000000000002514      0x21a CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
+ .debug_abbrev  0x000000000000272e      0x512 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_abbrev  0x0000000000002c40      0x352 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_abbrev  0x0000000000002f92      0x42c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_abbrev  0x00000000000033be      0x219 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_abbrev  0x00000000000035d7      0x1ee CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_abbrev  0x00000000000037c5      0x3ef CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_abbrev  0x0000000000003bb4      0x114 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_abbrev  0x0000000000003cc8      0x245 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_abbrev  0x0000000000003f0d      0x3af CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_abbrev  0x00000000000042bc      0x38a CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_abbrev  0x0000000000004646       0x38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_abbrev  0x000000000000467e      0x260 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_abbrev  0x00000000000048de       0x78 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_abbrev  0x0000000000004956      0x26c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_abbrev  0x0000000000004bc2      0x47e CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_abbrev  0x0000000000005040      0x316 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_abbrev  0x0000000000005356      0x3f2 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_abbrev  0x0000000000005748      0x448 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_abbrev  0x0000000000005b90      0x242 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_abbrev  0x0000000000005dd2      0x26f CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
 
-.debug_loc      0x0000000000000000     0xcae5
- .debug_loc     0x0000000000000000       0xe9 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
- .debug_loc     0x00000000000000e9       0x70 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
- .debug_loc     0x0000000000000159      0x102 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
- .debug_loc     0x000000000000025b      0x282 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_loc     0x00000000000004dd      0x653 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
- .debug_loc     0x0000000000000b30       0x60 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
- .debug_loc     0x0000000000000b90     0x1875 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
- .debug_loc     0x0000000000002405       0x93 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
- .debug_loc     0x0000000000002498       0xd3 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
- .debug_loc     0x000000000000256b     0x22ef CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
- .debug_loc     0x000000000000485a      0xde6 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
- .debug_loc     0x0000000000005640      0x124 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
- .debug_loc     0x0000000000005764       0x6e CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
- .debug_loc     0x00000000000057d2      0x659 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_loc     0x0000000000005e2b      0x10f CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_loc     0x0000000000005f3a      0xf38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_loc     0x0000000000006e72      0x738 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_loc     0x00000000000075aa     0x1505 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_loc     0x0000000000008aaf      0x1e2 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_loc     0x0000000000008c91      0xe82 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_loc     0x0000000000009b13      0xfc3 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_loc     0x000000000000aad6       0x15 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_loc     0x000000000000aaeb      0x109 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_loc     0x000000000000abf4      0xccd CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_loc     0x000000000000b8c1       0xc5 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_loc     0x000000000000b986      0xaff CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_loc     0x000000000000c485      0x3e0 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_loc     0x000000000000c865      0x280 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+.debug_loc      0x0000000000000000     0xcaf2
+ .debug_loc     0x0000000000000000       0xf6 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+ .debug_loc     0x00000000000000f6       0x70 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
+ .debug_loc     0x0000000000000166      0x102 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+ .debug_loc     0x0000000000000268      0x282 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_loc     0x00000000000004ea      0x653 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+ .debug_loc     0x0000000000000b3d       0x60 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
+ .debug_loc     0x0000000000000b9d     0x1875 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+ .debug_loc     0x0000000000002412       0x93 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+ .debug_loc     0x00000000000024a5       0xd3 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+ .debug_loc     0x0000000000002578     0x22ef CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+ .debug_loc     0x0000000000004867      0xde6 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+ .debug_loc     0x000000000000564d      0x124 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+ .debug_loc     0x0000000000005771       0x6e CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
+ .debug_loc     0x00000000000057df      0x659 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_loc     0x0000000000005e38      0x10f CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_loc     0x0000000000005f47      0xf38 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_loc     0x0000000000006e7f      0x738 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_loc     0x00000000000075b7     0x1505 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_loc     0x0000000000008abc      0x1e2 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_loc     0x0000000000008c9e      0xe82 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_loc     0x0000000000009b20      0xfc3 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_loc     0x000000000000aae3       0x15 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_loc     0x000000000000aaf8      0x109 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_loc     0x000000000000ac01      0xccd CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_loc     0x000000000000b8ce       0xc5 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_loc     0x000000000000b993      0xaff CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_loc     0x000000000000c492      0x3e0 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_loc     0x000000000000c872      0x280 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
 
 .debug_aranges  0x0000000000000000      0xf18
  .debug_aranges
@@ -20705,107 +20706,107 @@ OUTPUT(CESE2020/FreeRTOS_IRQ/out/FreeRTOS_IRQ.elf elf32-littlearm)
  .debug_macro   0x000000000000f441      0x47d CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
  .debug_macro   0x000000000000f8be      0x482 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
 
-.debug_line     0x0000000000000000    0x1c1cf
- .debug_line    0x0000000000000000     0x12d7 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
- .debug_line    0x00000000000012d7     0x12a3 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
- .debug_line    0x000000000000257a     0x1359 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
- .debug_line    0x00000000000038d3      0x267 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_line    0x0000000000003b3a      0x711 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
- .debug_line    0x000000000000424b      0xa43 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
- .debug_line    0x0000000000004c8e     0x23e1 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
- .debug_line    0x000000000000706f      0xace CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
- .debug_line    0x0000000000007b3d      0x9f0 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
- .debug_line    0x000000000000852d     0x2f4d CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
- .debug_line    0x000000000000b47a     0x13b6 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
- .debug_line    0x000000000000c830      0xdc3 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
- .debug_line    0x000000000000d5f3      0x8c8 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
- .debug_line    0x000000000000debb      0xe22 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_line    0x000000000000ecdd      0x9b9 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_line    0x000000000000f696      0xf7f CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_line    0x0000000000010615      0xb34 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_line    0x0000000000011149      0x848 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_line    0x0000000000011991     0x14ec CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_line    0x0000000000012e7d      0x7c1 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_line    0x000000000001363e      0x9d3 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_line    0x0000000000014011     0x10f3 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_line    0x0000000000015104     0x12fa CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_line    0x00000000000163fe       0x44 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_line    0x0000000000016442      0x8fa CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_line    0x0000000000016d3c       0x6f CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_line    0x0000000000016dab      0xa1a CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
- .debug_line    0x00000000000177c5     0x106e CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
- .debug_line    0x0000000000018833      0xa19 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
- .debug_line    0x000000000001924c      0xcd2 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
- .debug_line    0x0000000000019f1e      0xde5 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_line    0x000000000001ad03      0x9ea CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
- .debug_line    0x000000000001b6ed      0xae2 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+.debug_line     0x0000000000000000    0x1c1d9
+ .debug_line    0x0000000000000000     0x12e1 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+ .debug_line    0x00000000000012e1     0x12a3 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
+ .debug_line    0x0000000000002584     0x1359 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+ .debug_line    0x00000000000038dd      0x267 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_line    0x0000000000003b44      0x711 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+ .debug_line    0x0000000000004255      0xa43 CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
+ .debug_line    0x0000000000004c98     0x23e1 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+ .debug_line    0x0000000000007079      0xace CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+ .debug_line    0x0000000000007b47      0x9f0 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+ .debug_line    0x0000000000008537     0x2f4d CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+ .debug_line    0x000000000000b484     0x13b6 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+ .debug_line    0x000000000000c83a      0xdc3 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+ .debug_line    0x000000000000d5fd      0x8c8 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
+ .debug_line    0x000000000000dec5      0xe22 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_line    0x000000000000ece7      0x9b9 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_line    0x000000000000f6a0      0xf7f CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_line    0x000000000001061f      0xb34 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_line    0x0000000000011153      0x848 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_line    0x000000000001199b     0x14ec CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_line    0x0000000000012e87      0x7c1 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_line    0x0000000000013648      0x9d3 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_line    0x000000000001401b     0x10f3 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_line    0x000000000001510e     0x12fa CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_line    0x0000000000016408       0x44 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_line    0x000000000001644c      0x8fa CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_line    0x0000000000016d46       0x6f CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_line    0x0000000000016db5      0xa1a CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_line    0x00000000000177cf     0x106e CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_line    0x000000000001883d      0xa19 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_line    0x0000000000019256      0xcd2 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_line    0x0000000000019f28      0xde5 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_line    0x000000000001ad0d      0x9ea CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_line    0x000000000001b6f7      0xae2 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
 
-.debug_str      0x0000000000000000    0x2fa5f
- .debug_str     0x0000000000000000    0x273c7 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
-                                      0x277e7 (size before relaxing)
- .debug_str     0x00000000000273c7      0xe13 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
+.debug_str      0x0000000000000000    0x2fa73
+ .debug_str     0x0000000000000000    0x273ed CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
+                                      0x2780d (size before relaxing)
+ .debug_str     0x00000000000273ed      0xe13 CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/FreeRTOS_IRQ.o
                                       0x28564 (size before relaxing)
- .debug_str     0x00000000000281da       0x7f CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+ .debug_str     0x0000000000028200       0x6d CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
                                       0x26d5e (size before relaxing)
- .debug_str     0x0000000000028259      0x1e5 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_str     0x000000000002826d      0x1e5 CESE2020/FreeRTOS_IRQ/out/libs/cmsis_core//src/armv7m_startup.o
                                        0x3046 (size before relaxing)
- .debug_str     0x000000000002843e      0x764 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
+ .debug_str     0x0000000000028452      0x764 CESE2020/FreeRTOS_IRQ/out/libs/sys_newlib//src/system.o
                                        0x6d2d (size before relaxing)
- .debug_str     0x0000000000028ba2      0x21c CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
+ .debug_str     0x0000000000028bb6      0x21c CESE2020/FreeRTOS_IRQ/out/libs/freertos/MemMang/heap_1.o
                                       0x1e012 (size before relaxing)
- .debug_str     0x0000000000028dbe      0xa76 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
+ .debug_str     0x0000000000028dd2      0xa76 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/queue.o
                                       0x1f1a2 (size before relaxing)
- .debug_str     0x0000000000029834       0xa0 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
+ .debug_str     0x0000000000029848       0xa0 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/list.o
                                       0x1d00c (size before relaxing)
- .debug_str     0x00000000000298d4       0xc4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
+ .debug_str     0x00000000000298e8       0xc4 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/hooks.o
                                       0x1dc03 (size before relaxing)
- .debug_str     0x0000000000029998     0x1bf3 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
+ .debug_str     0x00000000000299ac     0x1bf3 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
                                       0x1ffb2 (size before relaxing)
- .debug_str     0x000000000002b58b      0x50c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
+ .debug_str     0x000000000002b59f      0x50c CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
                                       0x1f5b5 (size before relaxing)
- .debug_str     0x000000000002ba97      0x769 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
+ .debug_str     0x000000000002baab      0x769 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o
                                       0x1ba77 (size before relaxing)
- .debug_str     0x000000000002c200      0x543 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
+ .debug_str     0x000000000002c214      0x543 CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/freertos_cm_support.o
                                       0x17836 (size before relaxing)
- .debug_str     0x000000000002c743      0x9a4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_str     0x000000000002c757      0x9a4 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
                                       0x1b76c (size before relaxing)
- .debug_str     0x000000000002d0e7      0x352 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_str     0x000000000002d0fb      0x352 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
                                       0x1b0e7 (size before relaxing)
- .debug_str     0x000000000002d439      0x3cf CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_str     0x000000000002d44d      0x3cf CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
                                       0x1778d (size before relaxing)
- .debug_str     0x000000000002d808      0x14a CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_str     0x000000000002d81c      0x14a CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
                                       0x17128 (size before relaxing)
- .debug_str     0x000000000002d952      0x131 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_str     0x000000000002d966      0x131 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
                                       0x1767d (size before relaxing)
- .debug_str     0x000000000002da83      0x51c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_str     0x000000000002da97      0x51c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
                                       0x17b50 (size before relaxing)
- .debug_str     0x000000000002df9f       0x42 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_str     0x000000000002dfb3       0x42 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
                                       0x168df (size before relaxing)
- .debug_str     0x000000000002dfe1       0xbc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_str     0x000000000002dff5       0xbc CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
                                       0x175de (size before relaxing)
- .debug_str     0x000000000002e09d      0x584 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_str     0x000000000002e0b1      0x584 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
                                       0x178bf (size before relaxing)
- .debug_str     0x000000000002e621      0x3e8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_str     0x000000000002e635      0x3e8 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
                                       0x1731e (size before relaxing)
- .debug_str     0x000000000002ea09       0x43 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_str     0x000000000002ea1d       0x43 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/crp.o
                                        0x2e46 (size before relaxing)
- .debug_str     0x000000000002ea4c       0x65 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_str     0x000000000002ea60       0x65 CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/sysinit.o
                                       0x1a3b9 (size before relaxing)
- .debug_str     0x000000000002eab1       0x8c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_str     0x000000000002eac5       0x8c CESE2020/FreeRTOS_IRQ/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
                                        0x2eb5 (size before relaxing)
- .debug_str     0x000000000002eb3d       0xcd CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_str     0x000000000002eb51       0xcd CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/core/src/sapi_cyclesCounter.o
                                       0x1b0db (size before relaxing)
- .debug_str     0x000000000002ec0a      0x3ee CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
+ .debug_str     0x000000000002ec1e      0x3ee CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_uart.o
                                       0x1bb25 (size before relaxing)
- .debug_str     0x000000000002eff8       0x65 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
+ .debug_str     0x000000000002f00c       0x65 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_adc.o
                                       0x1a93a (size before relaxing)
- .debug_str     0x000000000002f05d      0x17c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
+ .debug_str     0x000000000002f071      0x17c CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/src/sapi_gpio.o
                                       0x1b3e6 (size before relaxing)
- .debug_str     0x000000000002f1d9      0x756 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_str     0x000000000002f1ed      0x756 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/soc/peripherals/usb/device/src/sapi_usb_device.o
                                       0x21267 (size before relaxing)
- .debug_str     0x000000000002f92f       0x2d CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
+ .debug_str     0x000000000002f943       0x2d CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/board/src/sapi_board.o
                                       0x1a8ff (size before relaxing)
- .debug_str     0x000000000002f95c      0x103 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
+ .debug_str     0x000000000002f970      0x103 CESE2020/FreeRTOS_IRQ/out/libs/sapi/sapi_v0.5.2/abstract_modules/src/sapi_print.o
                                       0x1aafd (size before relaxing)
 
 .comment        0x0000000000000000       0x68
@@ -22620,6 +22621,7 @@ xTaskGetTickCount                                 CESE2020/FreeRTOS_IRQ/out/libs
                                                   CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM/supporting_functions.o
                                                   CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/timers.o
                                                   CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/fsm_debounce.o
+                                                  CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o
 xTaskGetTickCountFromISR                          CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
 xTaskIncrementTick                                CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/tasks.o
                                                   CESE2020/FreeRTOS_IRQ/out/libs/freertos/source/portable/ARM_CM4F/port.o

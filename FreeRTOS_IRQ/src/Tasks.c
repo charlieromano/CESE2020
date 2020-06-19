@@ -65,7 +65,10 @@ void vTaskProcessing(void* xTaskParams){
 
     tConfigADC* x = (tConfigADC*)xTaskParams;
 
-    uint8_t sample;
+    uint16_t sample;
+    portTickType timePeriod = 500 / portTICK_RATE_MS;
+    portTickType timeDiff = xTaskGetTickCount();
+
     while(1){
         xQueueReceive(x->queue, &sample, portMAX_DELAY);
         debugPrintlnString( "TaskProcessing:\r\n");
@@ -73,6 +76,7 @@ void vTaskProcessing(void* xTaskParams){
         gpioWrite(LEDR, ON);
         vTaskDelay(sample);
         gpioWrite(LEDR, OFF);
+        vTaskDelay(sample);
     }
     
 }
