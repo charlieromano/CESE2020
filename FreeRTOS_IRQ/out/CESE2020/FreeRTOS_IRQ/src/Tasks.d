@@ -127,6 +127,9 @@ CESE2020/FreeRTOS_IRQ/out/CESE2020/FreeRTOS_IRQ/src/Tasks.o: \
  libs/sapi/sapi_v0.5.2/external_peripherals/imu/mpu60X0/inc/sapi_imu_mpu60X0.h \
  libs/sapi/sapi_v0.5.2/external_peripherals/memory/eeprom/inc/sapi_eeprom24xx1025.h \
  libs/sapi/sapi_v0.5.2/external_peripherals/ultrasonic/hcsr04/inc/sapi_ultrasonic_hcsr04.h \
- CESE2020/FreeRTOS_IRQ/inc/types_config.h \
+ libs/freertos/include/task.h libs/freertos/include/private/list.h \
+ CESE2020/FreeRTOS_IRQ/inc/Tasks.h \
  CESE2020/FreeRTOS_IRQ/inc/FreeRTOSConfig.h \
- libs/freertos/include/semphr.h libs/freertos/include/queue.h
+ libs/freertos/include/semphr.h libs/freertos/include/queue.h \
+ CESE2020/FreeRTOS_IRQ/inc/types_config.h \
+ CESE2020/FreeRTOS_IRQ/inc/MAX7219.h

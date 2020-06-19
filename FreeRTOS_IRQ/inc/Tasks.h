@@ -18,4 +18,8 @@ void vTaskWriteUART(void* xTaskParams);
 
 void vTaskProcessing(void* xTaskParams);
 
+void max7219Init( void );
+void maxClear( void );
+void maxAll(uint8_t reg_addr, uint8_t data);
+
 #endif

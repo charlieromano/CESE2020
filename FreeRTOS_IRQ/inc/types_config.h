@@ -38,11 +38,18 @@ typedef struct{
 typedef struct{
 
 	adcMap_t		adcChannel;
-	QueueHandle_t	queue;
 	uint16_t		value;
+	QueueHandle_t	queue;
 
 }tConfigADC;
 
+typedef struct{
+
+	uint8_t			dataOut;
+	uint8_t			dataIn;
+	QueueHandle_t	queue;
+
+}tConfigSPI;
 
 typedef struct{
 
