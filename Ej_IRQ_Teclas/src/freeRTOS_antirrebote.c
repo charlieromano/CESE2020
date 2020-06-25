@@ -12,18 +12,22 @@
 #include "FreeRTOSConfig.h"
 #include "board.h"
 
-
-/*==================[definiciones y macros]==================================*/
 #define UP      1
 #define FALLING 2
 #define DOWN	3
 #define RISING  4
 
-#define CANT_TECLAS 4
+#define CANT_TECLAS 1
 #define CANT_LEDS 4
 #define ANTIREBOTE_MS 20
 
-enum Teclas_t {Tecla1, Tecla2, Tecla3, Tecla4}; //indices de teclas para el vector de estructuras
+DEBUG_PRINT_ENABLE;
+
+void My_IRQ_Init (void);
+void Tecla( void* taskParmPtr );
+void Led_task( void* taskParmPtr );
+
+enum Teclas_t {Tecla1}; //indices de teclas para el vector de estructuras
 
 struct Button_Control { //estructura de control de datos capturados por la interrupciÃ³n
 	TickType_t Tiempo_inicial;
@@ -44,40 +48,15 @@ struct Lectura_t{
 
 
 
-/*==================[definiciones de datos internos]=========================*/
 SemaphoreHandle_t Mutex_uart; //Mutex que protege la UART de concurrencia
-
 xQueueHandle Cola_Lecturas;
-
-//DefiniciÃ³n de vector de estructuras de control
 struct Buttons_SM_t Buttons_SM[CANT_TECLAS];
 
-/*==================[definiciones de datos externos]=========================*/
-
-DEBUG_PRINT_ENABLE;
-
-/*==================[declaraciones de funciones internas]====================*/
-//FunciÃ³n de inicializaciÃ³n de interrupciones
-void My_IRQ_Init (void);
-
-/*==================[declaraciones de funciones externas]====================*/
-
-// Prototipo de funcion de la tarea
-void Tecla( void* taskParmPtr );
-
-void Led_task( void* taskParmPtr );
-
-/*==================[funcion principal]======================================*/
-
-// FUNCION PRINCIPAL, PUNTO DE ENTRADA AL PROGRAMA LUEGO DE ENCENDIDO O RESET.
 int main(void)
 {
    uint8_t Error_state = 0;
-	// ---------- CONFIGURACIONES ------------------------------
-   // Inicializar y configurar la plataforma
-   boardConfig();
 
-   //Iniciamos las interrupciones
+   boardConfig();
    My_IRQ_Init();
 
    // UART for debug messages
@@ -112,33 +91,6 @@ int main(void)
       0                           // Puntero a la tarea creada en el sistema
    );
 
-   xTaskCreate(
-		 Tecla,                     // Funcion de la tarea a ejecutar
-         (const char *)"Tec2",     // Nombre de la tarea como String amigable para el usuario
-         configMINIMAL_STACK_SIZE*2, // Cantidad de stack de la tarea
-		 &Buttons_SM[1],                          // Parametros de tarea
-         tskIDLE_PRIORITY+1,         // Prioridad de la tarea
-         0                           // Puntero a la tarea creada en el sistema
-      );
-
-   xTaskCreate(
-		 Tecla,                     // Funcion de la tarea a ejecutar
-         (const char *)"Tec3",     // Nombre de la tarea como String amigable para el usuario
-         configMINIMAL_STACK_SIZE*2, // Cantidad de stack de la tarea
-		 &Buttons_SM[2],                         // Parametros de tarea
-         tskIDLE_PRIORITY+1,         // Prioridad de la tarea
-         0                           // Puntero a la tarea creada en el sistema
-      );
-
-   xTaskCreate(
-		 Tecla,                     // Funcion de la tarea a ejecutar
-         (const char *)"Tec4",     // Nombre de la tarea como String amigable para el usuario
-         configMINIMAL_STACK_SIZE*2, // Cantidad de stack de la tarea
-		 &Buttons_SM[3],                          // Parametros de tarea
-         tskIDLE_PRIORITY+1,         // Prioridad de la tarea
-         0                           // Puntero a la tarea creada en el sistema
-      );
-
 
    // Crear tarea LED en freeRTOS
   xTaskCreate(
@@ -157,97 +109,11 @@ int main(void)
 	  printf("Error al iniciar el sistema !!!!!!!!!!!!!!");
    }
 
-   // ---------- REPETIR POR SIEMPRE --------------------------
-   while( TRUE ) {
-      // Si cae en este while 1 significa que no pudo iniciar el scheduler
-   }
+   while( TRUE );
 
-   // NO DEBE LLEGAR NUNCA AQUI, debido a que a este programa se ejecuta
-   // directamenteno sobre un microcontroladore y no es llamado por ningun
-   // Sistema Operativo, como en el caso de un programa para PC.
    return 0;
 }
 
-
-#define MY_ASSERT(CONDICION) my_assert_debug(CONDICION)
-/*==================[definiciones de funciones internas]=====================*/
-//FunciÃ³n de inicializaciÃ³n de IRQs
-void My_IRQ_Init (void){
-		//Inicializamos las interrupciones (LPCopen)
-		Chip_PININT_Init(LPC_GPIO_PIN_INT);
-
-		//Inicializamos de cada evento de interrupcion (LPCopen)
-
-		/*
-		GLOBAL! extern pinInitGpioLpc4337_t gpioPinsInit[];
-		Chip_SCU_GPIOIntPinSel( j,  gpioPinsInit[i].gpio.port, gpioPinsInit[i].gpio.pin );   // TECi
-		Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH( j ) );                      // INTj (canal j -> hanlder GPIOj)       //Borra el pending de la IRQ
-		Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH( j ) );                      // INTj //Selecciona activo por flanco
-		Chip_PININT_EnableIntLow( LPC_GPIO_PIN_INT, PININTCH( j ) );                        // INTj //Selecciona activo por flanco descendente
-		Chip_PININT_EnableIntHigh( LPC_GPIO_PIN_INT, PININTCH( j ) );                       // INTj //Selecciona activo por flanco ascendente
-		*/
-
-		// TEC1 FALL
-		Chip_SCU_GPIOIntPinSel(0, 0, 4); 	//(Canal 0 a 7, Puerto GPIO, Pin GPIO)
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH0);//Se configura el canal para que se active por flanco
-		Chip_PININT_EnableIntLow(LPC_GPIO_PIN_INT, PININTCH0);//Se configura para que el flanco sea el de bajada
-
-		// TEC1 RISE
-		Chip_SCU_GPIOIntPinSel(1, 0, 4);	//(Canal 0 a 7, Puerto GPIO, Pin GPIO)
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH1);//Se configura el canal para que se active por flanco
-		Chip_PININT_EnableIntHigh(LPC_GPIO_PIN_INT, PININTCH1);//En este caso el flanco es de subida
-
-		// TEC2 FALL
-		Chip_SCU_GPIOIntPinSel(2, 0, 8);
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH2);
-		Chip_PININT_EnableIntLow(LPC_GPIO_PIN_INT, PININTCH2);
-
-		// TEC1 RISE
-		Chip_SCU_GPIOIntPinSel(3, 0, 8);
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH3);
-		Chip_PININT_EnableIntHigh(LPC_GPIO_PIN_INT, PININTCH3);
-
-		// TEC3 FALL
-		Chip_SCU_GPIOIntPinSel(4, 0, 9);
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH4);
-		Chip_PININT_EnableIntLow(LPC_GPIO_PIN_INT, PININTCH4);
-
-		// TEC1 RISE
-		Chip_SCU_GPIOIntPinSel(5, 0, 9);
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH5);
-		Chip_PININT_EnableIntHigh(LPC_GPIO_PIN_INT, PININTCH5);
-
-		// TEC4 FALL
-		Chip_SCU_GPIOIntPinSel(6, 1, 9);
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH6);
-		Chip_PININT_EnableIntLow(LPC_GPIO_PIN_INT, PININTCH6);
-
-		// TEC1 RISE
-		Chip_SCU_GPIOIntPinSel(7, 1, 9);
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH7);
-		Chip_PININT_EnableIntHigh(LPC_GPIO_PIN_INT, PININTCH7);
-
-
-		//Una vez que se han configurado los eventos para cada canal de interrupcion
-		//Se activan las interrupciones para que comiencen a llamar al handler
-		NVIC_SetPriority(PIN_INT0_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-		NVIC_EnableIRQ(PIN_INT0_IRQn);
-		NVIC_SetPriority(PIN_INT1_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-		NVIC_EnableIRQ(PIN_INT1_IRQn);
-		NVIC_SetPriority(PIN_INT2_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-		NVIC_EnableIRQ(PIN_INT2_IRQn);
-		NVIC_SetPriority(PIN_INT3_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-		NVIC_EnableIRQ(PIN_INT3_IRQn);
-		NVIC_SetPriority(PIN_INT4_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-		NVIC_EnableIRQ(PIN_INT4_IRQn);
-		NVIC_SetPriority(PIN_INT5_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-		NVIC_EnableIRQ(PIN_INT5_IRQn);
-		NVIC_SetPriority(PIN_INT6_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-		NVIC_EnableIRQ(PIN_INT6_IRQn);
-		NVIC_SetPriority(PIN_INT7_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
-		NVIC_EnableIRQ(PIN_INT7_IRQn);
-
-}
 
 /*==================[definiciones de funciones externas]=====================*/
 
@@ -338,6 +204,44 @@ void Tecla( void* taskParmPtr )
 
 }
 
+#define MY_ASSERT(CONDICION) my_assert_debug(CONDICION)
+/*==================[definiciones de funciones internas]=====================*/
+//FunciÃ³n de inicializaciÃ³n de IRQs
+void My_IRQ_Init (void){
+		//Inicializamos las interrupciones (LPCopen)
+		Chip_PININT_Init(LPC_GPIO_PIN_INT);
+
+		//Inicializamos de cada evento de interrupcion (LPCopen)
+
+		/*
+		GLOBAL! extern pinInitGpioLpc4337_t gpioPinsInit[];
+		Chip_SCU_GPIOIntPinSel( j,  gpioPinsInit[i].gpio.port, gpioPinsInit[i].gpio.pin );   // TECi
+		Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH( j ) );                      // INTj (canal j -> hanlder GPIOj)       //Borra el pending de la IRQ
+		Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH( j ) );                      // INTj //Selecciona activo por flanco
+		Chip_PININT_EnableIntLow( LPC_GPIO_PIN_INT, PININTCH( j ) );                        // INTj //Selecciona activo por flanco descendente
+		Chip_PININT_EnableIntHigh( LPC_GPIO_PIN_INT, PININTCH( j ) );                       // INTj //Selecciona activo por flanco ascendente
+		*/
+
+		// TEC1 FALL
+		Chip_SCU_GPIOIntPinSel(0, 0, 4); 	//(Canal 0 a 7, Puerto GPIO, Pin GPIO)
+		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH0);//Se configura el canal para que se active por flanco
+		Chip_PININT_EnableIntLow(LPC_GPIO_PIN_INT, PININTCH0);//Se configura para que el flanco sea el de bajada
+
+		// TEC1 RISE
+		Chip_SCU_GPIOIntPinSel(1, 0, 4);	//(Canal 0 a 7, Puerto GPIO, Pin GPIO)
+		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH1);//Se configura el canal para que se active por flanco
+		Chip_PININT_EnableIntHigh(LPC_GPIO_PIN_INT, PININTCH1);//En este caso el flanco es de subida
+
+		//Una vez que se han configurado los eventos para cada canal de interrupcion
+		//Se activan las interrupciones para que comiencen a llamar al handler
+		NVIC_SetPriority(PIN_INT0_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
+		NVIC_EnableIRQ(PIN_INT0_IRQn);
+		NVIC_SetPriority(PIN_INT1_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY);
+		NVIC_EnableIRQ(PIN_INT1_IRQn);
+
+
+}
+
 
 // Implementacion de funcion de la tarea Led
 void Led_task( void* taskParmPtr ){
@@ -404,93 +308,3 @@ void GPIO1_IRQHandler(void){
 		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
 }
 
-void GPIO2_IRQHandler(void){
-	BaseType_t xHigherPriorityTaskWoken = pdFALSE; //Comenzamos definiendo la variable
-
-
-	if (Chip_PININT_GetFallStates(LPC_GPIO_PIN_INT) & PININTCH2){ //Verificamos que la interrupciÃ³n es la esperada
-		Chip_PININT_ClearIntStatus(LPC_GPIO_PIN_INT, PININTCH2); //Borramos el flag de interrupciÃ³n
-		//codigo a ejecutar si ocurriÃ³ la interrupciÃ³n
-		struct Button_Control Snapshot;
-		Snapshot.Flanco = FALLING;
-		Snapshot.Tiempo_inicial = xTaskGetTickCountFromISR();
-		xQueueSendFromISR( Buttons_SM[Tecla2].Cola, &Snapshot, &xHigherPriorityTaskWoken );
-	}
-
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
-
-void GPIO3_IRQHandler(void){
-	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-		if (Chip_PININT_GetRiseStates(LPC_GPIO_PIN_INT) & PININTCH3){
-			Chip_PININT_ClearIntStatus(LPC_GPIO_PIN_INT, PININTCH3);
-			//codigo a ejecutar si ocurriÃ³ la interrupciÃ³n
-			struct Button_Control Snapshot;
-			Snapshot.Flanco = RISING;
-			Snapshot.Tiempo_inicial = xTaskGetTickCountFromISR();
-			xQueueSendFromISR( Buttons_SM[Tecla2].Cola, &Snapshot, &xHigherPriorityTaskWoken );
-		}
-		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
-
-void GPIO4_IRQHandler(void){
-	BaseType_t xHigherPriorityTaskWoken = pdFALSE; //Comenzamos definiendo la variable
-
-
-	if (Chip_PININT_GetFallStates(LPC_GPIO_PIN_INT) & PININTCH4){ //Verificamos que la interrupciÃ³n es la esperada
-		Chip_PININT_ClearIntStatus(LPC_GPIO_PIN_INT, PININTCH4); //Borramos el flag de interrupciÃ³n
-		//codigo a ejecutar si ocurriÃ³ la interrupciÃ³n
-		struct Button_Control Snapshot;
-		Snapshot.Flanco = FALLING;
-		Snapshot.Tiempo_inicial = xTaskGetTickCountFromISR();
-		xQueueSendFromISR( Buttons_SM[Tecla3].Cola, &Snapshot, &xHigherPriorityTaskWoken );
-	}
-
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
-
-void GPIO5_IRQHandler(void){
-	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-		if (Chip_PININT_GetRiseStates(LPC_GPIO_PIN_INT) & PININTCH5){
-			Chip_PININT_ClearIntStatus(LPC_GPIO_PIN_INT, PININTCH5);
-			//codigo a ejecutar si ocurriÃ³ la interrupciÃ³n
-			struct Button_Control Snapshot;
-			Snapshot.Flanco = RISING;
-			Snapshot.Tiempo_inicial = xTaskGetTickCountFromISR();
-			xQueueSendFromISR( Buttons_SM[Tecla3].Cola, &Snapshot, &xHigherPriorityTaskWoken );
-		}
-		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
-
-void GPIO6_IRQHandler(void){
-	BaseType_t xHigherPriorityTaskWoken = pdFALSE; //Comenzamos definiendo la variable
-
-
-	if (Chip_PININT_GetFallStates(LPC_GPIO_PIN_INT) & PININTCH6){ //Verificamos que la interrupciÃ³n es la esperada
-		Chip_PININT_ClearIntStatus(LPC_GPIO_PIN_INT, PININTCH6); //Borramos el flag de interrupciÃ³n
-		//codigo a ejecutar si ocurriÃ³ la interrupciÃ³n
-		struct Button_Control Snapshot;
-		Snapshot.Flanco = FALLING;
-		Snapshot.Tiempo_inicial = xTaskGetTickCountFromISR();
-		xQueueSendFromISR( Buttons_SM[Tecla4].Cola, &Snapshot, &xHigherPriorityTaskWoken );
-	}
-
-	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
-
-void GPIO7_IRQHandler(void){
-	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-		if (Chip_PININT_GetRiseStates(LPC_GPIO_PIN_INT) & PININTCH7){
-			Chip_PININT_ClearIntStatus(LPC_GPIO_PIN_INT, PININTCH7);
-			//codigo a ejecutar si ocurriÃ³ la interrupciÃ³n
-			struct Button_Control Snapshot;
-			Snapshot.Flanco = RISING;
-			Snapshot.Tiempo_inicial = xTaskGetTickCountFromISR();
-			xQueueSendFromISR( Buttons_SM[Tecla4].Cola, &Snapshot, &xHigherPriorityTaskWoken );
-		}
-		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-}
-/*==================[fin del archivo]========================================*/

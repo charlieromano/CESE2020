@@ -10,6 +10,62 @@
 
 DEBUG_PRINT_ENABLE;
 
+void vTaskButton(void* xTaskParams){
+
+    tConfigButton* x = (tConfigButton*)xTaskParams;
+    x = (tConfigButton*) xTaskParams;
+
+    x->Estado = STATE_BUTTON_UP;
+    Lectura_t Lectura;
+    Lectura.Tecla = x->Tecla;
+    Button_Control Control;
+    TickType_t Last_Snapshot = 0;
+
+    if (pdTRUE == xSemaphoreTake( x->semaphoreUART, portMAX_DELAY)){
+         printf("Tarea TEC%d iniciada\r\n",Lectura.Tecla+1);
+         xSemaphoreGive( x->semaphoreUART );
+    }
+
+   while(1) {
+
+       if (xQueueReceive(x->Cola, &Control, portMAX_DELAY)){
+           switch (x->Estado){
+
+                case STATE_BUTTON_UP:
+                    if(Control.Flanco == STATE_BUTTON_FALLING){ //AcÃ¡ adentro estÃ¡ el pseudo estado Falling
+                        if (pdFALSE == (xQueueReceive(x->Cola, &Control, (40 / portTICK_RATE_MS)))){
+                            x->Estado = STATE_BUTTON_DOWN;
+                            //AcÃ¡ se mete cÃ³digo para ejecutar en flanco  de bajada
+                            x->Tiempo_inicial = Control.Tiempo_inicial;
+                            if (pdTRUE == xSemaphoreTake( x->semaphoreUART, portMAX_DELAY)){
+                                printf("Se capturo una pulsacion\r\n");
+                                xSemaphoreGive( x->semaphoreUART );
+                                }
+                        }
+                    }
+                 break;
+                 
+                 case STATE_BUTTON_DOWN:
+                     if(Control.Flanco == STATE_BUTTON_RISING){ //AcÃ¡ adentro estÃ¡ el pseudo estado Rising
+                        if (pdFALSE == (xQueueReceive(x->Cola, &Control, (40 / portTICK_RATE_MS)))){
+                            x->Estado = STATE_BUTTON_UP;
+                            //AcÃ¡ se mete cÃ³digo para ejecutar en flanco  de subida
+                            Lectura.Tiempo_medido = xTaskGetTickCount() - x->Tiempo_inicial;
+                            if (pdTRUE == xSemaphoreTake( x->semaphoreUART, portMAX_DELAY)){
+                                printf("Lectura completada en la tecla %d, presionada por %dms\r\n",Lectura.Tecla+1,Lectura.Tiempo_medido*portTICK_RATE_MS);
+                                xSemaphoreGive( x->semaphoreUART );
+                            }
+                            xQueueSend(x->queue2, &Lectura, portMAX_DELAY);
+                        }
+                    }
+                 break;
+                 default: x->Estado = STATE_BUTTON_UP;
+                 break;
+            }
+        }
+    }
+}
+
 void vTaskT0 (void* xTaskParams)
 {
     tConfig* x = (tConfig*)xTaskParams;

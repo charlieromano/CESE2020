@@ -9,8 +9,8 @@
 
 typedef enum{
 
-    STATE_BUTTON_UP,
     STATE_BUTTON_DOWN,
+    STATE_BUTTON_UP,
     STATE_BUTTON_FALLING,
     STATE_BUTTON_RISING
 
@@ -53,7 +53,43 @@ typedef struct{
 
 typedef struct{
 
+	SemaphoreHandle_t semaphoreUART;
 
 }tConfigUART;
+
+typedef struct{
+	gpioMap_t		button;
+	uint8_t 		fsmState;
+	TickType_t		timeDiff;
+	xQueueHandle	queue;
+
+}tConfigIRQ;
+
+typedef struct {
+
+	uint8_t Tecla;
+	fsmButtonState_t Estado;
+	xQueueHandle Cola;
+	xQueueHandle queue2;
+	TickType_t Tiempo_inicial;
+	TickType_t Tiempo_medido;
+	SemaphoreHandle_t semaphoreUART;
+
+}tConfigButton;
+
+typedef struct {
+
+	uint8_t Tecla;
+	TickType_t Tiempo_medido;
+
+}Lectura_t;
+
+typedef struct { //estructura de control de datos capturados por la interrupciÃ³n
+
+	TickType_t Tiempo_inicial;
+	uint8_t Flanco;
+	
+} Button_Control;
+
 	
 #endif
