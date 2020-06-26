@@ -10,8 +10,6 @@
 #include "tasks.h"
 #include "types_config.h"
 
-#define REFRESH_TIME_ADC 50
-#define REFRESH_TIME_DISPLAY 50
 #define ANTIREBOTE_MS 20
 #define CANT_LEDS 4
 
@@ -99,18 +97,6 @@ void vTaskWriteSPI(void* xTaskParams){
     }
 }
 
-void spiWriteMAX7219(spiMap_t spi, uint8_t data){
-
-	uint8_t col;
-
-	maxAll(0x00,0x00);
-	col = (int) data;
-	maxAll( col, 0b00011000 );
-	vTaskDelay(REFRESH_TIME_DISPLAY / portTICK_RATE_MS);
-	maxAll(0x00,0x00);
-	maxClear();
-
-}
 
 void vTaskButton( void* taskParmPtr )
 {

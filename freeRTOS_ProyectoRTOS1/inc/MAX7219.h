@@ -11,11 +11,16 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include "sapi.h"
+
+#define REFRESH_TIME_DISPLAY 50
+
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+void spiWriteMAX7219(spiMap_t spi, uint8_t data);
 void maxAll(uint8_t reg_addr, uint8_t data);
 void max7219Init( void );
 void maxClear( void );

@@ -21,4 +21,4 @@ void vTaskProcessing(void* xTaskParams);
 void vTaskButton( void* taskParmPtr );
 void Led_task( void* taskParmPtr );
 
-void spiWriteMAX7219(spiMap_t spi, uint8_t data);
+

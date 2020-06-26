@@ -1,8 +1,22 @@
 //max7219
-
+#include "FreeRTOS.h"   //Motor del OS
+#include "FreeRTOSConfig.h"
+#include "task.h"   //Api de control de tareas y temporizaciÃ³n
 #include "MAX7219.h"
 #include "sapi.h"
 
+void spiWriteMAX7219(spiMap_t spi, uint8_t data){
+
+  uint8_t col;
+
+  maxAll(0x00,0x00);
+  col = (int) data;
+  maxAll( col, 0b00011000 );
+  vTaskDelay(REFRESH_TIME_DISPLAY / portTICK_RATE_MS);
+  maxAll(0x00,0x00);
+  maxClear();
+
+}
 
 void maxAll(uint8_t reg_addr, uint8_t data){
    

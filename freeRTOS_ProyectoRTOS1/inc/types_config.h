@@ -10,6 +10,7 @@
 #include "board.h"
 
 #define ANTIREBOTE_MS 20
+#define REFRESH_TIME_ADC 50
 
 
 typedef enum{
