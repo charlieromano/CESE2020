@@ -18,12 +18,13 @@ int main (void){
     boardConfig();
     adcConfig( ADC_ENABLE );
     spiInit(SPI0); 
+    max7219Init();
 
     debugPrintConfigUart( UART_USB, 115200 );
     debugPrintlnString( "FreeRTOS project" );
     gpioWrite( LED3 , ON );
 
-    max7219Init();
+    
 
 
 
