@@ -1,3 +1,4 @@
+
 //max7219
 #include "FreeRTOS.h"   //Motor del OS
 #include "FreeRTOSConfig.h"
@@ -5,13 +6,17 @@
 #include "MAX7219.h"
 #include "sapi.h"
 
-void spiWriteMAX7219(spiMap_t spi, uint8_t data){
 
-  uint8_t col;
+
+void spiWriteMAX7219(spiMap_t spi, uint8_t col, uint8_t row){
+
+  uint8_t col_;
+  uint8_t row_;
 
   maxAll(0x00,0x00);
-  col = (int) data;
-  maxAll( col, 0b00011000 );
+  col_ = (int) col;
+  row_ = row;
+  maxAll( col_, row_ );
   vTaskDelay(REFRESH_TIME_DISPLAY / portTICK_RATE_MS);
   maxAll(0x00,0x00);
   maxClear();

@@ -1,6 +1,11 @@
-/*==================[inlcusiones]============================================*/
+/*****************************************************************************
+ * Copyright (c) 2020, Carlos Germán Carreño Romano <charlieromano@gmail.com>
+ * All rights reserved.
+ * License: gpl-3.0 (see LICENSE.txt)
+ * Date: 2020/06/25
+ * Version: 1.0
+ ****************************************************************************/
 
-// Includes de FreeRTOS
 #include "FreeRTOS.h"   //Motor del OS
 #include "FreeRTOSConfig.h"
 #include "task.h"		//Api de control de tareas y temporizaciÃ³n
@@ -13,17 +18,18 @@
 #include "tasks.h"
 #include "types_config.h"
 
+
 DEBUG_PRINT_ENABLE;
 
-SemaphoreHandle_t    Mutex_uart; //Mutex que protege la UART de concurrencia
+SemaphoreHandle_t    mutexUART; //Mutex que protege la UART de concurrencia
 SemaphoreHandle_t    mutexSPI;
 
 xQueueHandle         Cola_Lecturas;
 xQueueHandle         q1;
 xQueueHandle         q2;
+xQueueHandle         q3;
 
 Buttons_SM_t         Buttons_SM[1];
-tConfig              xTaskParams[1];
 tConfigADC           xTaskParamsADC[2];
 tConfigSPI           xTaskParamsSPI[1];
 tConfigDataProcess   xTaskParamsDataProc[1];
@@ -31,17 +37,13 @@ tConfigDataProcess   xTaskParamsDataProc[1];
 int main(void)
 {
 
-   uint8_t Error_state = 0;
-
    boardConfig();
    My_IRQ_Init();
    spiInit(SPI0); 
    max7219Init();
-
-
-   // UART for debug messages
    debugPrintConfigUart( UART_USB, 115200 );
-   printf( "Antirrebote con IRQ freeRTOS y sAPI\r\n" );
+
+   uint8_t Error_state = 0;
 
    xTaskParamsADC[0].adcChannel = CH1;
    xTaskParamsADC[1].adcChannel = CH2;
@@ -49,6 +51,7 @@ int main(void)
 
    if(NULL == ( q1 = xQueueCreate(1,sizeof(uint16_t)))){ Error_state = 1; }
    if(NULL == ( q2 = xQueueCreate(1,sizeof(uint16_t)))){ Error_state = 1; }
+   if(NULL == ( q3 = xQueueCreate(1,sizeof(uint16_t)))){ Error_state = 1; }   
    /* Creamos colas de capturas de teclas */
 	int8_t i;
    	for (i = 1 ; i-- ; i >= 0) {
@@ -60,7 +63,7 @@ int main(void)
    	}
 
    if (NULL == (Cola_Lecturas = xQueueCreate(10,sizeof(Lectura_t)))){ Error_state =1; }
-   if (NULL == (Mutex_uart = xSemaphoreCreateMutex())){ Error_state =1; }
+   if (NULL == (mutexUART = xSemaphoreCreateMutex())){ Error_state =1; }
    if (NULL == (mutexSPI = xSemaphoreCreateMutex())){ Error_state =1; }
 
    BaseType_t res;
@@ -68,10 +71,6 @@ int main(void)
    res=
    xTaskCreate( vTaskButton, (const char *)"Tec1", configMINIMAL_STACK_SIZE*2, &Buttons_SM[0], tskIDLE_PRIORITY+1, 0);
    if(res==pdFAIL) printf("ERROR_TASK_CREATE_BUTTON");
-
-   res=
-   xTaskCreate(  Led_task,    (const char *)"Led",  configMINIMAL_STACK_SIZE*2, 0, tskIDLE_PRIORITY+2, 0  );
-   if(res==pdFAIL) printf("ERROR_TASK_CREATE_LED");
 
    res=
    xTaskCreate( vTaskReadADC, (const char *)"TaskReadADC()", configMINIMAL_STACK_SIZE*4, &xTaskParamsADC[0], tskIDLE_PRIORITY+1,0  );
@@ -85,11 +84,17 @@ int main(void)
    xTaskCreate( vTaskWriteSPI, (const char *)"TaskWriteSPI()", configMINIMAL_STACK_SIZE*4, &xTaskParamsDataProc[0], tskIDLE_PRIORITY+1,0  );
    if(res==pdFAIL) printf("ERROR_TASK_CREATE_DATAPROC");
 
+   res=
+   xTaskCreate( vTaskProcessFromISR, (const char *)"TaskProcessFromISR()", configMINIMAL_STACK_SIZE*4, &xTaskParamsDataProc[0], tskIDLE_PRIORITY+1,0  );
+   if(res==pdFAIL) printf("ERROR_TASK_CREATE_DATAPROC");
+
    // Iniciar scheduler
    if (0 == Error_state){
-  	  vTaskStartScheduler();
+
+  	  vTaskStartScheduler();   // Scheduler
+
    } else{
-	  printf("Error al iniciar el sistema.");
+	  printf("Error system init.");
    }
 
    while(1);

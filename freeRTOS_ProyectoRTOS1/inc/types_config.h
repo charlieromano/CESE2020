@@ -33,64 +33,52 @@ typedef struct{
 
 typedef struct{
 
-	spiMap_t	spi;
-	uint8_t		data;
-	uint32_t	clk;
-	gpioMap_t	miso;
-	gpioMap_t	mosi;
-	gpioMap_t	cs;
-	bool_t		cpol;
-	bool_t		cpha;
+	spiMap_t		spi;
+	uint8_t			data;
+	uint32_t		clk;
+	gpioMap_t		miso;
+	gpioMap_t		mosi;
+	gpioMap_t		cs;
+	bool_t			cpol;
+	bool_t			cpha;
 
 }tConfigSPI;
 
 
 typedef struct{
 
-	uint16_t			dataOut;
-	uint16_t			dataIn;
+	uint16_t		dataOut;
+	uint16_t		dataIn;
+	uint8_t			counter;
+	uint8_t			row;
+	uint8_t			col;
 
 }tConfigDataProcess;
 
 
-typedef struct{
+typedef struct { 
 
-	gpioMap_t			pinIn;
-	gpioMap_t			pinOut;
-	
-	TickType_t 			tiempo_medido;	
-	fsmButtonState_t 	fsmButtonState;
-	
-	TickType_t 			tiempo_down;		
-	TickType_t 			tiempo_up;		
-
-	uint8_t 			contFalling;
-	uint8_t 			contRising;		
-
-	SemaphoreHandle_t	semaphore;
-	QueueHandle_t		queue;
-
-} tConfig;
-
-
-typedef struct { //estructura de control de datos capturados por la interrupciÃ³n
-	TickType_t Tiempo_inicial;
-	fsmButtonState_t Flanco;
+	TickType_t 			initTime;
+	fsmButtonState_t 	edge;
 
 } fsmButtonISR_t;
 
 
-typedef struct { //estructura de control de la mÃ¡quina de fsmStates de cada botÃ³n
-	uint8_t Tecla;
-	fsmButtonState_t fsmState;
-	xQueueHandle Cola;
-	TickType_t Tiempo_inicial;
+typedef struct { 
+
+	uint8_t 			Tecla;
+	TickType_t 			initTime;
+	fsmButtonState_t 	fsmState;
+	xQueueHandle 		Cola;
+
 }Buttons_SM_t;
 
 
 typedef struct{
-	uint8_t Tecla;
-	TickType_t Tiempo_medido;
+
+	uint8_t 		Tecla;
+	TickType_t 		Tiempo_medido;
+
 } Lectura_t;
 
 

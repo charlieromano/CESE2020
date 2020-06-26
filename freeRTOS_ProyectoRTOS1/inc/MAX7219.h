@@ -1,10 +1,3 @@
-/*=============================================================================
- * Copyright (c) 2020, Carlos Germán Carreño Romano <charlieromano@gmail.com>
- * All rights reserved.
- * License: gpl-3.0 (see LICENSE.txt)
- * Date: 2020/06/07
- * Version: 1.0
- *===========================================================================*/
 
 #ifndef __MAX7219_H__
 #define __MAX7219_H__
@@ -20,7 +13,7 @@
 extern "C" {
 #endif
 
-void spiWriteMAX7219(spiMap_t spi, uint8_t data);
+void spiWriteMAX7219(spiMap_t spi, uint8_t col, uint8_t row);
 void maxAll(uint8_t reg_addr, uint8_t data);
 void max7219Init( void );
 void maxClear( void );

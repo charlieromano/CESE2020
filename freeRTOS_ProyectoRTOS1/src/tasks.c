@@ -13,11 +13,12 @@
 #define ANTIREBOTE_MS 20
 #define CANT_LEDS 4
 
-extern SemaphoreHandle_t Mutex_uart;
+extern SemaphoreHandle_t mutexUART;
 extern SemaphoreHandle_t mutexSPI;
 extern xQueueHandle Cola_Lecturas;
 extern xQueueHandle q1;
 extern xQueueHandle q2;
+extern xQueueHandle q3;
 
 void vTaskReadADC(void* xTaskParams){
 
@@ -29,9 +30,9 @@ void vTaskReadADC(void* xTaskParams){
     while(1){
 
         x-> value = adcRead( x-> adcChannel );
-        if (pdTRUE == xSemaphoreTake( Mutex_uart, portMAX_DELAY)){
+        if (pdTRUE == xSemaphoreTake( mutexUART, portMAX_DELAY)){
         	printf("ADC read: [ %d ];\r\n", x-> value);
-        	xSemaphoreGive( Mutex_uart );   	
+        	xSemaphoreGive( mutexUART );   	
         }
 
 
@@ -43,26 +44,36 @@ void vTaskReadADC(void* xTaskParams){
     }
 }
 
+
 void vTaskProcessing(void* xTaskParams){
 
 	tConfigDataProcess* x = (tConfigDataProcess*)xTaskParams;
+
 	uint16_t sample;
+    uint8_t default_row = 0b11111111;
+    x-> row = default_row;
 
 	while(1){
 
 		if( pdTRUE == (xQueueReceive(q1, &sample, portMAX_DELAY))) // QueueReceive(q1)
 		{
 			x-> dataIn = sample;
-			if (pdTRUE == xSemaphoreTake( Mutex_uart, portMAX_DELAY)){
+			if (pdTRUE == xSemaphoreTake( mutexUART, portMAX_DELAY)) // enter critical section UART
+			{
 				printf("Processing: [ %d ];\r\n", x-> dataIn);
-				xSemaphoreGive( Mutex_uart );
+				xSemaphoreGive( mutexUART );						  // exit critical section UART
 			}
+
+			if(x->counter==1){
+				x-> row = 0b00011000;
+			}else{x-> row = default_row;}
 
 			x-> dataOut = (int) sample / 128 + 1;
 			
-			if (pdTRUE == xSemaphoreTake( Mutex_uart, portMAX_DELAY)){
+			if (pdTRUE == xSemaphoreTake( mutexUART, portMAX_DELAY)) // enter critical section UART
+			{
 				printf("Processed: [ %d ];\r\n", x->dataOut);
-				xSemaphoreGive( Mutex_uart );
+				xSemaphoreGive( mutexUART );						  // exit critical section UART
 			}
 			
 			if( pdFALSE == (xQueueSend(q2, &(x->dataOut), portMAX_DELAY ))) // QueueSend(q2)
@@ -76,10 +87,9 @@ void vTaskProcessing(void* xTaskParams){
 
 void vTaskWriteSPI(void* xTaskParams){
 
-    tConfigSPI* x = (tConfigSPI*)xTaskParams;
+    tConfigDataProcess* x = (tConfigDataProcess*)xTaskParams;
 
-    int data;
-    uint8_t j;
+    uint8_t data;
     portTickType timePeriod = 100 / portTICK_RATE_MS;
     portTickType timeDiff = xTaskGetTickCount();
 
@@ -88,10 +98,11 @@ void vTaskWriteSPI(void* xTaskParams){
 
 		if ( pdTRUE == xQueueReceive(q2, &data, portMAX_DELAY)) // QueueReceive(q2)
 		{
-			if (pdTRUE == xSemaphoreTake( mutexSPI, portMAX_DELAY)) // enter critical section
+
+			if (pdTRUE == xSemaphoreTake( mutexSPI, portMAX_DELAY)) // enter critical section SPI
 			{
-				spiWriteMAX7219(x-> spi, data);
-		  		xSemaphoreGive( mutexSPI );  // exit critical section
+				spiWriteMAX7219(SPI0, data, x->row);
+		  		xSemaphoreGive( mutexSPI );  // exit critical section SPI
 		  	}
 		}
     }
@@ -101,19 +112,22 @@ void vTaskWriteSPI(void* xTaskParams){
 void vTaskButton( void* taskParmPtr )
 {
 
-	Buttons_SM_t* Config; //Me preparo para recibir la direcciÃ³n de la estructura y copiarla en una varibale local
+	Buttons_SM_t* Config;
+	
 	Config = (Buttons_SM_t*) taskParmPtr;
+	
 	Config->fsmState = STATE_BUTTON_UP;
+	
 	Lectura_t Lectura;
 	Lectura.Tecla = Config->Tecla;
    
 	fsmButtonISR_t Control;
 	TickType_t Last_Snapshot = 0;
 
-	 if (pdTRUE == xSemaphoreTake( Mutex_uart, portMAX_DELAY))
+	 if (pdTRUE == xSemaphoreTake( mutexUART, portMAX_DELAY))
 	 {
 	 	printf("Tarea TEC%d iniciada\r\n",Lectura.Tecla+1);
-		xSemaphoreGive( Mutex_uart );
+		xSemaphoreGive( mutexUART );
 	  }
 
    while(1){
@@ -122,35 +136,38 @@ void vTaskButton( void* taskParmPtr )
 	   		switch (Config->fsmState)
 	   		{
 	   			case STATE_BUTTON_UP:
-	   			if(Control.Flanco == STATE_BUTTON_FALLING)
+	   			if(Control.edge == STATE_BUTTON_FALLING)
 	   			{
-					if (pdFALSE == (xQueueReceive(Config->Cola, &Control, (ANTIREBOTE_MS / portTICK_RATE_MS))))
+					if (pdFALSE == (xQueueReceive(Config->Cola, &Control, (ANTIREBOTE_MS / portTICK_RATE_MS))))   // QueueReceive()
 					{
 						Config->fsmState = STATE_BUTTON_DOWN;
-					  	Config->Tiempo_inicial = Control.Tiempo_inicial;
-					  	if (pdTRUE == xSemaphoreTake( Mutex_uart, portMAX_DELAY))
+					  	Config->initTime = Control.initTime;
+					  	if (pdTRUE == xSemaphoreTake( mutexUART, portMAX_DELAY)) // enter critical section UART
 					  	{
 					  		printf("Se capturo una pulsacion\r\n");
-					  		xSemaphoreGive( Mutex_uart );
+					  		xSemaphoreGive( mutexUART );// exit critical section UART
 					  	}
 					}
 				}
 				break;
 
 				case STATE_BUTTON_DOWN:
-				if(Control.Flanco == STATE_BUTTON_RISING)
+				if(Control.edge == STATE_BUTTON_RISING)
 				{
-					if (pdFALSE == (xQueueReceive(Config->Cola, &Control, (ANTIREBOTE_MS / portTICK_RATE_MS))))
+					if (pdFALSE == (xQueueReceive(Config->Cola, &Control, (ANTIREBOTE_MS / portTICK_RATE_MS))))  // QueueReceive()
 					{
 						Config->fsmState = STATE_BUTTON_UP;
-						Lectura.Tiempo_medido = xTaskGetTickCount() - Config->Tiempo_inicial;
-						if (pdTRUE == xSemaphoreTake( Mutex_uart, portMAX_DELAY))
+
+						Lectura.Tiempo_medido = xTaskGetTickCount() - Config->initTime;
+						int t = Lectura.Tiempo_medido*portTICK_RATE_MS;
+
+						if (pdTRUE == xSemaphoreTake( mutexUART, portMAX_DELAY)) // enter critical section UART
 						{
-							printf("Lectura completada en la tecla %d, presionada por %dms\r\n",Lectura.Tecla+1,Lectura.Tiempo_medido*portTICK_RATE_MS);
-							xSemaphoreGive( Mutex_uart );
+							printf("Lectura completada en la tecla %d, presionada por %dms\r\n",Lectura.Tecla+1, t) ;
+							xSemaphoreGive( mutexUART );// exit critical section UART
 						}
 					
-						xQueueSend(Cola_Lecturas, &Lectura, portMAX_DELAY);
+						xQueueSend(q3, &t, portMAX_DELAY); // QueueSend()
 					}
 				}
 				break;
@@ -163,33 +180,26 @@ void vTaskButton( void* taskParmPtr )
 	}
 }
 
+void vTaskProcessFromISR(void* xTaskParams){
 
+	tConfigDataProcess* x = (tConfigDataProcess*)xTaskParams;
 
-// Implementacion de funcion de la tarea Led
-void Led_task( void* taskParmPtr ){
+	int value;
+	int counter=0;
 
-	Lectura_t Lectura;
+	while(1){
 
-	gpioMap_t Led_Map[CANT_LEDS] = {LEDR,LED1,LED2,LED3};
-
-	while (TRUE){
-		//Espero evento de Lectura completada
-		if (xQueueReceive(Cola_Lecturas, &Lectura, portMAX_DELAY)){
-
-			if (pdTRUE == xSemaphoreTake( Mutex_uart, portMAX_DELAY)){
-
-				  printf("Se encendera el LED %d, por %dms\r\n",Lectura.Tecla+1,Lectura.Tiempo_medido*portTICK_RATE_MS);
-
-				  xSemaphoreGive( Mutex_uart );
-
+		if (pdTRUE == (xQueueReceive(q3, &value, portMAX_DELAY))) // QueueReceive(q3)
+		{
+			if (pdTRUE == xSemaphoreTake( mutexUART, portMAX_DELAY)) // enter critical section UART
+			{
+				printf("VALUE: [ %d ];\r\n", value);
+				counter++;
+				x-> counter = counter%2;
+				xSemaphoreGive( mutexUART );						  // exit critical section UART
 			}
 
-			gpioWrite(Led_Map[Lectura.Tecla],ON);
-
-			//Espero tiempo de encendido
-			vTaskDelay( Lectura.Tiempo_medido );
-
-			gpioWrite(Led_Map[Lectura.Tecla],OFF);
 		}
 	}
+
 }

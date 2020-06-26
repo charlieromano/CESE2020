@@ -16,7 +16,6 @@
 extern Buttons_SM_t Buttons_SM[1];
 
 
-
 void My_IRQ_Init (void){
 		//Inicializamos las interrupciones (LPCopen)
 		Chip_PININT_Init(LPC_GPIO_PIN_INT);
@@ -26,20 +25,20 @@ void My_IRQ_Init (void){
 		GLOBAL! extern pinInitGpioLpc4337_t gpioPinsInit[];
 		Chip_SCU_GPIOIntPinSel( j,  gpioPinsInit[i].gpio.port, gpioPinsInit[i].gpio.pin );   // TECi
 		Chip_PININT_ClearIntStatus( LPC_GPIO_PIN_INT, PININTCH( j ) );                      // INTj (canal j -> hanlder GPIOj)       //Borra el pending de la IRQ
-		Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH( j ) );                      // INTj //Selecciona activo por flanco
-		Chip_PININT_EnableIntLow( LPC_GPIO_PIN_INT, PININTCH( j ) );                        // INTj //Selecciona activo por flanco descendente
-		Chip_PININT_EnableIntHigh( LPC_GPIO_PIN_INT, PININTCH( j ) );                       // INTj //Selecciona activo por flanco ascendente
+		Chip_PININT_SetPinModeEdge( LPC_GPIO_PIN_INT, PININTCH( j ) );                      // INTj //Selecciona activo por edge
+		Chip_PININT_EnableIntLow( LPC_GPIO_PIN_INT, PININTCH( j ) );                        // INTj //Selecciona activo por edge descendente
+		Chip_PININT_EnableIntHigh( LPC_GPIO_PIN_INT, PININTCH( j ) );                       // INTj //Selecciona activo por edge ascendente
 		*/
 
 		// TEC1 FALL
 		Chip_SCU_GPIOIntPinSel(0, 0, 4); 	//(Canal 0 a 7, Puerto GPIO, Pin GPIO)
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH0);//Se configura el canal para que se active por flanco
-		Chip_PININT_EnableIntLow(LPC_GPIO_PIN_INT, PININTCH0);//Se configura para que el flanco sea el de bajada
+		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH0);//Se configura el canal para que se active por edge
+		Chip_PININT_EnableIntLow(LPC_GPIO_PIN_INT, PININTCH0);//Se configura para que el edge sea el de bajada
 
 		// TEC1 RISE
 		Chip_SCU_GPIOIntPinSel(1, 0, 4);	//(Canal 0 a 7, Puerto GPIO, Pin GPIO)
-		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH1);//Se configura el canal para que se active por flanco
-		Chip_PININT_EnableIntHigh(LPC_GPIO_PIN_INT, PININTCH1);//En este caso el flanco es de subida
+		Chip_PININT_SetPinModeEdge(LPC_GPIO_PIN_INT, PININTCH1);//Se configura el canal para que se active por edge
+		Chip_PININT_EnableIntHigh(LPC_GPIO_PIN_INT, PININTCH1);//En este caso el edge es de subida
 
 		//Una vez que se han configurado los eventos para cada canal de interrupcion
 		//Se activan las interrupciones para que comiencen a llamar al handler
@@ -60,15 +59,14 @@ void GPIO0_IRQHandler(void){
 		//codigo a ejecutar si ocurriÃ³ la interrupciÃ³n
 
 		fsmButtonISR_t Snapshot;
-		Snapshot.Flanco = STATE_BUTTON_FALLING;
-		Snapshot.Tiempo_inicial = xTaskGetTickCountFromISR();
+		Snapshot.edge = STATE_BUTTON_FALLING;
+		Snapshot.initTime = xTaskGetTickCountFromISR();
 
 		xQueueSendFromISR( Buttons_SM[0].Cola, &Snapshot, &xHigherPriorityTaskWoken );
 	}
 	portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
 }
-//A 2 <
-//B 3
+
 void GPIO1_IRQHandler(void){
 
 	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
@@ -77,9 +75,9 @@ void GPIO1_IRQHandler(void){
 			Chip_PININT_ClearIntStatus(LPC_GPIO_PIN_INT, PININTCH1);
 			//codigo a ejecutar si ocurriÃ³ la interrupciÃ³n
 			fsmButtonISR_t Snapshot;
-			Snapshot.Flanco = STATE_BUTTON_RISING;
-			Snapshot.Tiempo_inicial = xTaskGetTickCountFromISR();
-			
+			Snapshot.edge = STATE_BUTTON_RISING;
+			Snapshot.initTime = xTaskGetTickCountFromISR();
+
 			xQueueSendFromISR( Buttons_SM[0].Cola, &Snapshot, &xHigherPriorityTaskWoken );
 		}
 		portYIELD_FROM_ISR( xHigherPriorityTaskWoken );

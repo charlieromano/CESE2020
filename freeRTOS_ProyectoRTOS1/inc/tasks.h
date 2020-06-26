@@ -17,6 +17,7 @@ void vTaskWriteSPI(void* xTaskParams);
 void vTaskButtonRead(void* xTaskParams);
 void vTaskWriteUART(void* xTaskParams);
 void vTaskProcessing(void* xTaskParams);
+void vTaskProcessFromISR(void* xTaskParams);
 
 void vTaskButton( void* taskParmPtr );
 void Led_task( void* taskParmPtr );
