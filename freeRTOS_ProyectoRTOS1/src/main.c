@@ -56,7 +56,7 @@ int main(void)
 	int8_t i;
    	for (i = 1 ; i-- ; i >= 0) {
    	  Buttons_SM[i].Tecla = i;
-   	  if (NULL == (Buttons_SM[i].Cola = xQueueCreate(5,sizeof(fsmButtonISR_t))))
+   	  if (NULL == (Buttons_SM[i].Cola = xQueueCreate(5,sizeof(char[20]))))
         {
 		   Error_state =1;
          }

@@ -2,7 +2,7 @@
 #include "sapi.h"
 #include "typesConfig.h"
 
-
+extern xQueueHandle q1;
 
 void fsmButtonError( tButtonFSM* config );
 void fsmButtonInit( tButtonFSM* config );
@@ -25,10 +25,15 @@ void buttonReleased( tButtonFSM* config )
     char str[20];
 
     if (config->tiempo_medido > 0)
-        printf("TEC%d T=%d ms\r\n", config->index, config->tiempo_medido);//xQueueSend(config->)
-        sprintf(str,"TEC%d T=%d ms\r\n", config->index, config->tiempo_medido);//xQueueSend(config->)
-
-        xSemaphoreGive( config->semaphoreButton );
+    {
+       //printf("TEC%d T=%d ms\r\n", config->index, config->tiempo_medido);//xQueueSend(config->)
+        sprintf(str,"TEC%d T=%d ms", config->index, config->tiempo_medido);//xQueueSend(config->)
+    if( pdFALSE == (xQueueSend(q1, &str, portMAX_DELAY )))  // QueueSend(q1)
+    {
+        printf("Unsent data\r\n");
+    }
+    xSemaphoreGive( config->semaphoreButton );
+    }
 }
 
 void fsmButtonError( tButtonFSM* config )
