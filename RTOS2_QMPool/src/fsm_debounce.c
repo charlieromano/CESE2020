@@ -1,6 +1,6 @@
 #include "FreeRTOS.h"
 #include "sapi.h"
-#include "typesConfig.h"
+#include "types.h"
 
 extern xQueueHandle q1;
 

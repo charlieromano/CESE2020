@@ -1,67 +1,45 @@
+//tasks.c
 #include  "FreeRTOS.h"
 #include  "FreeRTOSConfig.h"
-#include  "task.h"
+#include  "tasks.h"
+#include  "sapi.h"
 #include  "semphr.h"
 #include  "queue.h"
-#include  "sapi.h"
-#include  "board.h"
-#include  "typesConfig.h"
+#include  "types.h"
+#include  "qmpool.h"
 
-DEBUG_PRINT_ENABLE;
 
-void  vTaskA(void *xTaskParams);
-void  vTaskB(void *xTaskParams);
-void  vTaskC(void *xTaskParams);
-char* itoa(int value, char* result, int base);
 
-xQueueHandle    q1;
-SemaphoreHandle_t mutexUART; 
+extern xQueueHandle    q1;
+extern SemaphoreHandle_t mutexUART; 
+extern Error_t      errorStatus;
+extern QMPool memoryPool;
 
-tButtonFSM   xTaskParams[1];
-tButtonFSM   xButton[2];
-
-int main (void){
-   
-   boardConfig();
-   debugPrintConfigUart( UART_USB, 115200 );
-
-   uint8_t Error_state = 0;
-
-   xButton[0].button      = TEC1;
-   xButton[0].led         = LED1;
-   xButton[0].index       = 1;
-   xButton[0].semaphoreButton   = xSemaphoreCreateCounting( 3 , 0 );
-
-   xButton[1].button      = TEC2;
-   xButton[1].led         = LED2;
-   xButton[1].index       = 2;
-   xButton[1].semaphoreButton   = xSemaphoreCreateCounting( 3 , 0 );
-
-   if (NULL == ( q1 = xQueueCreate(1,sizeof(char[MSG_LEN])))){ Error_state = 1; }
-   if (NULL == (mutexUART = xSemaphoreCreateMutex())){ Error_state =1; }
-
+void _TaskCreate_ ( TaskFunction_t pvTaskName, 
+					const char * const taskName, 
+					unsigned short usStackDepth, 
+					void *pvParams, 
+					BaseType_t uxPriority, 
+					TaskHandle_t *pxCreatedTask)
+{
    BaseType_t res;
-
    res=
-   xTaskCreate( vTaskA, "LED", configMINIMAL_STACK_SIZE*2, &xButton[0], tskIDLE_PRIORITY+1, 0);
-   if(res==pdFAIL) printf("ERROR_TASK_CREATE_BUTTON");
+   xTaskCreate( pvTaskName, taskName, usStackDepth*configMINIMAL_STACK_SIZE, pvParams, tskIDLE_PRIORITY+uxPriority,0);
+   if(res==pdFAIL){
+   	errorStatus = ERROR_TASK_CREATE;
+   	while(1);
+   }
 
-   res=
-   xTaskCreate( vTaskB, "Button", configMINIMAL_STACK_SIZE*2, &xButton[0], tskIDLE_PRIORITY+1, 0);
-   if(res==pdFAIL) printf("ERROR_TASK_CREATE_BUTTON");
+}
 
-   res=
-   xTaskCreate( vTaskB, "Button2", configMINIMAL_STACK_SIZE*2, &xButton[1], tskIDLE_PRIORITY+1, 0);
-   if(res==pdFAIL) printf("ERROR_TASK_CREATE_BUTTON");
+void _QueueCreate_(UBaseType_t uxQueueLength, UBaseType_t uxItemSize){
 
-    res=
-   xTaskCreate( vTaskC, "Print msg", configMINIMAL_STACK_SIZE*2, 0, tskIDLE_PRIORITY+1, 0);
-   if(res==pdFAIL) printf("ERROR_TASK_CREATE_BUTTON");
+	q1 = xQueueCreate(1,sizeof(char[MSG_LEN]));
 
-  vTaskStartScheduler();
-
-  while(1);
-
+	if (NULL == q1)
+	{ 
+		errorStatus = ERROR_QUEUE_CREATE;
+	}
 }
 
 void vTaskA(void *xTaskParams){
@@ -119,6 +97,34 @@ void vTaskC(void * xTaskParams){
       }   
     }
   }
+}
+
+
+void vTaskD(void * xTaskParams){
+
+  tString* pMsg;
+  tString  msg="hello world!";
+
+  portTickType timePeriod = 5000 / portTICK_RATE_MS;
+  portTickType timeDiff = xTaskGetTickCount();
+
+  while(1){
+
+    pMsg = ( tString* ) QMPool_get( &memoryPool, 0 ); //pido un bloque del pool
+    if(pMsg==NULL){
+      printf("Error memory get\n");
+      errorStatus = ERROR_MEMORY_GET;
+    }
+
+    *pMsg = msg;
+
+    printf("%s\n", *pMsg);
+
+    QMPool_put( &memoryPool, pMsg );
+
+    vTaskDelayUntil( &timeDiff, timePeriod );
+  }
+
 }
 
 char* itoa(int value, char* result, int base) {
