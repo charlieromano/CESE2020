@@ -1,0 +1,30 @@
+---
+:source:
+  :path: test
+  :file: test_leds.c
+:successes:
+- :test: test_todos_los_leds_inician_apagaods
+  :line: 5
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_un_led
+  :line: 14
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_un_led
+  :line: 22
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_los_leds
+  :line: 30
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 4
+  :passed: 4
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.002036414998656255
