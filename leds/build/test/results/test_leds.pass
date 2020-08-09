@@ -19,12 +19,24 @@
   :line: 30
   :message: ''
   :unity_test_time: 0
+- :test: test_encender_todos_los_leds_de_una_vez
+  :line: 38
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_todos_los_leds_de_una_vez
+  :line: 44
+  :message: ''
+  :unity_test_time: 0
+- :test: test_consultar_estado_de_led
+  :line: 48
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 4
-  :passed: 4
+  :total: 7
+  :passed: 7
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.002036414998656255
+:time: 0.0022275250012171455

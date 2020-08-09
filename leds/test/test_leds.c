@@ -2,7 +2,7 @@
 #include "leds.h"
 
 //! @test Todos los leds empiezan apagados
-void test_todos_los_leds_inician_apagaods(void){
+void test_todos_los_leds_inician_apagados(void){
 
 	uint16_t virtuales = 0xFFFF;
 	LedsCreate(&virtuales);
@@ -28,9 +28,20 @@ void test_encender_y_apagar_un_led(void){
 }
 
 void test_encender_y_apagar_los_leds(void){
-	uint16_t virtuales;
-	LedsCreate(&virtuales);
-	LedsTurnOn(1);
-	LedsTurnOff(1);
-	TEST_ASSERT_EQUAL_UINT16(0x0000,virtuales);
+
+
+}
+
+void test_encender_todos_los_leds_de_una_vez(void){
+	
+
+
+}
+
+void test_encender_y_apagar_todos_los_leds_de_una_vez(void){
+	
+}
+
+void test_consultar_estado_de_led(void){
+
 }

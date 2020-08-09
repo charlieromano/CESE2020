@@ -84,3 +84,31 @@ void test_encender_y_apagar_los_leds(void){
 ), (UNITY_UINT)(35), UNITY_DISPLAY_STYLE_UINT16);
 
 }
+
+
+
+void test_encender_todos_los_leds_de_una_vez(void){
+
+
+
+
+
+
+
+}
+
+
+
+void test_encender_y_apagar_todos_los_leds_de_una_vez(void){
+
+
+
+}
+
+
+
+void test_consultar_estado_de_led(void){
+
+
+
+}
