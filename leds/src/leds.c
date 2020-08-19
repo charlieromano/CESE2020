@@ -18,10 +18,9 @@ void LedsTurnOff(uint8_t led){
 }
 
 void LedsTurnOnAll(void){
-	uint16_t virtualLed;
-	for(uint16_t i= 0; i< LEDS_NUM; i++){
-		virtualLed=i;
-		LedsCreate(&virtualLed);
-		LedsTurnOn(i);
-	}
+	*port=0xffff;
+}
+
+void LedsTurnOffAll(void){
+	*port=0x0000;
 }

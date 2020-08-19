@@ -1,0 +1,42 @@
+---
+:source:
+  :path: test
+  :file: test_leds.c
+:successes:
+- :test: test_todos_los_leds_inician_apagados
+  :line: 5
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_un_led
+  :line: 14
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_un_led
+  :line: 22
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_todos_los_leds
+  :line: 30
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_los_leds
+  :line: 38
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_todos_los_leds
+  :line: 50
+  :message: ''
+  :unity_test_time: 0
+- :test: test_consultar_estado_de_led
+  :line: 58
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 7
+  :passed: 7
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.002583415000117384
