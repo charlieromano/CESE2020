@@ -1,18 +1,27 @@
-#include "leds.h"
+#include    "leds.h"
 
-static uint16_t * puerto;
+#define    LEDS_NUM    16
+
+static uint16_t * port;
 
 void LedsCreate(uint16_t * direccion){
-	puerto = direccion;
-	*puerto=0x0000;
+	port = direccion;
+	*port=0x0000;
 }
 
 void LedsTurnOn(uint8_t led){
-	*puerto |=(1<<(led-1));
+	*port |=(1<<(led-1));
 }
 
 void LedsTurnOff(uint8_t led){
-	*puerto &=~(1<<(led-1));
+	*port &=~(1<<(led-1));
 }
 
-
+void LedsTurnOnAll(void){
+	uint16_t virtualLed;
+	for(uint16_t i= 0; i< LEDS_NUM; i++){
+		virtualLed=i;
+		LedsCreate(&virtualLed);
+		LedsTurnOn(i);
+	}
+}

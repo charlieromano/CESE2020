@@ -10,11 +10,11 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_todos_los_leds_inician_apagaods(void);
+extern void test_todos_los_leds_inician_apagados(void);
 extern void test_encender_un_led(void);
 extern void test_encender_y_apagar_un_led(void);
 extern void test_encender_y_apagar_los_leds(void);
-extern void test_encender_todos_los_leds_de_una_vez(void);
+extern void test_encender_todos_los_leds(void);
 extern void test_encender_y_apagar_todos_los_leds_de_una_vez(void);
 extern void test_consultar_estado_de_led(void);
 
@@ -87,13 +87,13 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_todos_los_leds_inician_apagaods, "test_todos_los_leds_inician_apagaods", 5);
+  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 5);
   run_test(test_encender_un_led, "test_encender_un_led", 14);
   run_test(test_encender_y_apagar_un_led, "test_encender_y_apagar_un_led", 22);
   run_test(test_encender_y_apagar_los_leds, "test_encender_y_apagar_los_leds", 30);
-  run_test(test_encender_todos_los_leds_de_una_vez, "test_encender_todos_los_leds_de_una_vez", 38);
-  run_test(test_encender_y_apagar_todos_los_leds_de_una_vez, "test_encender_y_apagar_todos_los_leds_de_una_vez", 44);
-  run_test(test_consultar_estado_de_led, "test_consultar_estado_de_led", 48);
+  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 37);
+  run_test(test_encender_y_apagar_todos_los_leds_de_una_vez, "test_encender_y_apagar_todos_los_leds_de_una_vez", 45);
+  run_test(test_consultar_estado_de_led, "test_consultar_estado_de_led", 49);
 
   return UnityEnd();
 }
