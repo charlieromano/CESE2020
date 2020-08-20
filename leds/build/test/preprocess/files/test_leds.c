@@ -5,6 +5,22 @@
 
 
 
+static uint16_t virtualLed;
+
+
+
+void setUp(void){
+
+ LedsCreate(&virtualLed);
+
+}
+
+
+
+
+
+
+
 void test_todos_los_leds_inician_apagados(void){
 
 
@@ -17,7 +33,7 @@ void test_todos_los_leds_inician_apagados(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(9), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(17), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -29,9 +45,7 @@ void test_todos_los_leds_inician_apagados(void){
 
 void test_encender_un_led(void){
 
- uint16_t virtualLed;
-
- LedsCreate(&virtualLed);
+ setUp();
 
  LedsTurnOn(1);
 
@@ -39,7 +53,7 @@ void test_encender_un_led(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(18), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(25), UNITY_DISPLAY_STYLE_UINT16);
 
 
 
@@ -47,11 +61,11 @@ void test_encender_un_led(void){
 
 
 
+
+
 void test_encender_y_apagar_un_led(void){
 
- uint16_t virtualLed;
-
- LedsCreate(&virtualLed);
+ setUp();
 
  LedsTurnOn(1);
 
@@ -61,19 +75,17 @@ void test_encender_y_apagar_un_led(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(27), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(34), UNITY_DISPLAY_STYLE_UINT16);
 
 }
 
 
 
+
+
 void test_encender_todos_los_leds(void){
 
-
-
- uint16_t virtualLed;
-
- LedsCreate(&virtualLed);
+ setUp();
 
  LedsTurnOnAll();
 
@@ -81,9 +93,11 @@ void test_encender_todos_los_leds(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(35), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(41), UNITY_DISPLAY_STYLE_UINT16);
 
 }
+
+
 
 
 
@@ -91,9 +105,7 @@ void test_encender_y_apagar_los_leds(void){
 
 
 
- uint16_t virtualLed;
-
- LedsCreate(&virtualLed);
+ setUp();
 
  LedsTurnOn(2);
 
@@ -103,11 +115,19 @@ void test_encender_y_apagar_los_leds(void){
 
  LedsTurnOn(8);
 
- UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT16)((0x00AA)), (UNITY_INT)(UNITY_UINT16)((virtualLed)), (
+ LedsTurnOff(2);
+
+ LedsTurnOff(4);
+
+ LedsTurnOff(6);
+
+ LedsTurnOff(8);
+
+ UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT16)((0x0000)), (UNITY_INT)(UNITY_UINT16)((virtualLed)), (
 
 ((void *)0)
 
-), (UNITY_UINT)(46), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(56), UNITY_DISPLAY_STYLE_UINT16);
 
 }
 
@@ -115,11 +135,11 @@ void test_encender_y_apagar_los_leds(void){
 
 
 
+
+
 void test_encender_y_apagar_todos_los_leds(void){
 
- uint16_t virtualLed;
-
- LedsCreate(&virtualLed);
+ setUp();
 
  LedsTurnOnAll();
 
@@ -129,9 +149,11 @@ void test_encender_y_apagar_todos_los_leds(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(55), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(65), UNITY_DISPLAY_STYLE_UINT16);
 
 }
+
+
 
 
 
@@ -139,16 +161,16 @@ void test_consultar_estado_de_led(void){
 
 
 
- uint16_t virtualLed;
+ setUp();
 
- LedsCreate(&virtualLed);
+ LedsTurnOff(3);
 
- LedsTurnOn(3);
+ LedGetState(3);
 
- UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT16)((0x0004)), (UNITY_INT)(UNITY_UINT16)((virtualLed)), (
+ UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT16)((0x0000)), (UNITY_INT)(UNITY_UINT16)((virtualLed)), (
 
 ((void *)0)
 
-), (UNITY_UINT)(63), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(74), UNITY_DISPLAY_STYLE_UINT16);
 
 }

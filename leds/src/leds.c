@@ -1,6 +1,7 @@
 #include    "leds.h"
 
-#define    LEDS_NUM    16
+#define STATE_ON 1
+#define OFFSET_VALUE 1
 
 static uint16_t * port;
 
@@ -10,11 +11,11 @@ void LedsCreate(uint16_t * direccion){
 }
 
 void LedsTurnOn(uint8_t led){
-	*port |=(1<<(led-1));
+	*port |=(STATE_ON<<(led-OFFSET_VALUE));
 }
 
 void LedsTurnOff(uint8_t led){
-	*port &=~(1<<(led-1));
+	*port &=~(STATE_ON<<(led-OFFSET_VALUE));
 }
 
 void LedsTurnOnAll(void){
@@ -23,4 +24,8 @@ void LedsTurnOnAll(void){
 
 void LedsTurnOffAll(void){
 	*port=0x0000;
+}
+
+uint16_t LedGetState(uint8_t led){
+	return *port;
 }

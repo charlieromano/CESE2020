@@ -33,9 +33,6 @@ static void CMock_Destroy(void)
 {
 }
 
-/*=======Setup (stub)=====*/
-void setUp(void) {}
-
 /*=======Teardown (stub)=====*/
 void tearDown(void) {}
 
@@ -87,13 +84,13 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_leds.c");
-  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 5);
-  run_test(test_encender_un_led, "test_encender_un_led", 14);
-  run_test(test_encender_y_apagar_un_led, "test_encender_y_apagar_un_led", 22);
-  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 30);
-  run_test(test_encender_y_apagar_los_leds, "test_encender_y_apagar_los_leds", 38);
-  run_test(test_encender_y_apagar_todos_los_leds, "test_encender_y_apagar_todos_los_leds", 50);
-  run_test(test_consultar_estado_de_led, "test_consultar_estado_de_led", 58);
+  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 13);
+  run_test(test_encender_un_led, "test_encender_un_led", 22);
+  run_test(test_encender_y_apagar_un_led, "test_encender_y_apagar_un_led", 30);
+  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 38);
+  run_test(test_encender_y_apagar_los_leds, "test_encender_y_apagar_los_leds", 45);
+  run_test(test_encender_y_apagar_todos_los_leds, "test_encender_y_apagar_todos_los_leds", 61);
+  run_test(test_consultar_estado_de_led, "test_consultar_estado_de_led", 69);
 
   return UnityEnd();
 }
