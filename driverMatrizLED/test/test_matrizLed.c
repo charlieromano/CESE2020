@@ -1,8 +1,12 @@
 #include "/var/lib/gems/2.5.0/gems/ceedling-0.30.0/vendor/unity/src/unity.h"
 #include "matrizLed.h"
 
+
+
 //! @test common init
 static uint16_t virtualLed;
+static uint8_t  virtualMatrix[2];
+
 
 void setUp(void){
 	LedsCreate(&virtualLed);	
@@ -84,3 +88,11 @@ void test_consultar_estado_de_led(void){
  * desplazar una columna
  * 
  */
+
+
+void encender_fila(void){
+
+	LedMatrixCreate(&virtualMatrix[ROW_INDEX], &virtualMatrix[DATA_INDEX]);
+
+	//TEST_ASSERT_EQUAL_UINT8_ARRAY(0x00,);
+}

@@ -5,7 +5,15 @@
 
 
 
+
+
+
+
 static uint16_t virtualLed;
+
+static uint8_t virtualMatrix[2];
+
+
 
 
 
@@ -33,7 +41,7 @@ void test_todos_los_leds_inician_apagados(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(17), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(21), UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -53,7 +61,7 @@ void test_encender_un_led(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(25), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(29), UNITY_DISPLAY_STYLE_UINT16);
 
 
 
@@ -75,7 +83,7 @@ void test_encender_y_apagar_un_led(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(34), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(38), UNITY_DISPLAY_STYLE_UINT16);
 
 }
 
@@ -93,7 +101,7 @@ void test_encender_todos_los_leds(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(41), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(45), UNITY_DISPLAY_STYLE_UINT16);
 
 }
 
@@ -127,7 +135,7 @@ void test_encender_y_apagar_los_leds(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(56), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(60), UNITY_DISPLAY_STYLE_UINT16);
 
 }
 
@@ -149,7 +157,7 @@ void test_encender_y_apagar_todos_los_leds(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(65), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(69), UNITY_DISPLAY_STYLE_UINT16);
 
 }
 
@@ -171,6 +179,18 @@ void test_consultar_estado_de_led(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(74), UNITY_DISPLAY_STYLE_UINT16);
+), (UNITY_UINT)(78), UNITY_DISPLAY_STYLE_UINT16);
+
+}
+
+void encender_fila(void){
+
+
+
+ LedMatrixCreate(&virtualMatrix[0], &virtualMatrix[1]);
+
+
+
+
 
 }
