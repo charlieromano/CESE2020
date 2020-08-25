@@ -1,3 +1,17 @@
+/**
+ * Matriz led 8x8
+ * @file matrizLed.h
+ * @author Carlos G. C. Romano <charlieromano@gmail.com>
+ * @brief driver para matrices led 8x8. Se accede como 
+ *        registro (fila) + data. Ejemplo: fila 3, led 5 ON es 
+ *        registro=0x03; data=0x10
+ * @version 0.1
+ * @date 2020-08-24
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #ifndef MATRIZLED_H
 #define MATRIZLED_H
 #include <stdint.h>
@@ -11,7 +25,6 @@ uint16_t LedGetState(uint8_t led);
 
 
 
-/* Matriz led 8x8*/
 
 #define    ROW_NUM 8
 #define    COL_NUM 8

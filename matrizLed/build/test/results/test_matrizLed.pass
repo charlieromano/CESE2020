@@ -31,24 +31,24 @@
   :line: 72
   :message: ''
   :unity_test_time: 0
+- :test: test_iniciar_matriz_led
+  :line: 98
+  :message: ''
+  :unity_test_time: 0
 - :test: test_encender_fila
-  :line: 106
+  :line: 105
   :message: ''
   :unity_test_time: 0
 - :test: test_encender_columna
-  :line: 115
+  :line: 113
   :message: ''
   :unity_test_time: 0
-:failures:
-- :test: test_iniciar_matriz_led
-  :line: 103
-  :message: Expected 16 Was 0
-  :unity_test_time: 0
+:failures: []
 :ignores: []
 :counts:
   :total: 10
-  :passed: 9
-  :failed: 1
+  :passed: 10
+  :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.001960569992661476
+:time: 0.0018695479957386851

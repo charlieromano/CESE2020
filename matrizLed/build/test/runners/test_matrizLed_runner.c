@@ -95,8 +95,8 @@ int main(void)
   run_test(test_encender_y_apagar_todos_los_leds, "test_encender_y_apagar_todos_los_leds", 64);
   run_test(test_consultar_estado_de_led, "test_consultar_estado_de_led", 72);
   run_test(test_iniciar_matriz_led, "test_iniciar_matriz_led", 98);
-  run_test(test_encender_fila, "test_encender_fila", 106);
-  run_test(test_encender_columna, "test_encender_columna", 115);
+  run_test(test_encender_fila, "test_encender_fila", 105);
+  run_test(test_encender_columna, "test_encender_columna", 113);
 
   return UnityEnd();
 }

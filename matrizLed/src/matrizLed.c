@@ -1,4 +1,5 @@
 #include    "matrizLed.h"
+#include <stdio.h>
 
 #define STATE_ON         1
 #define OFFSET_VALUE     1
@@ -44,13 +45,13 @@ void LedMatrixCreate(tLedMatrix * matrix, uint8_t rows, uint8_t cols){
 }
 
 void ledMatrixRowOn(uint8_t row){
-/*
-	port_matrix->rows[row]  = row;
-	port_matrix->data = 0xFF;
-*/
+
+	port_matrix->data[row] = 0xFF;
+
 }
 
 
 void ledMatrixColumnOn(uint8_t column){
-//	port_matrix->data |= ( STATE_ON <<(column-OFFSET_VALUE)); ;	
+	for(int i=0; i<ROW_NUM; i++)
+		port_matrix->data[i]  |= (STATE_ON<<(column-OFFSET_VALUE));
 }

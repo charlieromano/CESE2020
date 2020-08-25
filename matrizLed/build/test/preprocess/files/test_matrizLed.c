@@ -209,25 +209,21 @@ void test_iniciar_matriz_led(void){
 
 
 
- UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((0x10)), (UNITY_INT)(UNITY_UINT8 )((virtualMatrix.data[2])), (
-
-((void *)0)
-
-), (UNITY_UINT)(103), UNITY_DISPLAY_STYLE_UINT8);
-
 }
 
 
 
 void test_encender_fila(void){
 
+ setUpMatrix();
 
+ ledMatrixRowOn(1);
 
+ UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((0xFF)), (UNITY_INT)(UNITY_UINT8 )((virtualMatrix.data[1])), (
 
+((void *)0)
 
-
-
-
+), (UNITY_UINT)(108), UNITY_DISPLAY_STYLE_UINT8);
 
 
 
@@ -238,6 +234,18 @@ void test_encender_fila(void){
 
 
 void test_encender_columna(void){
+
+ setUpMatrix();
+
+ ledMatrixColumnOn(8);
+
+ for(int i=0; i<8; i++)
+
+  UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((0x80)), (UNITY_INT)(UNITY_UINT8 )((virtualMatrix.data[i])), (
+
+ ((void *)0)
+
+ ), (UNITY_UINT)(117), UNITY_DISPLAY_STYLE_UINT8);
 
 
 

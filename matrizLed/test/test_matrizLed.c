@@ -103,15 +103,18 @@ void test_iniciar_matriz_led(void){
 }
 
 void test_encender_fila(void){
-/*	setUpMatrix();	
+	setUpMatrix();	
 	ledMatrixRowOn(1);
-	TEST_ASSERT_EQUAL_UINT8(0xFF, virtualMatrix.data[0]);
 	TEST_ASSERT_EQUAL_UINT8(0xFF, virtualMatrix.data[1]);
-*/
+
 }
 
 
 void test_encender_columna(void){
+	setUpMatrix();
+	ledMatrixColumnOn(8);
+	for(int i=0; i<ROW_NUM; i++)
+		TEST_ASSERT_EQUAL_UINT8(0x80, virtualMatrix.data[i]);
 
 }
 
