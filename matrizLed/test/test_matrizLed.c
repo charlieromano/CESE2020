@@ -81,11 +81,10 @@ void test_consultar_estado_de_led(void){
 /* 
  * encender una fila de leds
  * encender una coumna de leds
- * encender un caracter
- * encender un numero
  * desplazar una fila
  * desplazar una columna
- * 
+ * encender toda la matriz
+ * apagar toda la matriz
  */
 
 static tLedMatrix virtualMatrix;
@@ -118,3 +117,43 @@ void test_encender_columna(void){
 
 }
 
+
+void test_desplazar_columna(void){
+	setUpMatrix();
+	ledMatrixColumnOn(8);
+	ledMatrixColumnOff(8);
+	ledMatrixColumnOn(7);
+	for(int i=0; i<ROW_NUM; i++)
+		TEST_ASSERT_EQUAL_UINT8(0x40, virtualMatrix.data[i]);
+
+}
+
+void test_desplazar_fila(void){
+	setUpMatrix();
+	ledMatrixRowOn(1);
+	ledMatrixRowOff(1);
+	ledMatrixRowOn(2);
+	for(int i=0; i<ROW_NUM; i++){
+		if(i=2-OFFSET_VALUE){
+			TEST_ASSERT_EQUAL_UINT8(0x00, virtualMatrix.data[i]);
+			break;
+		}
+		TEST_ASSERT_EQUAL_UINT8(0x00, virtualMatrix.data[i]);
+	}
+
+}
+
+void test_encender_toda_la_matriz(void){
+	setUpMatrix();
+	ledMatrixOn();
+	for(int i=0; i<ROW_NUM; i++)
+		TEST_ASSERT_EQUAL_UINT8(0xFF, virtualMatrix.data[i]);
+}
+
+
+void test_apagar_toda_la_matriz(void){
+	setUpMatrix();
+	ledMatrixOff();
+	for(int i=0; i<ROW_NUM; i++)
+		TEST_ASSERT_EQUAL_UINT8(0x00, virtualMatrix.data[i]);	
+}

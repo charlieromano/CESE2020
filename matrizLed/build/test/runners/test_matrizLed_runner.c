@@ -20,6 +20,10 @@ extern void test_consultar_estado_de_led(void);
 extern void test_iniciar_matriz_led(void);
 extern void test_encender_fila(void);
 extern void test_encender_columna(void);
+extern void test_desplazar_columna(void);
+extern void test_desplazar_fila(void);
+extern void test_encender_toda_la_matriz(void);
+extern void test_apagar_toda_la_matriz(void);
 
 
 /*=======Mock Management=====*/
@@ -94,9 +98,13 @@ int main(void)
   run_test(test_encender_y_apagar_los_leds, "test_encender_y_apagar_los_leds", 48);
   run_test(test_encender_y_apagar_todos_los_leds, "test_encender_y_apagar_todos_los_leds", 64);
   run_test(test_consultar_estado_de_led, "test_consultar_estado_de_led", 72);
-  run_test(test_iniciar_matriz_led, "test_iniciar_matriz_led", 98);
-  run_test(test_encender_fila, "test_encender_fila", 105);
-  run_test(test_encender_columna, "test_encender_columna", 113);
+  run_test(test_iniciar_matriz_led, "test_iniciar_matriz_led", 97);
+  run_test(test_encender_fila, "test_encender_fila", 104);
+  run_test(test_encender_columna, "test_encender_columna", 112);
+  run_test(test_desplazar_columna, "test_desplazar_columna", 121);
+  run_test(test_desplazar_fila, "test_desplazar_fila", 131);
+  run_test(test_encender_toda_la_matriz, "test_encender_toda_la_matriz", 146);
+  run_test(test_apagar_toda_la_matriz, "test_apagar_toda_la_matriz", 154);
 
   return UnityEnd();
 }

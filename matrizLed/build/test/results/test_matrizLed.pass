@@ -32,23 +32,39 @@
   :message: ''
   :unity_test_time: 0
 - :test: test_iniciar_matriz_led
-  :line: 98
+  :line: 97
   :message: ''
   :unity_test_time: 0
 - :test: test_encender_fila
-  :line: 105
+  :line: 104
   :message: ''
   :unity_test_time: 0
 - :test: test_encender_columna
-  :line: 113
+  :line: 112
+  :message: ''
+  :unity_test_time: 0
+- :test: test_desplazar_columna
+  :line: 121
+  :message: ''
+  :unity_test_time: 0
+- :test: test_desplazar_fila
+  :line: 131
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_toda_la_matriz
+  :line: 146
+  :message: ''
+  :unity_test_time: 0
+- :test: test_apagar_toda_la_matriz
+  :line: 154
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 10
-  :passed: 10
+  :total: 14
+  :passed: 14
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0018695479957386851
+:time: 0.002851283992640674

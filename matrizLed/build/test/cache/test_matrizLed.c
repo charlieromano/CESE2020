@@ -205,7 +205,7 @@ void test_iniciar_matriz_led(void){
 
  ((void *)0)
 
- ), (UNITY_UINT)(101), UNITY_DISPLAY_STYLE_UINT8);
+ ), (UNITY_UINT)(100), UNITY_DISPLAY_STYLE_UINT8);
 
 
 
@@ -223,7 +223,7 @@ void test_encender_fila(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(108), UNITY_DISPLAY_STYLE_UINT8);
+), (UNITY_UINT)(107), UNITY_DISPLAY_STYLE_UINT8);
 
 
 
@@ -245,8 +245,110 @@ void test_encender_columna(void){
 
  ((void *)0)
 
- ), (UNITY_UINT)(117), UNITY_DISPLAY_STYLE_UINT8);
+ ), (UNITY_UINT)(116), UNITY_DISPLAY_STYLE_UINT8);
 
 
+
+}
+
+
+
+
+
+void test_desplazar_columna(void){
+
+ setUpMatrix();
+
+ ledMatrixColumnOn(8);
+
+ ledMatrixColumnOff(8);
+
+ ledMatrixColumnOn(7);
+
+ for(int i=0; i<8; i++)
+
+  UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((0x40)), (UNITY_INT)(UNITY_UINT8 )((virtualMatrix.data[i])), (
+
+ ((void *)0)
+
+ ), (UNITY_UINT)(127), UNITY_DISPLAY_STYLE_UINT8);
+
+
+
+}
+
+
+
+void test_desplazar_fila(void){
+
+ setUpMatrix();
+
+ ledMatrixRowOn(1);
+
+ ledMatrixRowOff(1);
+
+ ledMatrixRowOn(2);
+
+ for(int i=0; i<8; i++){
+
+  if(i=2-1){
+
+   UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((0x00)), (UNITY_INT)(UNITY_UINT8 )((virtualMatrix.data[i])), (
+
+  ((void *)0)
+
+  ), (UNITY_UINT)(138), UNITY_DISPLAY_STYLE_UINT8);
+
+   break;
+
+  }
+
+  UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((0x00)), (UNITY_INT)(UNITY_UINT8 )((virtualMatrix.data[i])), (
+
+ ((void *)0)
+
+ ), (UNITY_UINT)(141), UNITY_DISPLAY_STYLE_UINT8);
+
+ }
+
+
+
+}
+
+
+
+void test_encender_toda_la_matriz(void){
+
+ setUpMatrix();
+
+ ledMatrixOn();
+
+ for(int i=0; i<8; i++)
+
+  UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((0xFF)), (UNITY_INT)(UNITY_UINT8 )((virtualMatrix.data[i])), (
+
+ ((void *)0)
+
+ ), (UNITY_UINT)(150), UNITY_DISPLAY_STYLE_UINT8);
+
+}
+
+
+
+
+
+void test_apagar_toda_la_matriz(void){
+
+ setUpMatrix();
+
+ ledMatrixOff();
+
+ for(int i=0; i<8; i++)
+
+  UnityAssertEqualNumber((UNITY_INT)(UNITY_UINT8 )((0x00)), (UNITY_INT)(UNITY_UINT8 )((virtualMatrix.data[i])), (
+
+ ((void *)0)
+
+ ), (UNITY_UINT)(158), UNITY_DISPLAY_STYLE_UINT8);
 
 }

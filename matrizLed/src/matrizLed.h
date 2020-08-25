@@ -16,6 +16,9 @@
 #define MATRIZLED_H
 #include <stdint.h>
 
+#define STATE_ON         1
+#define OFFSET_VALUE     1
+
 void LedsCreate(uint16_t * direccion);
 void LedsTurnOn(uint8_t led);
 void LedsTurnOff(uint8_t led);
@@ -40,6 +43,10 @@ typedef struct {
 
 void LedMatrixCreate(tLedMatrix * matrix, uint8_t rows, uint8_t cols);
 void ledMatrixRowOn(uint8_t row);
+void ledMatrixRowOff(uint8_t row);
 void ledMatrixColumnOn(uint8_t column);
+void ledMatrixColumnOff(uint8_t column);
+void ledMatrixOn(void);
+void ledMatrixOff(void);
 
 #endif
