@@ -1,0 +1,54 @@
+---
+:source:
+  :path: test
+  :file: test_matrizLed.c
+:successes:
+- :test: test_todos_los_leds_inician_apagados
+  :line: 16
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_un_led
+  :line: 25
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_un_led
+  :line: 33
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_todos_los_leds
+  :line: 41
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_los_leds
+  :line: 48
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_y_apagar_todos_los_leds
+  :line: 64
+  :message: ''
+  :unity_test_time: 0
+- :test: test_consultar_estado_de_led
+  :line: 72
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_fila
+  :line: 106
+  :message: ''
+  :unity_test_time: 0
+- :test: test_encender_columna
+  :line: 115
+  :message: ''
+  :unity_test_time: 0
+:failures:
+- :test: test_iniciar_matriz_led
+  :line: 103
+  :message: Expected 16 Was 0
+  :unity_test_time: 0
+:ignores: []
+:counts:
+  :total: 10
+  :passed: 9
+  :failed: 1
+  :ignored: 0
+:stdout: []
+:time: 0.001960569992661476
