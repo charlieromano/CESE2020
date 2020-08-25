@@ -84,13 +84,13 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("test_matrizLed.c");
-  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 17);
-  run_test(test_encender_un_led, "test_encender_un_led", 26);
-  run_test(test_encender_y_apagar_un_led, "test_encender_y_apagar_un_led", 34);
-  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 42);
-  run_test(test_encender_y_apagar_los_leds, "test_encender_y_apagar_los_leds", 49);
-  run_test(test_encender_y_apagar_todos_los_leds, "test_encender_y_apagar_todos_los_leds", 65);
-  run_test(test_consultar_estado_de_led, "test_consultar_estado_de_led", 73);
+  run_test(test_todos_los_leds_inician_apagados, "test_todos_los_leds_inician_apagados", 16);
+  run_test(test_encender_un_led, "test_encender_un_led", 25);
+  run_test(test_encender_y_apagar_un_led, "test_encender_y_apagar_un_led", 33);
+  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 41);
+  run_test(test_encender_y_apagar_los_leds, "test_encender_y_apagar_los_leds", 48);
+  run_test(test_encender_y_apagar_todos_los_leds, "test_encender_y_apagar_todos_los_leds", 64);
+  run_test(test_consultar_estado_de_led, "test_consultar_estado_de_led", 72);
 
   return UnityEnd();
 }

@@ -5,7 +5,6 @@
 
 //! @test common init
 static uint16_t virtualLed;
-static uint8_t  virtualMatrix[2];
 
 
 void setUp(void){
@@ -89,10 +88,13 @@ void test_consultar_estado_de_led(void){
  * 
  */
 
+static uint8_t * virtualMatrix[MAX_ARRAY_SIZE];
+
 
 void encender_fila(void){
 
-	LedMatrixCreate(&virtualMatrix[ROW_INDEX], &virtualMatrix[DATA_INDEX]);
+	LedMatrixCreate(8,8, virtualMatrix);
+	TEST_ASSERT_EQUAL_UINT8_ARRAY(0x01,virtualMatrix, 64); 
+	//TEST_ASSERT_EQUAL_HEX8_ARRAY(expected, actual, elements)
 
-	//TEST_ASSERT_EQUAL_UINT8_ARRAY(0x00,);
 }

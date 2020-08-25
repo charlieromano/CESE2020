@@ -11,6 +11,7 @@ uint16_t LedGetState(uint8_t led);
 
 #define    ROW_INDEX   0
 #define    DATA_INDEX  1
+#define MAX_ARRAY_SIZE   64
 
-void LedMatrixCreate(uint8_t * rowAddr, uint8_t * dataAddr );
+void LedMatrixCreate(uint8_t rows, uint8_t columns, uint8_t * direccion[MAX_ARRAY_SIZE]);
 void LedsMatrixRowTurnOn(uint8_t row, uint8_t data);
